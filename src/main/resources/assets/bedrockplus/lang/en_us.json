@@ -1,0 +1,11 @@
+{
+  "itemGroup.bedrockplus.impure_bedrock": "Bedrock Plus Mod",
+
+  "item.bedrockplus.impure_bedrock_ingot": "Impure Bedrock ingot",
+  "item.bedrockplus.impure_bedrock_scrap" : "Impure Bedrock scrap",
+
+  "item.bedrockplus.impurebedrock_helmet" : "Impure Bedrock Helmet",
+  "item.bedrockplus.impurebedrock_chestplate" : "Impure Bedrock Chestplate",
+  "item.bedrockplus.impurebedrock_leggings" : "Impure Bedrock Leggings",
+  "item.bedrockplus.impurebedrock_boots" : "Impure Bedrock Boots"
+}
