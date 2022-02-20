@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#$#"
+  ],
+  "key": {
+    "#": {
+      "item": "bedrockplus:impure_bedrock_scrap"
+    },
+    "$": {
+      "item" : "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "bedrockplus:impure_bedrock_ingot"
+  }
+}
