@@ -10,7 +10,7 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    IMPUREBEDROCK("impurebedrock", 50, new int[]{5, 8, 10, 4}, 2,
+    IMPUREBEDROCK("impurebedrock", 74, new int[]{5, 8, 10, 4}, 2,
             SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.5F, 0.2F,
             () -> {return Ingredient.ofItems(ModItems.IMPURE_BEDROCK_INGOT);
     });
