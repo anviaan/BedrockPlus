@@ -15,5 +15,7 @@ public class BedrockPlusMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 
 		ModItems.registerModItems();
+
+		ModBlocks.registerModBlock();
 	}
 }

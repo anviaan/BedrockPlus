@@ -7,5 +7,7 @@
   "item.bedrockplus.impurebedrock_helmet" : "Impure Bedrock Helmet",
   "item.bedrockplus.impurebedrock_chestplate" : "Impure Bedrock Chestplate",
   "item.bedrockplus.impurebedrock_leggings" : "Impure Bedrock Leggings",
-  "item.bedrockplus.impurebedrock_boots" : "Impure Bedrock Boots"
+  "item.bedrockplus.impurebedrock_boots" : "Impure Bedrock Boots",
+
+  "block.bedrockplus.impure_bedrock": "Bedrock Impure Deepslate"
 }
