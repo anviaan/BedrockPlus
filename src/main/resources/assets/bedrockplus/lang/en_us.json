@@ -9,5 +9,11 @@
   "item.bedrockplus.impurebedrock_leggings" : "Impure Bedrock Leggings",
   "item.bedrockplus.impurebedrock_boots" : "Impure Bedrock Boots",
 
+  "item.bedrockplus.impurebedrock_sword" : "Impure Bedrock Sword",
+  "item.bedrockplus.impurebedrock_axe" : "Impure Bedrock Axe",
+  "item.bedrockplus.impurebedrock_hoe" : "Impure Bedrock Hoe",
+  "item.bedrockplus.impurebedrock_shovel" : "Impure Bedrock Shovel",
+  "item.bedrockplus.impurebedrock_pickaxe" : "Impure Bedrock Pickaxe",
+
   "block.bedrockplus.impure_bedrock": "Bedrock Impure Deepslate"
 }

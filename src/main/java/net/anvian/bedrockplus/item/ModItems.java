@@ -2,9 +2,14 @@ package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.custom.ModArmorItem;
+import net.anvian.bedrockplus.item.custom.ModAxeItem;
+import net.anvian.bedrockplus.item.custom.ModHoeItem;
+import net.anvian.bedrockplus.item.custom.ModPickaxeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -29,6 +34,23 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPURE_BEDROCK_BOOTS = registerItem("impurebedrock_boots",
             new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.FEET,
+                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+
+    //tools
+    public static final Item IMPUREBEDROCK_SWORD = registerItem("impurebedrock_sword",
+            new SwordItem(ModToolMaterials.IMPUREBEDROCK,1,2f,
+                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+    public static final Item IMPUREBEDROCK_SPICKAXE = registerItem("impurebedrock_pickaxe",
+            new ModPickaxeItem(ModToolMaterials.IMPUREBEDROCK,1,0f,
+                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+    public static final Item IMPUREBEDROCK_AXE = registerItem("impurebedrock_axe",
+            new ModAxeItem(ModToolMaterials.IMPUREBEDROCK,3,1f,
+                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+    public static final Item IMPUREBEDROCK_SHOVEL = registerItem("impurebedrock_shovel",
+            new ShovelItem(ModToolMaterials.IMPUREBEDROCK,1,1f,
+                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+    public static final Item IMPUREBEDROCK_HOE = registerItem("impurebedrock_hoe",
+            new ModHoeItem(ModToolMaterials.IMPUREBEDROCK,1,1f,
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
 
     private static Item registerItem(String name,Item item){
