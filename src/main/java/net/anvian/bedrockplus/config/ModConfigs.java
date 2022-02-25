@@ -35,11 +35,11 @@ public class ModConfigs {
     }
 
     private static void createConfigs() {
-        configs.addKeyValuePair(new Pair<>("impurebedrock.tools.durability","4062"),"int");
-        configs.addKeyValuePair(new Pair<>("impurebedrock.tools.miningSpeed","10.0d"),"double");
-        configs.addKeyValuePair(new Pair<>("bedrockplus.tools.attackDamage", "5.0d"),"double");
-        configs.addKeyValuePair(new Pair<>("bedrockplus.tools.miningLevel","4"), "int");
-        configs.addKeyValuePair(new Pair<>("bedrockplus.tools.enchantability","30"),"int");
+        configs.addKeyValuePair(new Pair<>("tools.durability","4062"),"int");
+        configs.addKeyValuePair(new Pair<>("tools.miningSpeed","10.0d"),"double");
+        configs.addKeyValuePair(new Pair<>("tools.attackDamage", "5.0d"),"double");
+        configs.addKeyValuePair(new Pair<>("tools.miningLevel","4"), "int");
+        configs.addKeyValuePair(new Pair<>("tools.enchantability","30"),"int");
 
         configs.addKeyValuePair(new Pair<>("sword.attackDamage", "7"),"int");
         configs.addKeyValuePair(new Pair<>("sword.attackSpeed", "-1.4d"),"double");
@@ -54,11 +54,11 @@ public class ModConfigs {
     }
 
     private static void assignConfigs() {
-        DURABILITY = CONFIG.getOrDefault("impurebedrock.tools.durability",4062);
-        MININGSPEED = CONFIG.getOrDefault("impurebedrock.tools.miningSpeed",10.0d);
-        ATTACKDAMAGE = CONFIG.getOrDefault("bedrockplus.tools.attackDamage",5.0d);
-        MININGLEVEL = CONFIG.getOrDefault("bedrockplus.tools.miningLevel",4);
-        ENCHANTABILITY = CONFIG.getOrDefault("bedrockplus.tools.enchantability",30);
+        DURABILITY = CONFIG.getOrDefault("tools.durability",4062);
+        MININGSPEED = CONFIG.getOrDefault("tools.miningSpeed",10.0d);
+        ATTACKDAMAGE = CONFIG.getOrDefault("tools.attackDamage",5.0d);
+        MININGLEVEL = CONFIG.getOrDefault("tools.miningLevel",4);
+        ENCHANTABILITY = CONFIG.getOrDefault("tools.enchantability",30);
 
         SwordAttackDamage = CONFIG.getOrDefault("sword.attackDamage",7);
         SwordAttackSpeed = CONFIG.getOrDefault("sword.attackSpeed",-1.4d);
