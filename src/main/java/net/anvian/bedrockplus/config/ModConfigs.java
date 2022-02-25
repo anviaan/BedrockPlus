@@ -7,11 +7,11 @@ public class ModConfigs {
     public static SimpleConfig CONFIG;
     private static ModConfigProvider configs;
 
-    public static int DURABILITY;
-    public static double MININGSPEED;
-    public static double ATTACKDAMAGE;
-    public static int MININGLEVEL;
-    public static int ENCHANTABILITY;
+    public static int Durability;
+    public static double Miningspeed;
+    public static double AttackDamage;
+    public static int MiningLevel;
+    public static int Enchantability;
 
     public static int SwordAttackDamage;
     public static double SwordAttackSpeed;
@@ -54,11 +54,11 @@ public class ModConfigs {
     }
 
     private static void assignConfigs() {
-        DURABILITY = CONFIG.getOrDefault("tools.durability",4062);
-        MININGSPEED = CONFIG.getOrDefault("tools.miningSpeed",10.0d);
-        ATTACKDAMAGE = CONFIG.getOrDefault("tools.attackDamage",5.0d);
-        MININGLEVEL = CONFIG.getOrDefault("tools.miningLevel",4);
-        ENCHANTABILITY = CONFIG.getOrDefault("tools.enchantability",30);
+        Durability = CONFIG.getOrDefault("tools.durability",4062);
+        Miningspeed = CONFIG.getOrDefault("tools.miningSpeed",10.0d);
+        AttackDamage = CONFIG.getOrDefault("tools.attackDamage",5.0d);
+        MiningLevel = CONFIG.getOrDefault("tools.miningLevel",4);
+        Enchantability = CONFIG.getOrDefault("tools.enchantability",30);
 
         SwordAttackDamage = CONFIG.getOrDefault("sword.attackDamage",7);
         SwordAttackSpeed = CONFIG.getOrDefault("sword.attackSpeed",-1.4d);
