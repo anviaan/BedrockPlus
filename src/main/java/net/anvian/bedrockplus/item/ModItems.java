@@ -38,19 +38,19 @@ public class ModItems {
 
     //tools
     public static final Item IMPUREBEDROCK_SWORD = registerItem("impurebedrock_sword",
-            new SwordItem(ModToolMaterials.IMPUREBEDROCK,1,2f,
+            new SwordItem(ModToolMaterials.INSTANCE,7,-1.4f,
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
-    public static final Item IMPUREBEDROCK_SPICKAXE = registerItem("impurebedrock_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.IMPUREBEDROCK,1,0f,
+    public static final Item IMPUREBEDROCK_PICKAXE = registerItem("impurebedrock_pickaxe",
+            new ModPickaxeItem(ModToolMaterials.INSTANCE,5,-1.8f,
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_AXE = registerItem("impurebedrock_axe",
-            new ModAxeItem(ModToolMaterials.IMPUREBEDROCK,3,1f,
+            new ModAxeItem(ModToolMaterials.INSTANCE,9,-2f,
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_SHOVEL = registerItem("impurebedrock_shovel",
-            new ShovelItem(ModToolMaterials.IMPUREBEDROCK,1,1f,
+            new ShovelItem(ModToolMaterials.INSTANCE,(float)5.5,-2f,
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_HOE = registerItem("impurebedrock_hoe",
-            new ModHoeItem(ModToolMaterials.IMPUREBEDROCK,1,1f,
+            new ModHoeItem(ModToolMaterials.INSTANCE,0,1f,
                     new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
 
     private static Item registerItem(String name,Item item){

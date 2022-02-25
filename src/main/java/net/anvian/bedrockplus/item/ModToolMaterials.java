@@ -1,61 +1,48 @@
 package net.anvian.bedrockplus.item;
 
-import net.minecraft.item.ItemConvertible;
+import net.anvian.config.ModConfigs;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
-
-import java.util.function.Supplier;
 
 
-public enum ModToolMaterials implements ToolMaterial {
-        IMPUREBEDROCK(4,4062,10.0f,5.0f,30, () ->{
-                return Ingredient.ofItems(new ItemConvertible[]{ModItems.IMPURE_BEDROCK_INGOT});
-        });
 
-        private final int miningLevel;
-        private final int itemDurability;
-        private final float miningSpeed;
-        private final float attackDamage;
-        private final int enchantability;
-        private final Lazy<Ingredient> repairIngredient;
+public class ModToolMaterials implements ToolMaterial {
 
-        ModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
-                this.miningLevel = miningLevel;
-                this.itemDurability = itemDurability;
-                this.miningSpeed = miningSpeed;
-                this.attackDamage = attackDamage;
-                this.enchantability = enchantability;
-                this.repairIngredient = new Lazy<Ingredient>(repairIngredient);
-        }
+        public static final ModToolMaterials INSTANCE = new ModToolMaterials();
+
+        private static final int durability = ModConfigs.DURABILITY;
+        private static final float miningSpeed = (float) ModConfigs.MININGSPEED;
+        private static final float attackDamage = (float) ModConfigs.ATTACKDAMAGE;
+        private static final int miningLevel = ModConfigs.MININGLEVEL;
+        private static final int enchantability = ModConfigs.ENCHANTABILITY;
 
         @Override
         public int getDurability() {
-                return this.itemDurability;
+                return durability;
         }
 
         @Override
         public float getMiningSpeedMultiplier() {
-                return this.miningSpeed;
+                return miningSpeed;
         }
 
         @Override
         public float getAttackDamage() {
-                return this.attackDamage;
-        }
+                return attackDamage;
+        } //(float) materialDamage + (int) toolDamage + 1
 
         @Override
         public int getMiningLevel() {
-                return this.miningLevel;
+                return miningLevel;
         }
 
         @Override
         public int getEnchantability() {
-                return this.enchantability;
+                return enchantability;
         }
 
         @Override
         public Ingredient getRepairIngredient() {
-                return this.repairIngredient.get();
+                return Ingredient.ofItems(ModItems.IMPURE_BEDROCK_SCRAP);
         }
 }
