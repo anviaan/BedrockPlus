@@ -1,4 +1,4 @@
-package net.anvian.config;
+package net.anvian.bedrockplus.config;
 
 /*
  * Copyright (c) 2021 magistermaks

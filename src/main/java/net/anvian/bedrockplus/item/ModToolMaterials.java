@@ -1,6 +1,6 @@
 package net.anvian.bedrockplus.item;
 
-import net.anvian.config.ModConfigs;
+import net.anvian.bedrockplus.config.ModConfigs;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 

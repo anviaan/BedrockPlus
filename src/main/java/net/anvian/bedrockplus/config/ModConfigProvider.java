@@ -1,4 +1,4 @@
-package net.anvian.config;
+package net.anvian.bedrockplus.config;
 
 import com.mojang.datafixers.util.Pair;
 
