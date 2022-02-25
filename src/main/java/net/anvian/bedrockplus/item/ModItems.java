@@ -1,6 +1,7 @@
 package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
+import net.anvian.bedrockplus.config.ModConfigs;
 import net.anvian.bedrockplus.item.custom.ModArmorItem;
 import net.anvian.bedrockplus.item.custom.ModAxeItem;
 import net.anvian.bedrockplus.item.custom.ModHoeItem;
@@ -38,20 +39,25 @@ public class ModItems {
 
     //tools
     public static final Item IMPUREBEDROCK_SWORD = registerItem("impurebedrock_sword",
-            new SwordItem(ModToolMaterials.INSTANCE,7,-1.4f,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+            new SwordItem(ModToolMaterials.INSTANCE,
+                    ModConfigs.SwordAttackDamage,(float) ModConfigs.SwordAttackSpeed,
+                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_PICKAXE = registerItem("impurebedrock_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.INSTANCE,5,-1.8f,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+            new ModPickaxeItem(ModToolMaterials.INSTANCE,
+                    ModConfigs.PickaxeAttackDamage,(float)ModConfigs.PickaxeAttackSpeed,
+                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_AXE = registerItem("impurebedrock_axe",
-            new ModAxeItem(ModToolMaterials.INSTANCE,9,-2f,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+            new ModAxeItem(ModToolMaterials.INSTANCE,
+                    ModConfigs.AxeAttackDamage, (float)ModConfigs.AxeAttackSpeed,
+                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_SHOVEL = registerItem("impurebedrock_shovel",
-            new ShovelItem(ModToolMaterials.INSTANCE,(float)5.5,-2f,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+            new ShovelItem(ModToolMaterials.INSTANCE,
+                    (float)ModConfigs.ShovelAttackDamage,(float)ModConfigs.ShovelAttackSpeed,
+                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_HOE = registerItem("impurebedrock_hoe",
-            new ModHoeItem(ModToolMaterials.INSTANCE,0,1f,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+            new ModHoeItem(ModToolMaterials.INSTANCE,
+                    0,(float)1f,
+                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
 
     private static Item registerItem(String name,Item item){
         return Registry.register(Registry.ITEM, new Identifier(BedrockPlusMod.MOD_ID, name), item);
