@@ -27,7 +27,7 @@ public class ModBlocks {
 
     private static Item registerBlockItem(String name, Block block){
         return Registry.register(Registry.ITEM, new Identifier(BedrockPlusMod.MOD_ID, name),
-            new BlockItem(block, new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
+            new BlockItem(block, new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
 }
 
     public static void registerModBlock(){
