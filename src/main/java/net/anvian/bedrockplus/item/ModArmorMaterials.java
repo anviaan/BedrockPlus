@@ -1,42 +1,28 @@
 package net.anvian.bedrockplus.item;
 
+import net.anvian.bedrockplus.config.ModConfigs;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Lazy;
 
-import java.util.function.Supplier;
+public class ModArmorMaterials implements ArmorMaterial {
 
-public enum ModArmorMaterials implements ArmorMaterial {
-    IMPUREBEDROCK("impurebedrock", 74, new int[]{5, 8, 10, 4}, 2,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.5F, 0.2F,
-            () -> {return Ingredient.ofItems(ModItems.IMPURE_BEDROCK_INGOT);
-    });
+    public static final ModArmorMaterials IMPUREBEDROCK = new ModArmorMaterials();
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private final String name;
-    private final int durabilityMultiplier;
-    private final int[] protectionAmounts;
-    private final int enchantability;
-    private final SoundEvent equipSound;
-    private final float toughness;
-    private final float knockbackResistance;
-    private final Lazy<Ingredient> repairIngredientSupplier;
-
-    private ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts,
-                              int enchantability, SoundEvent equipSound, float toughness,
-                              float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
-        this.name = name;
-        this.durabilityMultiplier = durabilityMultiplier;
-        this.protectionAmounts = protectionAmounts;
-        this.enchantability = enchantability;
-        this.equipSound = equipSound;
-        this.toughness = toughness;
-        this.knockbackResistance = knockbackResistance;
-        this.repairIngredientSupplier = new Lazy(repairIngredientSupplier);
-    }
+    private final SoundEvent equipSound = SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE;
+    private final int durabilityMultiplier = ModConfigs.ArmorDurabilityMultiplier;
+    private final int[] protectionAmounts = {
+            ModConfigs.ArmorProtectionAmounts[0],
+            ModConfigs.ArmorProtectionAmounts[1],
+            ModConfigs.ArmorProtectionAmounts[2],
+            ModConfigs.ArmorProtectionAmounts[3]
+    };
+    private final int enchantability = ModConfigs.ArmorEnchantability;
+    private final float toughness = (float) ModConfigs.ArmorToughness;
+    private final float knockbackResistance = (float) ModConfigs.ArmorKnockbackResistance;
 
     public int getDurability(EquipmentSlot slot) {
         return BASE_DURABILITY[slot.getEntitySlotId()] * this.durabilityMultiplier;
@@ -55,11 +41,11 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredientSupplier.get();
+        return Ingredient.ofItems(ModItems.IMPURE_BEDROCK_SCRAP);
     }
 
     public String getName() {
-        return this.name;
+        return "impurebedrock";
     }
 
     public float getToughness() {
