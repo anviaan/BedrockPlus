@@ -56,7 +56,7 @@ public class ModItems {
                         new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
     public static final Item IMPUREBEDROCK_HOE = registerItem("impurebedrock_hoe",
             new ModHoeItem(ModToolMaterials.INSTANCE,
-                    0,(float)1f,
+                    ModConfigs.HoeAttackDamage,(float)ModConfigs.HoeAttackSpeed,
                         new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS)));
 
     private static Item registerItem(String name,Item item){
