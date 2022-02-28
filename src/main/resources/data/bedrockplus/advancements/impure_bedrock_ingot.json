@@ -5,8 +5,7 @@
     "description": "Craft a bedrock impure ingot",
     "frame": "task",
     "show_toast": true,
-    "annouce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    "annouce_to_chat": true
   },
   "parent": "bedrockplus:impure_bedrock_scrap",
   "criteria": {

@@ -5,8 +5,7 @@
     "description": "Wear a impure bedrock armor",
     "frame": "challenge",
     "show_toast": true,
-    "annouce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    "annouce_to_chat": true
   },
   "rewards": {
     "experience": 150
