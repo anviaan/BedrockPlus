@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {"item": "bedrockplus:impurebedrock_sword"},
+    "title": "Powerful Tools",
+    "description": "Craft all the impure bedrock tools",
+    "frame": "challenge",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "rewards": {
+    "experience": 150
+  },
+  "parent": "bedrockplus:impure_bedrock_ingot",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bedrockplus:impurebedrock_sword"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_pickaxe"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_axe"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_shovel"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
