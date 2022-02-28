@@ -9,7 +9,7 @@
     "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
   },
   "rewards": {
-    "experience": 100
+    "experience": 150
   },
   "parent": "bedrockplus:impure_bedrock_ingot",
   "criteria": {
