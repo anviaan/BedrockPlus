@@ -8,11 +8,11 @@
 
 **With this scrap you can craft the IMPURE BEDROCK INGOT**
 
-**![Impure Bedrock Scrap](https://media.forgecdn.net/attachments/436/591/screenshot_1.jpg)**
+**![Impure Bedrock Scrap](https://github.com/anviaan/BedrockPlus/blob/main/img/Screenshot_1.jpg?raw=true)**
 
 **And with this ingot you can combine it withnetherite tools and armor to improve your equipment, for example**
 
-**![Recipe ](https://media.forgecdn.net/attachments/436/592/screenshot_2.jpg)**
+**![Recipe ](https://github.com/anviaan/BedrockPlus/blob/main/img/Screenshot_2.jpg?raw=true)**
 
 **Effects:**
 
