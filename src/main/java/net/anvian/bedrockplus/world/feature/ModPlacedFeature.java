@@ -9,7 +9,7 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 
 public class ModPlacedFeature {
 
-    public static final RegistryEntry<PlacedFeature> MYTHRIL_ORE_PLACED = PlacedFeatures.register("mythril_ore_placed",
+    public static final RegistryEntry<PlacedFeature> IMPURE_BEDROCK_ORE_PLACED = PlacedFeatures.register("impure_bedrock_ore_placed",
             ModConfiguredFeatures.IMPURE_BEDROCK, ModOreFeature.modifiersWithCount(30,
-                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.aboveBottom(-58))));
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-58))));
 }
