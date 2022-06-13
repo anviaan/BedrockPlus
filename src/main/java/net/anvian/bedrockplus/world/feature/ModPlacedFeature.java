@@ -10,6 +10,6 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 public class ModPlacedFeature {
 
     public static final RegistryEntry<PlacedFeature> IMPURE_BEDROCK_ORE_PLACED = PlacedFeatures.register("impure_bedrock_ore_placed",
-            ModConfiguredFeatures.IMPURE_BEDROCK, ModOreFeature.modifiersWithCount(30,
+            ModConfiguredFeatures.IMPURE_BEDROCK, ModOreFeature.modifiersWithCount(20,
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-58))));
 }
