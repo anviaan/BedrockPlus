@@ -1,13 +1,13 @@
 package net.anvian.bedrockplus.item;
 
-import net.anvian.bedrockplus.BedrockPlusMod;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 public class ModItemGroup {
-    public static final ItemGroup BEDROCKPLUS = FabricItemGroupBuilder.build
-            (new Identifier(BedrockPlusMod.MOD_ID, "impure_bedrock"),
-                    () -> new ItemStack(ModItems.IMPURE_BEDROCK_INGOT));
+    public static final CreativeModeTab BEDROCKPLUS  = new CreativeModeTab("impure_bedrock") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.IMPURE_BEDROCK_INGOT.get());
+        }
+    };
 }

@@ -1,30 +1,37 @@
 package net.anvian.bedrockplus;
 
+import com.mojang.logging.LogUtils;
 import net.anvian.bedrockplus.block.ModBlocks;
 import net.anvian.bedrockplus.item.ModItems;
-import net.anvian.bedrockplus.config.ModConfigs;
-import net.anvian.bedrockplus.world.feature.ModConfiguredFeatures;
-import net.anvian.bedrockplus.world.gen.ModWorldGen;
-import net.fabricmc.api.ModInitializer;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class BedrockPlusMod implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
-	public static final String MOD_ID = "bedrockplus";
+@Mod(BedrockPlusMod.MOD_ID)
+public class BedrockPlusMod
+{
+    public static final String MOD_ID = "bedrockplus";
+    private static final Logger LOGGER = LogUtils.getLogger();
 
-	@Override
-	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+    public BedrockPlusMod()
+    {
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		ModConfiguredFeatures.registerConfiguredFeatures();
+        ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
-		ModConfigs.registerConfigs();
+        eventBus.addListener(this::setup);
 
-		ModItems.registerModItems();
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
-		ModBlocks.registerModBlock();
-
-		ModWorldGen.generateWorldGen();
-	}
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        LOGGER.info("HELLO FROM PREINIT");
+        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
 }

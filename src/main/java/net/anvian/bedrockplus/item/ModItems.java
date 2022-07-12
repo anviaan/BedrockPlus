@@ -1,69 +1,45 @@
 package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
-import net.anvian.bedrockplus.config.ModConfigs;
-import net.anvian.bedrockplus.item.custom.ModArmorItem;
-import net.anvian.bedrockplus.item.custom.ModAxeItem;
-import net.anvian.bedrockplus.item.custom.ModHoeItem;
-import net.anvian.bedrockplus.item.custom.ModPickaxeItem;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.item.*;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, BedrockPlusMod.MOD_ID);
 
-    public static final Item IMPURE_BEDROCK_INGOT = registerItem("impure_bedrock_ingot",
-            new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON).group(ModItemGroup.BEDROCKPLUS).fireproof()));
+    public static final RegistryObject<Item> IMPURE_BEDROCK_INGOT = ITEMS.register("impure_bedrock_ingot",
+            () -> new Item(new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
+                    .fireResistant()
+                    .tab(ModItemGroup.BEDROCKPLUS)));
 
-    public static final Item IMPURE_BEDROCK_SCRAP = registerItem("impure_bedrock_scrap",
-            new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON).group(ModItemGroup.BEDROCKPLUS).fireproof()));
-
-    //armor
-    public static final Item IMPURE_BEDROCK_HELMET = registerItem("impurebedrock_helmet",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.HEAD,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPURE_BEDROCK_CHESTPLATE = registerItem("impurebedrock_chestplate",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.CHEST,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPURE_BEDROCK_LEGGINGS = registerItem("impurebedrock_leggings",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.LEGS,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPURE_BEDROCK_BOOTS = registerItem("impurebedrock_boots",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.FEET,
-                    new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
+    public static final RegistryObject<Item> IMPURE_BEDROCK_SCRAP = ITEMS.register("impure_bedrock_scrap",
+            () -> new Item(new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
+                    .fireResistant()
+                    .tab(ModItemGroup.BEDROCKPLUS)));
 
     //tools
-    public static final Item IMPUREBEDROCK_SWORD = registerItem("impurebedrock_sword",
-            new SwordItem(ModToolMaterials.INSTANCE,
-                    ModConfigs.SwordAttackDamage,(float) ModConfigs.SwordAttackSpeed,
-                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPUREBEDROCK_PICKAXE = registerItem("impurebedrock_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.INSTANCE,
-                    ModConfigs.PickaxeAttackDamage,(float)ModConfigs.PickaxeAttackSpeed,
-                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPUREBEDROCK_AXE = registerItem("impurebedrock_axe",
-            new ModAxeItem(ModToolMaterials.INSTANCE,
-                    ModConfigs.AxeAttackDamage, (float)ModConfigs.AxeAttackSpeed,
-                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPUREBEDROCK_SHOVEL = registerItem("impurebedrock_shovel",
-            new ShovelItem(ModToolMaterials.INSTANCE,
-                    (float)ModConfigs.ShovelAttackDamage,(float)ModConfigs.ShovelAttackSpeed,
-                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-    public static final Item IMPUREBEDROCK_HOE = registerItem("impurebedrock_hoe",
-            new ModHoeItem(ModToolMaterials.INSTANCE,
-                    ModConfigs.HoeAttackDamage,(float)ModConfigs.HoeAttackSpeed,
-                        new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
-
-    private static Item registerItem(String name,Item item){
-        return Registry.register(Registry.ITEM, new Identifier(BedrockPlusMod.MOD_ID, name), item);
-    }
-
-    public static void registerModItems(){
-        System.out.println("Registering Mod Items for " + BedrockPlusMod.MOD_ID);
+    public static final RegistryObject<Item> IMPUREBEDROCK_SWORD  = ITEMS.register("impurebedrock_sword",
+            () -> new SwordItem(ModTiers.INSTANCE, 7,1.4f,
+                    new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
+    public static final RegistryObject<Item> IMPUREBEDROCK_PICKAXE  = ITEMS.register("impurebedrock_pickaxe",
+            () -> new PickaxeItem(ModTiers.INSTANCE, 5,1.8f,
+                    new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
+    public static final RegistryObject<Item> IMPUREBEDROCK_AXE  = ITEMS.register("impurebedrock_axe",
+            () -> new AxeItem(ModTiers.INSTANCE, 9,2.0f,
+                    new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
+    public static final RegistryObject<Item> IMPUREBEDROCK_SHOVEL = ITEMS.register("impurebedrock_shovel",
+            () -> new ShovelItem(ModTiers.INSTANCE, 5, 2.0f,
+                    new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
+    public static final RegistryObject<Item> IMPUREBEDROCK_HOE  = ITEMS.register("impurebedrock_hoe",
+            () -> new HoeItem(ModTiers.INSTANCE, 0,1.0f,
+                    new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
+    public static void register(IEventBus eventBus){
+        ITEMS.register(eventBus);
     }
 }
