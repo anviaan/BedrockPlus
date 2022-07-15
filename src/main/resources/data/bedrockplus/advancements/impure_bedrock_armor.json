@@ -1,0 +1,43 @@
+{
+  "display": {
+    "icon": {"item": "bedrockplus:impurebedrock_helmet"},
+    "title": "You feel powerful",
+    "description": "Wear a impure bedrock armor",
+    "frame": "challenge",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "rewards": {
+    "experience": 150
+  },
+  "parent": "bedrockplus:impure_bedrock_ingot",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bedrockplus:impurebedrock_helmet"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_leggings"
+            ]
+          },
+          {
+            "items": [
+              "bedrockplus:impurebedrock_boots"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

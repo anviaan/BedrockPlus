@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_boots"
+  },
+  "addition": {
+    "item": "bedrockplus:impure_bedrock_ingot"
+  },
+  "result": {
+    "item": "bedrockplus:impurebedrock_boots"
+  }
+}

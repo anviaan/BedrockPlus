@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "bedrockplus:impure_bedrock"
+  },
+  "result": "bedrockplus:impure_bedrock_scrap",
+  "experience": 5,
+  "cookingtime": 500
+}

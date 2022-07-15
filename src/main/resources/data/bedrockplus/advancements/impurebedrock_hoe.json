@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {"item": "bedrockplus:impurebedrock_hoe"},
+    "title": "Serious seriously dedication ",
+    "description": "Craft a impure bedrock hoe",
+    "frame": "challenge",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "parent": "bedrockplus:impure_bedrock_ingot",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bedrockplus:impurebedrock_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

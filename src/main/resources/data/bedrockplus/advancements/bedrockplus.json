@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {"item": "bedrockplus:impure_bedrock"},
+    "title": "Bedrock Plus Mod",
+    "description": "A very resistant mineral",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "bedrockplus:impure_bedrock"
+              ]
+            }
+          ]
+        }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {"item": "bedrockplus:impure_bedrock_ingot"},
+    "title": "A very hard mineral",
+    "description": "Craft a bedrock impure ingot",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "bedrockplus:impure_bedrock_scrap",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items":[
+              "bedrockplus:impure_bedrock_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
