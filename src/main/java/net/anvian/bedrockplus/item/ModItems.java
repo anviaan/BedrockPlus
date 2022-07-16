@@ -27,16 +27,16 @@ public class ModItems {
 
     //tools
     public static final RegistryObject<Item> IMPUREBEDROCK_SWORD  = ITEMS.register("impurebedrock_sword",
-            () -> new SwordItem(ModTiers.INSTANCE, 7,1.4f,
+            () -> new SwordItem(ModTiers.INSTANCE, 7,-1.4f,
                     new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_PICKAXE  = ITEMS.register("impurebedrock_pickaxe",
-            () -> new PickaxeItem(ModTiers.INSTANCE,5, 1.8f,
+            () -> new PickaxeItem(ModTiers.INSTANCE,5, -1.8f,
                     new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_AXE  = ITEMS.register("impurebedrock_axe",
-            () -> new AxeItem(ModTiers.INSTANCE,9, 2.0f,
+            () -> new AxeItem(ModTiers.INSTANCE,9, -2.0f,
                     new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_SHOVEL = ITEMS.register("impurebedrock_shovel",
-            () -> new ShovelItem(ModTiers.INSTANCE,5.5f, 2.0f,
+            () -> new ShovelItem(ModTiers.INSTANCE,5.5f, -2.0f,
                     new Item.Properties().tab(ModItemGroup.BEDROCKPLUS).fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_HOE  = ITEMS.register("impurebedrock_hoe",
             () -> new HoeItem(ModTiers.INSTANCE,0, 1.0f,
