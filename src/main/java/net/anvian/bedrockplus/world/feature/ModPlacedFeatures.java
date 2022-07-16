@@ -11,4 +11,3 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.IMPURE_BEDROCK_ORE, ModOrePlacement.commonOrePlacement(25, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(-58))));
 }
-//-80 a 80
