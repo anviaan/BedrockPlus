@@ -1,6 +1,7 @@
 package net.anvian.bedrockplus.block;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
+import net.anvian.bedrockplus.config.ModCommonConfigs;
 import net.anvian.bedrockplus.item.ModItemGroup;
 import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -23,7 +24,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> IMPURE_BEDROCK = registerBlock("impure_bedrock",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(250.0f,6000.0f)
+                    .strength(ModCommonConfigs.BlockStrength.get(),6000.0f) //250.0
                     .requiresCorrectToolForDrops()), ModItemGroup.BEDROCKPLUS);
 
 
