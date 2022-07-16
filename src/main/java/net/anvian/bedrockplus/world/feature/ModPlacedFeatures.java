@@ -9,6 +9,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class ModPlacedFeatures {
     public static final Holder<PlacedFeature> IMPUREBEDROCK_ORE_PLACED = PlacementUtils.register("impurebedrock_ore_placed",
             ModConfiguredFeatures.IMPURE_BEDROCK_ORE, ModOrePlacement.commonOrePlacement(25, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(-58))));//desde 0 hacia abajo
+                    HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(-58))));
 }
 //-80 a 80
