@@ -2,7 +2,6 @@ package net.anvian.bedrockplus;
 
 import com.mojang.logging.LogUtils;
 import net.anvian.bedrockplus.block.ModBlocks;
-import net.anvian.bedrockplus.config.ModCommonConfigs;
 import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,8 +25,6 @@ public class BedrockPlusMod
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModCommonConfigs.SPEC, "bedrockplus-common.toml");
 
         eventBus.addListener(this::setup);
 
