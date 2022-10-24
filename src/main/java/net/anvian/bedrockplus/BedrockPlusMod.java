@@ -3,12 +3,12 @@ package net.anvian.bedrockplus;
 import com.mojang.logging.LogUtils;
 import net.anvian.bedrockplus.block.ModBlocks;
 import net.anvian.bedrockplus.item.ModItems;
-import net.minecraft.world.level.block.Blocks;
+import net.anvian.bedrockplus.world.feature.ModConfiguredFeatures;
+import net.anvian.bedrockplus.world.feature.ModPlacedFeatures;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -26,6 +26,9 @@ public class BedrockPlusMod
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
 
+        ModConfiguredFeatures.register(eventBus);
+        ModPlacedFeatures.register(eventBus);
+
         eventBus.addListener(this::setup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -34,6 +37,6 @@ public class BedrockPlusMod
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
