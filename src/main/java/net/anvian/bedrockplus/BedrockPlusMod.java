@@ -5,7 +5,6 @@ import net.anvian.bedrockplus.block.ModBlocks;
 import net.anvian.bedrockplus.item.ModItems;
 import net.anvian.bedrockplus.world.feature.ModConfiguredFeatures;
 import net.anvian.bedrockplus.world.feature.ModPlacedFeatures;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -36,7 +35,6 @@ public class BedrockPlusMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        LOGGER.info("Hello from BedrockPlus!");
     }
 }
