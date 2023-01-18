@@ -1,7 +1,6 @@
 plugins {
 	id 'fabric-loom' version '1.0-SNAPSHOT'
 	id 'maven-publish'
-	
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -16,34 +15,9 @@ repositories {
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	// for more information about repositories.,
 }
 
-loom {
-    runs {
-        // This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
-        datagen {
-            inherit server
-            name "Data Generation"
-            vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-            vmArg "-Dfabric-api.datagen.modid=bedrockplus"
- 
-            runDir "build/datagen"
-        }
-    }
-}
-
-// Add the generated resources to the main source set
-sourceSets {
-    main {
-        resources {
-            srcDirs += [
-                    'src/main/generated'
-            ]
-        }
-    }
-}
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -52,8 +26,8 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
-	// Uncomment the following line to enable the deprecated Fabric API modules. 
+
+	// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
@@ -66,6 +40,24 @@ processResources {
 		expand "version": project.version
 	}
 }
+
+def dataOutput = 'src/main/generated'
+
+loom {
+	runs {
+		datagen {
+			server()
+
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file(dataOutput)}"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
+sourceSets { main { resources { srcDirs += dataOutput } } }
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
