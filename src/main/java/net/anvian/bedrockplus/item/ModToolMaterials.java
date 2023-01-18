@@ -4,8 +4,6 @@ import net.anvian.bedrockplus.config.ModConfigs;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-
-
 public class ModToolMaterials implements ToolMaterial {
 
         public static final ModToolMaterials INSTANCE = new ModToolMaterials();
