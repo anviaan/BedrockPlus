@@ -3,14 +3,16 @@ package net.anvian.bedrockplus.block;
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
 
@@ -22,12 +24,14 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
-        return Registry.register(Registry.BLOCK, new Identifier(BedrockPlusMod.MOD_ID,name),block);
+        return Registry.register(Registries.BLOCK, new Identifier(BedrockPlusMod.MOD_ID,name),block);
     }
 
     private static Item registerBlockItem(String name, Block block){
-        return Registry.register(Registry.ITEM, new Identifier(BedrockPlusMod.MOD_ID, name),
-            new BlockItem(block, new FabricItemSettings().group(ModItemGroup.BEDROCKPLUS).fireproof()));
+        Item item = Registry.register(Registries.ITEM, new Identifier(BedrockPlusMod.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings().fireproof()));
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.MANGO).register(entries -> entries.add(item));
+        return item;
 }
 
     public static void registerModBlock(){
