@@ -17,10 +17,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.anvian.bedrockplus.ExampleMod"
+			"net.anvian.bedrockplus.BedrockPlusMod"
 		],
 		"fabric-datagen": [
-			"net.anvian.bedrockplus.ExampleModDataGenerator"
+			"net.anvian.bedrockplus.datagen.ExampleModDataGenerator"
 		]
 	},
 	"mixins": [
