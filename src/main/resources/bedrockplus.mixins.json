@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
-  "client": [],
+  "client": [
+    "BedrockPlusMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }
