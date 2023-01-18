@@ -4,7 +4,7 @@ import net.anvian.bedrockplus.block.ModBlocks;
 import net.anvian.bedrockplus.config.ModConfigs;
 import net.anvian.bedrockplus.item.ModItemGroup;
 import net.anvian.bedrockplus.item.ModItems;
-import net.anvian.bedrockplus.world.feature.ModConfiguredFeatures;
+import net.anvian.bedrockplus.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -20,13 +20,13 @@ public class BedrockPlusMod implements ModInitializer {
 
 		ModItemGroup.registerItemGroup();
 
-		ModConfiguredFeatures.registerConfiguredFeatures();
-
 		ModConfigs.registerConfigs();
 
 		ModItems.registerModItems();
 
 		ModBlocks.registerModBlock();
+
+		ModWorldGen.generateWorldGen();
 
 	}
 }

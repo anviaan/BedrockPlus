@@ -1,15 +1,45 @@
 package net.anvian.bedrockplus.world.feature;
 
-import net.minecraft.util.registry.RegistryEntry;
+import net.anvian.bedrockplus.BedrockPlusMod;
+import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placementmodifier.*;
+
+import java.util.List;
 
 
 public class ModPlacedFeature {
 
-    public static final RegistryEntry<PlacedFeature> IMPURE_BEDROCK_ORE_PLACED = PlacedFeatures.register("impure_bedrock_ore_placed",
-            ModConfiguredFeatures.IMPURE_BEDROCK, ModOreFeature.modifiersWithCount(25,
-                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-58))));
+    public static final RegistryKey<PlacedFeature> IMPURE_BEDROCK_ORE_PLACED_KEY = registerKey("impure_bedrock_ore_placed_key");
+
+public static void bootstrap(Registerable<PlacedFeature> context){
+    var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+    register(context, IMPURE_BEDROCK_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
+            modifiersWithCount(25, // VeinsPerChunk
+                    HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.fixed(-58))));
+}
+
+
+
+
+    public static RegistryKey<PlacedFeature> registerKey(String name) {
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(BedrockPlusMod.MOD_ID, name));
+    }
+
+    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,
+                                 List<PlacementModifier> modifiers) {
+        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
+    }
+    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+        return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
+    }
+    private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
+        return modifiers(CountPlacementModifier.of(count), heightModifier);
+    }
 }

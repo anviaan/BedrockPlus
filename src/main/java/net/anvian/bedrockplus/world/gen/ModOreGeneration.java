@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.gen.GenerationStep;
 
 public class ModOreGeneration {
-    public static void generateOre(){
+    public static void generateOres(){
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeature.IMPURE_BEDROCK_ORE_PLACED.getKey().get());
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeature.IMPURE_BEDROCK_ORE_PLACED_KEY);
     }
 }

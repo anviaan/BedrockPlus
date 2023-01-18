@@ -20,7 +20,7 @@
 			"net.anvian.bedrockplus.BedrockPlusMod"
 		],
 		"fabric-datagen": [
-			"net.anvian.bedrockplus.datagen.ExampleModDataGenerator"
+			"net.anvian.bedrockplus.datagen.DataGeneratorEntrypoint"
 		]
 	},
 	"mixins": [
