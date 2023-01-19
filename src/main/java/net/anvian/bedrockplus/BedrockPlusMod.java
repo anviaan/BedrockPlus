@@ -22,11 +22,9 @@ public class BedrockPlusMod implements ModInitializer {
 
 		ModConfigs.registerConfigs();
 
+		ModBlocks.registerModBlock();
 		ModItems.registerModItems();
 
-		ModBlocks.registerModBlock();
-
 		ModWorldGen.generateWorldGen();
-
 	}
 }
