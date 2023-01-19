@@ -13,7 +13,6 @@ import net.minecraft.world.gen.feature.*;
 
 import java.util.List;
 
-
 public class ModConfiguredFeatures {
 
         public static final RegistryKey<ConfiguredFeature<?,?>> IMPURE_BEDROCK_ORE_KEY = registerKey("impure_bedrock_ore_key");
@@ -23,10 +22,10 @@ public class ModConfiguredFeatures {
 
             RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
-            List<OreFeatureConfig.Target> overworldCitrineOres =
+            List<OreFeatureConfig.Target> overworldImpureBedrockOres =
                     List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.IMPURE_BEDROCK.getDefaultState()));
 
-            register(context, IMPURE_BEDROCK_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldCitrineOres,10));
+            register(context, IMPURE_BEDROCK_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldImpureBedrockOres,10));
         }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
