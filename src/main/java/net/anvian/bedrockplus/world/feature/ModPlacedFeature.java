@@ -22,11 +22,8 @@ public static void bootstrap(Registerable<PlacedFeature> context){
 
     register(context, IMPURE_BEDROCK_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
             modifiersWithCount(25, // VeinsPerChunk
-                    HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.fixed(-58))));
+                    HeightRangePlacementModifier.uniform(YOffset.aboveBottom(-80), YOffset.fixed(-58))));
 }
-
-
-
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(BedrockPlusMod.MOD_ID, name));
