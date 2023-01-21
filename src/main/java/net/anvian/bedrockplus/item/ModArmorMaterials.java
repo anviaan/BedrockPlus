@@ -15,10 +15,10 @@ public class ModArmorMaterials implements ArmorMaterial {
     private final SoundEvent equipSound = SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE;
     private final int durabilityMultiplier = ModConfigs.ArmorDurabilityMultiplier;
     private final int[] protectionAmounts = {
-            ModConfigs.ArmorProtectionAmounts[0],
-            ModConfigs.ArmorProtectionAmounts[1],
-            ModConfigs.ArmorProtectionAmounts[2],
-            ModConfigs.ArmorProtectionAmounts[3]
+            ModConfigs.ArmorProtectionAmounts1,
+            ModConfigs.ArmorProtectionAmounts2,
+            ModConfigs.ArmorProtectionAmounts3,
+            ModConfigs.ArmorProtectionAmounts4
     };
     private final int enchantability = ModConfigs.ArmorEnchantability;
     private final float toughness = (float) ModConfigs.ArmorToughness;

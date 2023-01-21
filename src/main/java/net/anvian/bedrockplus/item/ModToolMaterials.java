@@ -9,7 +9,7 @@ public class ModToolMaterials implements ToolMaterial {
         public static final ModToolMaterials INSTANCE = new ModToolMaterials();
 
         private static final int durability = ModConfigs.ToolDurability;
-        private static final float miningSpeed = (float) ModConfigs.ToolMiningspeed;
+        private static final float miningSpeed = (float) ModConfigs.ToolMiningSpeed;
         private static final float attackDamage = (float) ModConfigs.ToolAttackDamage;
         private static final int miningLevel = ModConfigs.ToolMiningLevel;
         private static final int enchantability = ModConfigs.ToolEnchantability;
