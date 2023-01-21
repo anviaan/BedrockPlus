@@ -1,5 +1,6 @@
 package net.anvian.bedrockplus;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.anvian.bedrockplus.block.ModBlocks;
 import net.anvian.bedrockplus.item.ModItems;
 import net.anvian.bedrockplus.config.ModConfigs;
@@ -19,7 +20,7 @@ public class BedrockPlusMod implements ModInitializer {
 
 		ModConfiguredFeatures.registerConfiguredFeatures();
 
-		ModConfigs.registerConfigs();
+		MidnightConfig.init(MOD_ID, ModConfigs.class);
 
 		ModItems.registerModItems();
 

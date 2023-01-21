@@ -1,102 +1,56 @@
 package net.anvian.bedrockplus.config;
 
-import com.mojang.datafixers.util.Pair;
-import net.anvian.bedrockplus.BedrockPlusMod;
+import eu.midnightdust.lib.config.MidnightConfig;
 
 public class ModConfigs {
-    public static SimpleConfig CONFIG;
-    private static ModConfigProvider configs;
 
-    public static int ToolDurability;
-    public static double ToolMiningspeed;
-    public static double ToolAttackDamage;
-    public static int ToolMiningLevel;
-    public static int ToolEnchantability;
+    @MidnightConfig.Comment(centered = true) public static MidnightConfig.Comment warning;
+     @MidnightConfig.Entry
+     public static int ToolDurability = 4062;
+     @MidnightConfig.Entry
+     public static double ToolMiningSpeed = 10.0d;
+     @MidnightConfig.Entry
+     public static double ToolAttackDamage = 5.0d;
+     @MidnightConfig.Entry
+     public static int ToolMiningLevel = 4;
+     @MidnightConfig.Entry
+     public static int ToolEnchantability = 30;
 
-    public static int SwordAttackDamage;
-    public static double SwordAttackSpeed;
-    public static int PickaxeAttackDamage;
-    public static double PickaxeAttackSpeed;
-    public static int AxeAttackDamage;
-    public static double AxeAttackSpeed;
-    public static double ShovelAttackDamage;
-    public static double ShovelAttackSpeed;
-    public static int HoeAttackDamage;
-    public static double HoeAttackSpeed;
+     @MidnightConfig.Entry
+     public static int SwordAttackDamage = 7;
+     @MidnightConfig.Entry
+     public static double SwordAttackSpeed = -1.4d;
+     @MidnightConfig.Entry
+     public static int PickaxeAttackDamage = 5;
+     @MidnightConfig.Entry
+     public static double PickaxeAttackSpeed = -1.8d;
+     @MidnightConfig.Entry
+     public static int AxeAttackDamage = 9;
+     @MidnightConfig.Entry
+     public static double AxeAttackSpeed = -2d;
+     @MidnightConfig.Entry
+     public static double ShovelAttackDamage = 5.5;
+     @MidnightConfig.Entry
+     public static double ShovelAttackSpeed = -2d;
+     @MidnightConfig.Entry
+     public static int HoeAttackDamage = 0;
+     @MidnightConfig.Entry
+     public static double HoeAttackSpeed = -1d;
 
-    public static int ArmorDurabilityMultiplier;
-    public static int ArmorEnchantability;
-    public static double ArmorToughness;
-    public static double ArmorKnockbackResistance;
-    public static int[] ArmorProtectionAmounts = new int[4];
-
-    public static void registerConfigs() {
-        configs = new ModConfigProvider();
-        createConfigs();
-
-        //creates a file
-        CONFIG = SimpleConfig.of(BedrockPlusMod.MOD_ID + "config").provider(configs).request();
-
-        assignConfigs();
-    }
-
-    private static void createConfigs() {
-        configs.addKeyValuePair(new Pair<>("tools.durability","4062"),"int");
-        configs.addKeyValuePair(new Pair<>("tools.miningSpeed","10.0d"),"double");
-        configs.addKeyValuePair(new Pair<>("tools.attackDamage", "5.0d"),"double");
-        configs.addKeyValuePair(new Pair<>("tools.miningLevel","4"), "int");
-        configs.addKeyValuePair(new Pair<>("tools.enchantability","30"),"int");
-
-        configs.addKeyValuePair(new Pair<>("sword.attackDamage", "7"),"int");
-        configs.addKeyValuePair(new Pair<>("sword.attackSpeed", "-1.4d"),"double");
-        configs.addKeyValuePair(new Pair<>("pickaxe.attackDamage","5"),"int");
-        configs.addKeyValuePair(new Pair<>("pickaxe.attackSpeed","-1.8d"),"double");
-        configs.addKeyValuePair(new Pair<>("axe.attackDamage","9"),"int");
-        configs.addKeyValuePair(new Pair<>("axe.attackSpeed","-2d"),"double");
-        configs.addKeyValuePair(new Pair<>("shovel.attackDamage","5.5"),"double");
-        configs.addKeyValuePair(new Pair<>("shovel.attackSpeed","-2d"),"double");
-        configs.addKeyValuePair(new Pair<>("hoe.attackDamage","0"),"int");
-        configs.addKeyValuePair(new Pair<>("hoe.attackSpeed","1d"),"double");
-
-        configs.addKeyValuePair(new Pair<>("armor.durabilityMultiplier","74"),"int");
-        configs.addKeyValuePair(new Pair<>("armor.enchantability","2"),"int");
-        configs.addKeyValuePair(new Pair<>("armor.toughness","4.5d"),"double");
-        configs.addKeyValuePair(new Pair<>("armor.knockbackResistance", "0.2d"),"double");
-        configs.addKeyValuePair(new Pair<>("armor.protectionAmounts.0","5"),"int | boots");
-        configs.addKeyValuePair(new Pair<>("armor.protectionAmounts.1","8"),"int | leggings");
-        configs.addKeyValuePair(new Pair<>("armor.protectionAmounts.2","10"),"int | breastplate");
-        configs.addKeyValuePair(new Pair<>("armor.protectionAmounts.3","4"),"int |helmet");
-
-    }
-
-    private static void assignConfigs() {
-        ToolDurability = CONFIG.getOrDefault("tools.durability",4062);
-        ToolMiningspeed = CONFIG.getOrDefault("tools.miningSpeed",10.0d);
-        ToolAttackDamage = CONFIG.getOrDefault("tools.attackDamage",5.0d);
-        ToolMiningLevel = CONFIG.getOrDefault("tools.miningLevel",4);
-        ToolEnchantability = CONFIG.getOrDefault("tools.enchantability",30);
-
-        SwordAttackDamage = CONFIG.getOrDefault("sword.attackDamage",7);
-        SwordAttackSpeed = CONFIG.getOrDefault("sword.attackSpeed",-1.4d);
-        PickaxeAttackDamage = CONFIG.getOrDefault("pickaxe.attackDamage", 5);
-        PickaxeAttackSpeed = CONFIG.getOrDefault("pickaxe.attackSpeed", -1.8d);
-        AxeAttackDamage = CONFIG.getOrDefault("axe.attackDamage", 9);
-        AxeAttackSpeed = CONFIG.getOrDefault("axe.attackSpeed", -2d);
-        ShovelAttackDamage = CONFIG.getOrDefault("shovel.attackDamage", 5.5);
-        ShovelAttackSpeed = CONFIG.getOrDefault("shovel.attackSpeed", -2d);
-        HoeAttackDamage = CONFIG.getOrDefault("hoe.attackDamage", 0);
-        HoeAttackSpeed = CONFIG.getOrDefault("hoe.attackSpeed", -1d);
-
-        ArmorDurabilityMultiplier= CONFIG.getOrDefault("armor.durabilityMultiplier",74);
-        ArmorEnchantability = CONFIG.getOrDefault("armor.enchantability",2);
-        ArmorToughness = CONFIG.getOrDefault("armor.toughness", 4.5d);
-        ArmorKnockbackResistance = CONFIG.getOrDefault("armor.knockbackResistance",0.2d);
-        ArmorProtectionAmounts[0] = CONFIG.getOrDefault("armor.protectionAmounts.0",5);
-        ArmorProtectionAmounts[1] = CONFIG.getOrDefault("armor.protectionAmounts.1",8);
-        ArmorProtectionAmounts[2] = CONFIG.getOrDefault("armor.protectionAmounts.2",10);
-        ArmorProtectionAmounts[3] = CONFIG.getOrDefault("armor.protectionAmounts.3",4);
-
-
-        System.out.println("All " + configs.getConfigsList().size() + " have been set properly");
-    }
+     @MidnightConfig.Entry
+     public static int ArmorDurabilityMultiplier = 74;
+     @MidnightConfig.Entry
+     public static int ArmorEnchantability = 2;
+     @MidnightConfig.Entry
+     public static double ArmorToughness = 4.5d;
+     @MidnightConfig.Entry
+     public static double ArmorKnockbackResistance = 0.2d;
+     @MidnightConfig.Entry
+     public static int ArmorProtectionAmounts4 = 4;
+     @MidnightConfig.Entry
+     public static int ArmorProtectionAmounts3 = 10;
+     @MidnightConfig.Entry
+     public static int ArmorProtectionAmounts2 = 8;
+     @MidnightConfig.Entry
+     public static int ArmorProtectionAmounts1 = 5;
 }

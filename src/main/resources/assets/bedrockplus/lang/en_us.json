@@ -15,5 +15,33 @@
   "item.bedrockplus.impurebedrock_shovel" : "Impure Bedrock Shovel",
   "item.bedrockplus.impurebedrock_pickaxe" : "Impure Bedrock Pickaxe",
 
-  "block.bedrockplus.impure_bedrock": "Bedrock Impure Deepslate"
+  "block.bedrockplus.impure_bedrock": "Bedrock Impure Deepslate",
+
+  "bedrockplus.midnightconfig.title" : "Bedrock Plus Mod",
+  "bedrockplus.midnightconfig.warning": "All changes made require a restart of the client",
+  "bedrockplus.midnightconfig.ToolDurability" : "Tool Durability",
+  "bedrockplus.midnightconfig.ToolMiningspeed" : "Tool Mining Speed",
+  "bedrockplus.midnightconfig.ToolAttackDamage" : "Tool Attack Damage",
+  "bedrockplus.midnightconfig.ToolMiningLevel" : "Tool Mining Level",
+  "bedrockplus.midnightconfig.ToolEnchantability" : "Tool Enchantability",
+
+  "bedrockplus.midnightconfig.SwordAttackDamage" : "Sword Attack Damage",
+  "bedrockplus.midnightconfig.SwordAttackSpeed": "Sword Attack Speed",
+  "bedrockplus.midnightconfig.PickaxeAttackDamage" : "Pickaxe Attack Damage",
+  "bedrockplus.midnightconfig.PickaxeAttackSpeed" : "Pickaxe Attack Spped",
+  "bedrockplus.midnightconfig.AxeAttackDamage" : "Axe Attack Damage",
+  "bedrockplus.midnightconfig.AxeAttackSpeed" : "Axe Attack Spped",
+  "bedrockplus.midnightconfig.ShovelAttackDamage" : "Shovel Attack Damage",
+  "bedrockplus.midnightconfig.ShovelAttackSpeed" : "Shovel Attack Speed",
+  "bedrockplus.midnightconfig.HoeAttackDamage" : "Hoe Attack Damage",
+  "bedrockplus.midnightconfig.HoeAttackSpeed" : "Hoe Attack Speed",
+
+  "bedrockplus.midnightconfig.ArmorDurabilityMultiplier" : "Armor Durability Multiplier",
+  "bedrockplus.midnightconfig.ArmorEnchantability" : "Armor Enchantability",
+  "bedrockplus.midnightconfig.ArmorToughness" : "Armor Toughness",
+  "bedrockplus.midnightconfig.ArmorKnockbackResistance" : "Armor Knockback Resistance",
+  "bedrockplus.midnightconfig.ArmorProtectionAmounts1" : "Armor Protection Amounts Boots",
+  "bedrockplus.midnightconfig.ArmorProtectionAmounts2" : "Armor Protection Amounts Leggings",
+  "bedrockplus.midnightconfig.ArmorProtectionAmounts3" : "Armor Protection Amounts Chestplate",
+  "bedrockplus.midnightconfig.ArmorProtectionAmounts4" : "Armor Protection Amounts Helmet"
 }
