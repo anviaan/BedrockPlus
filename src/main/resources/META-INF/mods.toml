@@ -1,32 +1,25 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[44,)"
 license="GPL-3.0"
 issueTrackerURL="https://github.com/anviaan/SimpleMango/issues"
 [[mods]]
-
 modId="bedrockplus"
-
 version="1.2.1"
-
 displayName="Bedrock Plus Mod"
-
 updateJSONURL="https://anvian-page.netlify.app/forge/bedrockPlus.json"
-
 displayURL="https://www.curseforge.com/minecraft/mc-mods/bedrock-pus"
-
 authors="anvian"
-
 description="Adds a new variant of bedrock, which can be combined with netherite armor."
 
 [[dependencies.bedrockplus]]
     modId="forge"
     mandatory=true
-    versionRange="[43,)"
+    versionRange="[44,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.bedrockplus]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.20)"
+    versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
