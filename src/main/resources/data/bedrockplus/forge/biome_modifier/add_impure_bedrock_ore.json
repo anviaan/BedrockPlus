@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "bedrockplus:impurebedrock_ore_placed",
+  "features": "bedrockplus:impurebedrock_ore_key",
   "step": "underground_ores"
 }
