@@ -1,5 +1,5 @@
 {
-  "feature": "bedrockplus:impure_bedrock_ore_key",
+  "feature": "bedrockplus:impurebedrock_config",
   "placement": [
     {
       "type": "minecraft:count",

@@ -18,7 +18,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?,?>> IMPURE_BEDROCK_ORE_KEY = registerKey("impure_bedrock_ore_key");
+    public static final ResourceKey<ConfiguredFeature<?,?>> IMPURE_BEDROCK_ORE_KEY = registerKey("impurebedrock_config");
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_IMPURE_BEDROCK_ORE_KEY = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), ModBlocks.IMPURE_BEDROCK.get().defaultBlockState())));

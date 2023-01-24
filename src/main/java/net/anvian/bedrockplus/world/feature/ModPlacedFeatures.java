@@ -15,14 +15,14 @@ import java.util.List;
 
 public class ModPlacedFeatures {
 
-    public static final ResourceKey<PlacedFeature> IMPUREBEDROCK_ORE_KEY = createKey("impurebedrock_ore_key");
+    public static final ResourceKey<PlacedFeature> IMPUREBEDROCK_ORE_KEY = createKey("impurebedrock_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context){
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, IMPUREBEDROCK_ORE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
                 commonOrePlacement(25, // VeinsPerChunk
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(-58))));
     }
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
