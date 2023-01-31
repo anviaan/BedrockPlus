@@ -1,0 +1,15 @@
+{
+    "itemGroup.bedrockplus.impure_bedrock": "基岩加上mod",
+    "item.bedrockplus.impure_bedrock_ingot": "不纯净的基岩锭",
+    "item.bedrockplus.impure_bedrock_scrap": "不纯净的基岩废料",
+    "item.bedrockplus.impurebedrock_helmet": "不纯净的基岩头盔",
+    "item.bedrockplus.impurebedrock_chestplate": "不纯净的基岩胸衣",
+    "item.bedrockplus.impurebedrock_leggings": "不纯净的基岩绑腿",
+    "item.bedrockplus.impurebedrock_boots": "不纯净的基岩靴子",
+    "item.bedrockplus.impurebedrock_sword": "不纯净的基岩剑",
+    "item.bedrockplus.impurebedrock_axe": "不纯净的基岩斧头",
+    "item.bedrockplus.impurebedrock_hoe": "不纯净的基岩ho",
+    "item.bedrockplus.impurebedrock_shovel": "不纯净的基岩铁锹",
+    "item.bedrockplus.impurebedrock_pickaxe": "不纯净的基岩皮卡",
+    "block.bedrockplus.impure_bedrock": "基岩不纯净的深板"
+}

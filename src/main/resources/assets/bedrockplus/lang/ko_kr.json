@@ -1,0 +1,15 @@
+{
+    "itemGroup.bedrockplus.impure_bedrock": "기반암 플러스 모드",
+    "item.bedrockplus.impure_bedrock_ingot": "불순한 기반암 잉곳",
+    "item.bedrockplus.impure_bedrock_scrap": "불순한 기반암 스크랩",
+    "item.bedrockplus.impurebedrock_helmet": "불순한 기반암 헬멧",
+    "item.bedrockplus.impurebedrock_chestplate": "불순한 기반암 가슴 판",
+    "item.bedrockplus.impurebedrock_leggings": "불순한 기반암 레깅스",
+    "item.bedrockplus.impurebedrock_boots": "불순한 기반암 부츠",
+    "item.bedrockplus.impurebedrock_sword": "불순한 기반암 검",
+    "item.bedrockplus.impurebedrock_axe": "불순한 기반암 도끼",
+    "item.bedrockplus.impurebedrock_hoe": "불순한 기반암 괭이",
+    "item.bedrockplus.impurebedrock_shovel": "불순한 기반암 삽",
+    "item.bedrockplus.impurebedrock_pickaxe": "불순한 기반암 곡예",
+    "block.bedrockplus.impure_bedrock": "기반암은 심해를 부정합니다"
+}
