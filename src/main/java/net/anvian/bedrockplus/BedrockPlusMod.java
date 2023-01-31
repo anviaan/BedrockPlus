@@ -1,9 +1,8 @@
 package net.anvian.bedrockplus;
 
-import eu.midnightdust.lib.config.MidnightConfig;
 import net.anvian.bedrockplus.block.ModBlocks;
+import net.anvian.bedrockplus.config.BedrockPlusConfig;
 import net.anvian.bedrockplus.item.ModItems;
-import net.anvian.bedrockplus.config.ModConfigs;
 import net.anvian.bedrockplus.world.feature.ModConfiguredFeatures;
 import net.anvian.bedrockplus.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
@@ -11,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BedrockPlusMod implements ModInitializer {
+	public static final BedrockPlusConfig CONFIG = BedrockPlusConfig.createAndLoad();
 	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
 	public static final String MOD_ID = "bedrockplus";
 
@@ -19,8 +19,6 @@ public class BedrockPlusMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 
 		ModConfiguredFeatures.registerConfiguredFeatures();
-
-		MidnightConfig.init(MOD_ID, ModConfigs.class);
 
 		ModItems.registerModItems();
 

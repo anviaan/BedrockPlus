@@ -1,6 +1,6 @@
 package net.anvian.bedrockplus.item;
 
-import net.anvian.bedrockplus.config.ModConfigs;
+import net.anvian.bedrockplus.BedrockPlusMod;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -13,16 +13,16 @@ public class ModArmorMaterials implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
     private final SoundEvent equipSound = SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE;
-    private final int durabilityMultiplier = ModConfigs.ArmorDurabilityMultiplier;
+    private final int durabilityMultiplier = BedrockPlusMod.CONFIG.ArmorDurabilityMultiplier();
     private final int[] protectionAmounts = {
-            ModConfigs.ArmorProtectionAmounts1,
-            ModConfigs.ArmorProtectionAmounts2,
-            ModConfigs.ArmorProtectionAmounts3,
-            ModConfigs.ArmorProtectionAmounts4
+            BedrockPlusMod.CONFIG.ArmorProtectionAmountsBoots(),
+            BedrockPlusMod.CONFIG.ArmorProtectionAmountsLeggings(),
+            BedrockPlusMod.CONFIG.ArmorProtectionAmountsChestplate(),
+            BedrockPlusMod.CONFIG.ArmorProtectionAmountsHelmet()
     };
-    private final int enchantability = ModConfigs.ArmorEnchantability;
-    private final float toughness = (float) ModConfigs.ArmorToughness;
-    private final float knockbackResistance = (float) ModConfigs.ArmorKnockbackResistance;
+    private final int enchantability = BedrockPlusMod.CONFIG.ArmorEnchantability();
+    private final float toughness = (float) BedrockPlusMod.CONFIG.ArmorToughness();
+    private final float knockbackResistance = (float) BedrockPlusMod.CONFIG.ArmorKnockbackResistance();
 
     public int getDurability(EquipmentSlot slot) {
         return BASE_DURABILITY[slot.getEntitySlotId()] * this.durabilityMultiplier;
