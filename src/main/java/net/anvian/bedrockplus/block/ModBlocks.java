@@ -4,7 +4,6 @@ import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.ModItemGroup;
 import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -23,7 +22,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> IMPURE_BEDROCK = registerBlock("impure_bedrock",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(75.0f,6000.0f) //250.0
+                    .strength(75.0f,1200.0F) //250.0
                     .requiresCorrectToolForDrops()));
 
 
