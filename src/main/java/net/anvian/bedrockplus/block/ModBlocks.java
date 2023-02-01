@@ -21,11 +21,13 @@ public class ModBlocks {
     public static final Block IMPURE_BEDROCK = registerBlock("impure_bedrock",
             new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)
                     .sounds(BlockSoundGroup.DEEPSLATE)
-                    .strength(75.0f,1200.0f)
+                    .strength(BedrockPlusMod.CONFIG.BedrockImpureDeepslateHardness(),
+                            BedrockPlusMod.CONFIG.BedrockImpureDeepslateResistance()) //75.0, 1200.0
                     .requiresTool()));
     public static final Block IMPURE_BEDROCK_BLOCK = registerBlock("impure_bedrock_block",
             new Block(FabricBlockSettings.of(Material.METAL, MapColor.BLACK)
-                    .requiresTool().strength(75.0f, 1200.0f)
+                    .requiresTool().strength(BedrockPlusMod.CONFIG.BlockOfImpureBedrockHardness(),
+                            BedrockPlusMod.CONFIG.BlockOfImpureBedrockResistance()) //75.0, 1200.0
                     .sounds(BlockSoundGroup.NETHERITE)));
 
     private static Block registerBlock(String name, Block block){
