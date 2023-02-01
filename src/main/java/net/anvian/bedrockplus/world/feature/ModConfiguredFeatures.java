@@ -16,7 +16,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig,?>> IMPURE_BEDROCK =
             ConfiguredFeatures.register("impure_bedrock", Feature.ORE,
-                    new OreFeatureConfig(OVERWORLD_IMPURE_BEDROCK,10));
+                    new OreFeatureConfig(OVERWORLD_IMPURE_BEDROCK,4));
 
     public static void registerConfiguredFeatures() {
         System.out.println("Registering ModConfiguredFeatures for " + BedrockPlusMod.MOD_ID);
