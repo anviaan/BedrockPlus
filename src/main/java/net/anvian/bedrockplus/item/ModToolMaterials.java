@@ -1,6 +1,6 @@
 package net.anvian.bedrockplus.item;
 
-import net.anvian.bedrockplus.config.ModConfigs;
+import net.anvian.bedrockplus.BedrockPlusMod;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -8,11 +8,11 @@ public class ModToolMaterials implements ToolMaterial {
 
         public static final ModToolMaterials INSTANCE = new ModToolMaterials();
 
-        private static final int durability = ModConfigs.ToolDurability;
-        private static final float miningSpeed = (float) ModConfigs.ToolMiningSpeed;
-        private static final float attackDamage = (float) ModConfigs.ToolAttackDamage;
-        private static final int miningLevel = ModConfigs.ToolMiningLevel;
-        private static final int enchantability = ModConfigs.ToolEnchantability;
+        private static final int durability = BedrockPlusMod.CONFIG.ToolDurability();
+        private static final float miningSpeed = (float) BedrockPlusMod.CONFIG.ToolMiningSpeed();
+        private static final float attackDamage = (float) BedrockPlusMod.CONFIG.ToolAttackDamage();
+        private static final int miningLevel = BedrockPlusMod.CONFIG.ToolMiningLevel();
+        private static final int enchantability = BedrockPlusMod.CONFIG.ToolEnchantability();
 
         @Override
         public int getDurability() {
