@@ -11,5 +11,6 @@
     "item.bedrockplus.impurebedrock_hoe": "Unreine Grundgestein Hacke",
     "item.bedrockplus.impurebedrock_shovel": "Unreine Grundgesteinschaufel",
     "item.bedrockplus.impurebedrock_pickaxe": "Unreine Grundgesteinsspitzung",
-    "block.bedrockplus.impure_bedrock": "Grundgestein unrein"
+    "block.bedrockplus.impure_bedrock": "Grundgestein unrein",
+    "block.bedrockplus.impure_bedrock_block": "Unreiner Grundblock"
 }

@@ -4,8 +4,7 @@ import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
@@ -19,6 +18,11 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE)
                     .strength(250.0f,6000.0f)
                     .requiresTool()));
+
+    public static final Block IMPURE_BEDROCK_BLOCK = registerBlock("impure_bedrock_block",
+            new Block(AbstractBlock.Settings.of(Material.METAL, MapColor.BLACK)
+                    .requiresTool().strength(75.0f, 1200.0f)
+                    .sounds(BlockSoundGroup.NETHERITE)));
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

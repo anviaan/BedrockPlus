@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class BedrockPlusMod implements ModInitializer {
 	public static final BedrockPlusConfig CONFIG = BedrockPlusConfig.createAndLoad();
-	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+	public static final Logger LOGGER = LoggerFactory.getLogger("bedrockplus");
 	public static final String MOD_ID = "bedrockplus";
 
 	@Override
