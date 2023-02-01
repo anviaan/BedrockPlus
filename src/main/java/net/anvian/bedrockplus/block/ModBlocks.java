@@ -16,7 +16,7 @@ public class ModBlocks {
     public static final Block IMPURE_BEDROCK = registerBlock("impure_bedrock",
             new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)
                     .sounds(BlockSoundGroup.DEEPSLATE)
-                    .strength(250.0f,6000.0f)
+                    .strength(75.0f,1200.0f)
                     .requiresTool()));
 
     public static final Block IMPURE_BEDROCK_BLOCK = registerBlock("impure_bedrock_block",
