@@ -23,19 +23,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> IMPURE_BEDROCK = registerBlock("impure_bedrock",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(250.0f,6000.0f) //250.0
-                    .requiresCorrectToolForDrops()), ModItemGroup.BEDROCKPLUS);
+                    .strength(75.0f,6000.0f) //250.0
+                    .requiresCorrectToolForDrops()));
 
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
-                                                                            CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().fireResistant().tab(tab)));
+                new Item.Properties().fireResistant().tab(ModItemGroup.BEDROCKPLUS)));
     }
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
