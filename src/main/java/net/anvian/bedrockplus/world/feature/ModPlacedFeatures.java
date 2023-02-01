@@ -15,8 +15,8 @@ public class ModPlacedFeatures {
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, BedrockPlusMod.MOD_ID);
 
     public static final RegistryObject<PlacedFeature> IMPUREBEDROCK_ORE_PLACED = PLACED_FEATURE.register("impurebedrock_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.IMPURE_BEDROCK.getHolder().get(), commonOrePlacement(25,
-                            HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(-58)))));
+            () -> new PlacedFeature(ModConfiguredFeatures.IMPURE_BEDROCK.getHolder().get(), commonOrePlacement(3,
+                            HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(-56)))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

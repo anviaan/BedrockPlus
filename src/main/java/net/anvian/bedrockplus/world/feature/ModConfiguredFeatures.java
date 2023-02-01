@@ -23,7 +23,7 @@ public class ModConfiguredFeatures {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.IMPURE_BEDROCK.get().defaultBlockState())
     ));
     public static final RegistryObject<ConfiguredFeature<?,?>> IMPURE_BEDROCK = CONFIGURED_FEATURES.register("impurebedrock_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_IMPURE_BEDROCK.get(), 10)));
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_IMPURE_BEDROCK.get(), 4)));
 
     public static void register(IEventBus eventBus){
         CONFIGURED_FEATURES.register(eventBus);
