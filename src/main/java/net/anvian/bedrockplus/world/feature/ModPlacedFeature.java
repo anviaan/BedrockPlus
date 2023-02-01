@@ -12,17 +12,16 @@ import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
 
-
 public class ModPlacedFeature {
 
     public static final RegistryKey<PlacedFeature> IMPURE_BEDROCK_ORE_PLACED_KEY = registerKey("impure_bedrock_ore_placed_key");
 
-public static void bootstrap(Registerable<PlacedFeature> context){
-    var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+    public static void bootstrap(Registerable<PlacedFeature> context){
+        var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
     register(context, IMPURE_BEDROCK_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
-            modifiersWithCount(25, // VeinsPerChunk
-                    HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(-58))));
+            modifiersWithCount(3, // VeinsPerChunk
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(-56))));
 }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

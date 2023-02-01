@@ -15,18 +15,18 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
-        public static final RegistryKey<ConfiguredFeature<?,?>> IMPURE_BEDROCK_ORE_KEY = registerKey("impure_bedrock_ore_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> IMPURE_BEDROCK_ORE_KEY = registerKey("impure_bedrock_ore_key");
 
-        public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context){
-            var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
+    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context){
+        var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
 
-            RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
-            List<OreFeatureConfig.Target> overworldImpureBedrockOres =
+        List<OreFeatureConfig.Target> overworldImpureBedrockOres =
                     List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.IMPURE_BEDROCK.getDefaultState()));
 
-            register(context, IMPURE_BEDROCK_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldImpureBedrockOres,10));
-        }
+        register(context, IMPURE_BEDROCK_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldImpureBedrockOres,4));
+    }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(BedrockPlusMod.MOD_ID, name));
