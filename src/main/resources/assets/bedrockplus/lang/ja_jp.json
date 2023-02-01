@@ -1,0 +1,16 @@
+{
+    "itemGroup.bedrockplus.impure_bedrock": "岩盤とmod",
+    "item.bedrockplus.impure_bedrock_ingot": "不純な岩盤のインゴット",
+    "item.bedrockplus.impure_bedrock_scrap": "不純な岩盤スクラップ",
+    "item.bedrockplus.impurebedrock_helmet": "不純な岩盤ヘルメット",
+    "item.bedrockplus.impurebedrock_chestplate": "不純な岩盤の胸部板",
+    "item.bedrockplus.impurebedrock_leggings": "不純な岩盤のレギンス",
+    "item.bedrockplus.impurebedrock_boots": "不純な岩盤ブーツ",
+    "item.bedrockplus.impurebedrock_sword": "不純な岩盤の剣",
+    "item.bedrockplus.impurebedrock_axe": "不純な岩盤x",
+    "item.bedrockplus.impurebedrock_hoe": "不純な岩盤hoe",
+    "item.bedrockplus.impurebedrock_shovel": "不純な岩盤シャベル",
+    "item.bedrockplus.impurebedrock_pickaxe": "不純な岩盤のピカクセ",
+    "block.bedrockplus.impure_bedrock": "岩盤の不純な深さ",
+    "block.bedrockplus.impure_bedrock_block": "不純な岩盤のブロック"
+}

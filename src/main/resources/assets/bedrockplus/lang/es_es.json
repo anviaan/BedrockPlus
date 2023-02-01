@@ -1,0 +1,20 @@
+{
+  "itemGroup.bedrockplus.impure_bedrock": "Bedrock Plus Mod",
+
+  "item.bedrockplus.impure_bedrock_ingot": "Lingote impuro de piedra base",
+  "item.bedrockplus.impure_bedrock_scrap" : "Fragmento impuro de piedra base",
+
+  "item.bedrockplus.impurebedrock_helmet" : "Casco impura de piedra base",
+  "item.bedrockplus.impurebedrock_chestplate" : "Peto impura de piedra base",
+  "item.bedrockplus.impurebedrock_leggings" : "Grebas impura de piedra base",
+  "item.bedrockplus.impurebedrock_boots" : "Botas impura de piedra base",
+
+  "item.bedrockplus.impurebedrock_sword" : "Espada impura de piedra base",
+  "item.bedrockplus.impurebedrock_axe" : "Hacha impura de piedra base",
+  "item.bedrockplus.impurebedrock_hoe" : "Azada impura de piedra base",
+  "item.bedrockplus.impurebedrock_shovel" : "Pala impura de piedra base",
+  "item.bedrockplus.impurebedrock_pickaxe" : "Pico impura de piedra base",
+
+  "block.bedrockplus.impure_bedrock": "Pizzara profunda impura de piedra base",
+  "block.bedrockplus.impure_bedrock_block" : "Bloque impuro de piedra base"
+}

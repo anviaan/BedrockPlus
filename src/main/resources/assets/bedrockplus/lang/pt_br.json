@@ -1,0 +1,16 @@
+{
+    "itemGroup.bedrockplus.impure_bedrock": "Bedrock Plus mod",
+    "item.bedrockplus.impure_bedrock_ingot": "Infinamento de rocha impuro",
+    "item.bedrockplus.impure_bedrock_scrap": "Sucata de rocha impura",
+    "item.bedrockplus.impurebedrock_helmet": "Capacete de rock impuro",
+    "item.bedrockplus.impurebedrock_chestplate": "Placa torácica de rocha de rocha impura",
+    "item.bedrockplus.impurebedrock_leggings": "Perneiras de rocha impuros",
+    "item.bedrockplus.impurebedrock_boots": "Botas de rock impure",
+    "item.bedrockplus.impurebedrock_sword": "Espada de rocha impura",
+    "item.bedrockplus.impurebedrock_axe": "Machado de rock impuro",
+    "item.bedrockplus.impurebedrock_hoe": "Enxada de rocha impura",
+    "item.bedrockplus.impurebedrock_shovel": "Matinho de rocha impuro",
+    "item.bedrockplus.impurebedrock_pickaxe": "Picareta de rocha impura",
+    "block.bedrockplus.impure_bedrock": "Bedrock Impure DeepSlate",
+    "block.bedrockplus.impure_bedrock_block": "Bloco de rocha impura"
+}

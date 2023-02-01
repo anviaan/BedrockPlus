@@ -1,0 +1,20 @@
+{
+  "itemGroup.bedrockplus.impure_bedrock": "Bedrock Plus mod",
+
+  "item.bedrockplus.impure_bedrock_ingot": "Lingote impuro de piedra aadre",
+  "item.bedrockplus.impure_bedrock_scrap" : "Fragmento impuro de piedra madre",
+
+  "item.bedrockplus.impurebedrock_helmet" : "Yelmo impura de piedra madre",
+  "item.bedrockplus.impurebedrock_chestplate" : "Pechera impura de piedra madre",
+  "item.bedrockplus.impurebedrock_leggings" : "Grebas impura de piedra madre",
+  "item.bedrockplus.impurebedrock_boots" : "Botas impura de Piedra madre",
+
+  "item.bedrockplus.impurebedrock_sword" : "Espada iimpura de Piedra madre",
+  "item.bedrockplus.impurebedrock_axe" : "Hacha impura de piedra madre",
+  "item.bedrockplus.impurebedrock_hoe" : "Azada impura de piedra madre",
+  "item.bedrockplus.impurebedrock_shovel" : "Pala impura de piedra madre",
+  "item.bedrockplus.impurebedrock_pickaxe" : "Pico impura de piedra madre",
+
+  "block.bedrockplus.impure_bedrock": "Pizzara profunda impura de piedra madre",
+  "block.bedrockplus.impure_bedrock_block" : "Bloque impuro de piedra Base"
+}
