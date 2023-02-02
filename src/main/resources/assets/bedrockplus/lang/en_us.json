@@ -1,19 +1,20 @@
 {
   "itemGroup.impure_bedrock": "Bedrock Plus Mod",
 
-  "item.bedrockplus.impure_bedrock_ingot": "Impure Bedrock ingot",
-  "item.bedrockplus.impure_bedrock_scrap" : "Impure Bedrock scrap",
+  "item.bedrockplus.impure_bedrock_ingot": "Impure bedrock ingot",
+  "item.bedrockplus.impure_bedrock_scrap" : "Impure bedrock scrap",
 
-  "item.bedrockplus.impurebedrock_helmet" : "Impure Bedrock Helmet",
-  "item.bedrockplus.impurebedrock_chestplate" : "Impure Bedrock Chestplate",
-  "item.bedrockplus.impurebedrock_leggings" : "Impure Bedrock Leggings",
-  "item.bedrockplus.impurebedrock_boots" : "Impure Bedrock Boots",
+  "item.bedrockplus.impurebedrock_helmet" : "Impure bedrock helmet",
+  "item.bedrockplus.impurebedrock_chestplate" : "Impure bedrock chestplate",
+  "item.bedrockplus.impurebedrock_leggings" : "Impure bedrock leggings",
+  "item.bedrockplus.impurebedrock_boots" : "Impure bedrock boots",
 
-  "item.bedrockplus.impurebedrock_sword" : "Impure Bedrock Sword",
-  "item.bedrockplus.impurebedrock_axe" : "Impure Bedrock Axe",
-  "item.bedrockplus.impurebedrock_hoe" : "Impure Bedrock Hoe",
-  "item.bedrockplus.impurebedrock_shovel" : "Impure Bedrock Shovel",
-  "item.bedrockplus.impurebedrock_pickaxe" : "Impure Bedrock Pickaxe",
+  "item.bedrockplus.impurebedrock_sword" : "Impure bedrock sword",
+  "item.bedrockplus.impurebedrock_axe" : "Impure bedrock axe",
+  "item.bedrockplus.impurebedrock_hoe" : "Impure bedrock hoe",
+  "item.bedrockplus.impurebedrock_shovel" : "Impure bedrock shovel",
+  "item.bedrockplus.impurebedrock_pickaxe" : "Impure bedrock pickaxe",
 
-  "block.bedrockplus.impure_bedrock": "Bedrock Impure Deepslate"
+  "block.bedrockplus.impure_bedrock": "Bedrock impure deepslate",
+  "block.bedrockplus.impure_bedrock_block" : "Block of impure bedrock"
 }
