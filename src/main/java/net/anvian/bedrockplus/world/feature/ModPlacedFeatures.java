@@ -21,8 +21,8 @@ public class ModPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, IMPUREBEDROCK_ORE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
-                commonOrePlacement(25, // VeinsPerChunk
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(-58))));
+                commonOrePlacement(3, // VeinsPerChunk
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(-56))));
     }
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
