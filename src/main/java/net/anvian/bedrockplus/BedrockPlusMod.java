@@ -39,6 +39,7 @@ public class BedrockPlusMod
     private void addCreative(CreativeModeTabEvent.BuildContents even){
         if (even.getTab() == ModItemGroup.BEDROCKPLUS){
             even.accept(ModBlocks.IMPURE_BEDROCK);
+            even.accept(ModBlocks.IMPURE_BEDROCK_BLOCK);
             even.accept(ModItems.IMPURE_BEDROCK_INGOT);
             even.accept(ModItems.IMPURE_BEDROCK_SCRAP);
             even.accept(ModItems.IMPUREBEDROCK_SWORD);
