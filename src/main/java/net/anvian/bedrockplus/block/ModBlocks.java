@@ -21,7 +21,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> IMPURE_BEDROCK = registerBlock("impure_bedrock",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(250.0f,6000.0f) //250.0
+                    .strength(75.0f,1200.0F) //250.0
                     .requiresCorrectToolForDrops()));
 
 
