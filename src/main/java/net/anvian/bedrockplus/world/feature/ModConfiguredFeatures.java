@@ -25,7 +25,7 @@ public class ModConfiguredFeatures {
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context){
 
-        register(context, IMPURE_BEDROCK_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_IMPURE_BEDROCK_ORE_KEY.get(),5));
+        register(context, IMPURE_BEDROCK_ORE_KEY, Feature.ORE, new OreConfiguration(OVERWORLD_IMPURE_BEDROCK_ORE_KEY.get(),4));
 
     }
 
