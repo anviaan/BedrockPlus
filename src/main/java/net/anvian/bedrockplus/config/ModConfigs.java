@@ -19,16 +19,16 @@ public class ModConfigs {
     public double ToolAttackDamage = 5.0d;
     public int ToolMiningLevel = 4;
     public int ToolEnchantability = 30;
-    public int SwordAttackDamage = 7;
-    public double SwordAttackSpeed = -1.4d;
-    public int PickaxeAttackDamage = 5;
-    public double PickaxeAttackSpeed = -1.8d;
-    public int AxeAttackDamage = 9;
-    public double AxeAttackSpeed = -2d;
-    public double ShovelAttackDamage = 5.5;
-    public double ShovelAttackSpeed = -2d;
-    public int HoeAttackDamage = 0;
-    public double HoeAttackSpeed = -1d;
+    public int SwordAttackDamage = 4;
+    public double SwordAttackSpeed = -0.4d;
+    public int PickaxeAttackDamage = 2;
+    public double PickaxeAttackSpeed = -0.8d;
+    public int AxeAttackDamage = 7;
+    public double AxeAttackSpeed = -1d;
+    public double ShovelAttackDamage = 2.5d;
+    public double ShovelAttackSpeed = -1d;
+    public int HoeAttackDamage = -3;
+    public double HoeAttackSpeed = 2;
     //armor
     public int ArmorDurabilityMultiplier = 74;
     public int ArmorEnchantability = 2;
