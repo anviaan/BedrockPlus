@@ -25,19 +25,19 @@ public class ModItems {
 
     //tools
     public static final RegistryObject<Item> IMPUREBEDROCK_SWORD  = ITEMS.register("impurebedrock_sword",
-            () -> new SwordItem(ModTiers.INSTANCE, 7,-1.4f,
+            () -> new SwordItem(ModTiers.INSTANCE, 4,-0.4f,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_PICKAXE  = ITEMS.register("impurebedrock_pickaxe",
-            () -> new PickaxeItem(ModTiers.INSTANCE,5, -1.8f,
+            () -> new PickaxeItem(ModTiers.INSTANCE,2, -0.8f,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_AXE  = ITEMS.register("impurebedrock_axe",
-            () -> new AxeItem(ModTiers.INSTANCE,9, -2.0f,
+            () -> new AxeItem(ModTiers.INSTANCE,7, -1.0f,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_SHOVEL = ITEMS.register("impurebedrock_shovel",
-            () -> new ShovelItem(ModTiers.INSTANCE,5.5f, -2.0f,
+            () -> new ShovelItem(ModTiers.INSTANCE,2.5f, -1.0f,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_HOE  = ITEMS.register("impurebedrock_hoe",
-            () -> new HoeItem(ModTiers.INSTANCE,0, 1.0f,
+            () -> new HoeItem(ModTiers.INSTANCE,-3, 2.0f,
                     new Item.Properties().fireResistant()));
     //armor
     public static final RegistryObject<Item> IMPURE_BEDROCK_HELMET = ITEMS.register("impurebedrock_helmet",
