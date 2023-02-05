@@ -2,15 +2,10 @@ package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.custom.ModArmorItem;
-import net.anvian.bedrockplus.item.custom.ModAxeItem;
-import net.anvian.bedrockplus.item.custom.ModHoeItem;
-import net.anvian.bedrockplus.item.custom.ModPickaxeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -44,11 +39,11 @@ public class ModItems {
                     BedrockPlusMod.CONFIG.SwordAttackDamage(),(float) BedrockPlusMod.CONFIG.SwordAttackSpeed(),
                         new FabricItemSettings().fireproof()));
     public static final Item IMPUREBEDROCK_PICKAXE = registerItem("impurebedrock_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.INSTANCE,
+            new PickaxeItem(ModToolMaterials.INSTANCE,
                     BedrockPlusMod.CONFIG.PickaxeAttackDamage(),(float)BedrockPlusMod.CONFIG.PickaxeAttackSpeed(),
                         new FabricItemSettings().fireproof()));
     public static final Item IMPUREBEDROCK_AXE = registerItem("impurebedrock_axe",
-            new ModAxeItem(ModToolMaterials.INSTANCE,
+            new AxeItem(ModToolMaterials.INSTANCE,
                     BedrockPlusMod.CONFIG.AxeAttackDamage(), (float)BedrockPlusMod.CONFIG.AxeAttackSpeed(),
                         new FabricItemSettings().fireproof()));
     public static final Item IMPUREBEDROCK_SHOVEL = registerItem("impurebedrock_shovel",
@@ -56,7 +51,7 @@ public class ModItems {
                     (float)BedrockPlusMod.CONFIG.ShovelAttackDamage(),(float)BedrockPlusMod.CONFIG.ShovelAttackSpeed(),
                         new FabricItemSettings().fireproof()));
     public static final Item IMPUREBEDROCK_HOE = registerItem("impurebedrock_hoe",
-            new ModHoeItem(ModToolMaterials.INSTANCE,
+            new HoeItem(ModToolMaterials.INSTANCE,
                     BedrockPlusMod.CONFIG.HoeAttackDamage(),(float)BedrockPlusMod.CONFIG.HoeAttackSpeed(),
                         new FabricItemSettings().fireproof()));
 
