@@ -59,6 +59,6 @@ public class ModItems {
     }
 
     public static void registerModItems(){
-        System.out.println("Registering Mod Items for " + BedrockPlusMod.MOD_ID);
+        BedrockPlusMod.LOGGER.debug("Registering Mod Items for " + BedrockPlusMod.MOD_ID);
     }
 }

@@ -37,6 +37,6 @@ public class ModBlocks {
 }
 
     public static void registerModBlock(){
-        System.out.println("Registering ModBlock for " + BedrockPlusMod.MOD_ID);
+        BedrockPlusMod.LOGGER.debug("Registering ModBlock for " + BedrockPlusMod.MOD_ID);
     }
 }
