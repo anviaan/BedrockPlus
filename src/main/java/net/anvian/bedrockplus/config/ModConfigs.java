@@ -4,6 +4,7 @@ import io.wispforest.owo.config.Option;
 import io.wispforest.owo.config.annotation.Config;
 import io.wispforest.owo.config.annotation.Sync;
 
+@SuppressWarnings("unused")
 @Config(name = "bedrockplus-config", wrapperName = "BedrockPlusConfig")
 @Sync(Option.SyncMode.OVERRIDE_CLIENT)
 public class ModConfigs {
