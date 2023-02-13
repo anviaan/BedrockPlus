@@ -1,6 +1,7 @@
 package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
+import net.anvian.bedrockplus.config.BedrockPlusConfig;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -13,11 +14,16 @@ public class ModArmorMaterials implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
     private final SoundEvent equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
-    private final int durabilityMultiplier = 74;
-    private final int[] protectionAmounts = {5, 8, 10, 4};
-    private final int enchantability = 2;
-    private final float toughness = 4.5f;
-    private final float knockbackResistance = 0.2f;
+    private final int durabilityMultiplier = BedrockPlusConfig.ArmorDurabilityMultiplier.get();
+    private final int[] protectionAmounts = {
+            BedrockPlusConfig.ArmorProtectionAmountsBoots.get(),
+            BedrockPlusConfig.ArmorProtectionAmountsLeggings.get(),
+            BedrockPlusConfig.ArmorProtectionAmountsChestplate.get(),
+            BedrockPlusConfig.ArmorProtectionAmountsHelmet.get()
+    };
+    private final int enchantability = BedrockPlusConfig.ArmorEnchantability.get();
+    private final float toughness = BedrockPlusConfig.ArmorToughness.get().floatValue();
+    private final float knockbackResistance = BedrockPlusConfig.ArmorKnockbackResistance.get().floatValue();
 
 
     public int getDurabilityForSlot(EquipmentSlot pSlot) {
