@@ -1,6 +1,7 @@
 package net.anvian.bedrockplus.block;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
+import net.anvian.bedrockplus.config.BedrockPlusConfig;
 import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -24,13 +25,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> IMPURE_BEDROCK = registerBlock("impure_bedrock",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(75.0f,1200.0F) //250.0
+                    .strength(BedrockPlusConfig.BedrockImpureDeepslateHardness.get().floatValue(),
+                            BedrockPlusConfig.BedrockImpureDeepslateResistance.get().floatValue())
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> IMPURE_BEDROCK_BLOCK = registerBlock("impure_bedrock_block",
             () -> new Block(BlockBehaviour.Properties
                     .of(Material.METAL, MaterialColor.COLOR_BLACK)
-                    .strength(75.0f,1200.0F)
+                    .strength(BedrockPlusConfig.BlockOfImpureBedrockHardness.get().floatValue(),
+                            BedrockPlusConfig.BlockOfImpureBedrockResistance.get().floatValue())
                     .requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
