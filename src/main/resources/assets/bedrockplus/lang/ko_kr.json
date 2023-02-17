@@ -1,16 +1,20 @@
 {
-    "itemGroup.bedrockplus.impure_bedrock": "기반암 플러스 모드",
-    "item.bedrockplus.impure_bedrock_ingot": "불순한 기반암 잉곳",
-    "item.bedrockplus.impure_bedrock_scrap": "불순한 기반암 스크랩",
-    "item.bedrockplus.impurebedrock_helmet": "불순한 기반암 헬멧",
-    "item.bedrockplus.impurebedrock_chestplate": "불순한 기반암 가슴 판",
-    "item.bedrockplus.impurebedrock_leggings": "불순한 기반암 레깅스",
-    "item.bedrockplus.impurebedrock_boots": "불순한 기반암 부츠",
-    "item.bedrockplus.impurebedrock_sword": "불순한 기반암 검",
-    "item.bedrockplus.impurebedrock_axe": "불순한 기반암 도끼",
-    "item.bedrockplus.impurebedrock_hoe": "불순한 기반암 괭이",
-    "item.bedrockplus.impurebedrock_shovel": "불순한 기반암 삽",
-    "item.bedrockplus.impurebedrock_pickaxe": "불순한 기반암 곡예",
-    "block.bedrockplus.impure_bedrock": "기반암은 심해를 부정합니다",
-    "block.bedrockplus.impure_bedrock_block": "불순한 기반암의 블록"
+  "itemGroup.bedrockplus.impure_bedrock": "기반심층암 모드",
+
+  "item.bedrockplus.impure_bedrock_ingot": "기반심층암 주괴",
+  "item.bedrockplus.impure_bedrock_scrap": "기반심층암 파편",
+
+  "item.bedrockplus.impurebedrock_helmet": "기반심층암 투구",
+  "item.bedrockplus.impurebedrock_chestplate": "기반심층암 흉갑",
+  "item.bedrockplus.impurebedrock_leggings": "기반심층암 레깅스",
+  "item.bedrockplus.impurebedrock_boots": "기반심층암 부츠",
+
+  "item.bedrockplus.impurebedrock_sword": "기반심층암 검",
+  "item.bedrockplus.impurebedrock_axe": "기반심층암 도끼",
+  "item.bedrockplus.impurebedrock_hoe": "기반심층암 괭이",
+  "item.bedrockplus.impurebedrock_shovel": "기반심층암 삽",
+  "item.bedrockplus.impurebedrock_pickaxe": "기반심층암 곡괭이",
+
+  "block.bedrockplus.impure_bedrock": "기반심층암",
+  "block.bedrockplus.impure_bedrock_block": "기반심층암 블록"
 }
