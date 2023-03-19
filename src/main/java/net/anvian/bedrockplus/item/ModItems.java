@@ -42,16 +42,16 @@ public class ModItems {
                     new Item.Properties().fireResistant()));
     //armor
     public static final RegistryObject<Item> IMPURE_BEDROCK_HELMET = ITEMS.register("impurebedrock_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.HEAD,
+            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.HELMET,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPURE_BEDROCK_CHESTPLATE = ITEMS.register("impurebedrock_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.CHEST,
+            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPURE_BEDROCK_LEGGINGS = ITEMS.register("impurebedrock_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.LEGS,
+            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPURE_BEDROCK_BOOTS = ITEMS.register("impurebedrock_boots",
-            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.FEET,
+            () -> new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.BOOTS,
                     new Item.Properties().fireResistant()));
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
