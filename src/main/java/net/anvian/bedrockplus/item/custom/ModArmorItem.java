@@ -3,8 +3,6 @@ package net.anvian.bedrockplus.item.custom;
 import com.google.common.collect.ImmutableMap;
 import net.anvian.bedrockplus.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,8 +20,8 @@ public class ModArmorItem extends ArmorItem {
                     .put(ModArmorMaterials.IMPUREBEDROCK,
                             new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0)).build();
 
-    public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
-        super(material, slot, settings);
+    public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
+        super(material, type, settings);
     }
 
     @Override
@@ -33,7 +31,7 @@ public class ModArmorItem extends ArmorItem {
                 PlayerEntity player = (PlayerEntity)entity;
 
                 if(hasFullSuitOfArmorOn(player)) {
-                    evaluateArmorEffects(player);
+                    evaluateArmorEffects(world, player);
                 }
             }
         }
@@ -41,18 +39,18 @@ public class ModArmorItem extends ArmorItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
-    private void evaluateArmorEffects(PlayerEntity player) {
+    private void evaluateArmorEffects(World world,PlayerEntity player) {
         for (Map.Entry<ArmorMaterial, StatusEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             StatusEffectInstance mapStatusEffect = entry.getValue();
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+                addStatusEffectForMaterial(world, player, mapArmorMaterial, mapStatusEffect);
             }
         }
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
+    private void addStatusEffectForMaterial(World world, PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
         boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
 
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
@@ -60,7 +58,7 @@ public class ModArmorItem extends ArmorItem {
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
 
              if(new Random().nextFloat() > 0.7f) { // 30% of damaging the armor
-                 player.getInventory().damageArmor(DamageSource.MAGIC, 1f, new int[]{0, 1, 2, 3});
+                 player.getInventory().damageArmor(world.getDamageSources().magic(), 1f, new int[]{0, 1, 2, 3});
              }
         }
     }

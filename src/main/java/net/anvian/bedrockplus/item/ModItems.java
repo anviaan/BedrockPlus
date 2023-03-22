@@ -4,7 +4,6 @@ import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.custom.ModArmorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,16 +20,16 @@ public class ModItems {
 
     //armor
     public static final Item IMPURE_BEDROCK_HELMET = registerItem("impurebedrock_helmet",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.HEAD,
+            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.HELMET,
                     new FabricItemSettings().fireproof()));
     public static final Item IMPURE_BEDROCK_CHESTPLATE = registerItem("impurebedrock_chestplate",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.CHEST,
+            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings().fireproof()));
     public static final Item IMPURE_BEDROCK_LEGGINGS = registerItem("impurebedrock_leggings",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.LEGS,
+            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.LEGGINGS,
                     new FabricItemSettings().fireproof()));
     public static final Item IMPURE_BEDROCK_BOOTS = registerItem("impurebedrock_boots",
-            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, EquipmentSlot.FEET,
+            new ModArmorItem(ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.BOOTS,
                     new FabricItemSettings().fireproof()));
 
     //tools

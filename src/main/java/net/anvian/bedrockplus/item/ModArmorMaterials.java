@@ -1,7 +1,7 @@
 package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
@@ -24,12 +24,14 @@ public class ModArmorMaterials implements ArmorMaterial {
     private final float toughness = (float) BedrockPlusMod.CONFIG.ArmorToughness();
     private final float knockbackResistance = (float) BedrockPlusMod.CONFIG.ArmorKnockbackResistance();
 
-    public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()] * this.durabilityMultiplier;
+    @Override
+    public int getDurability(ArmorItem.Type type) {
+        return BASE_DURABILITY[type.getEquipmentSlot().getEntitySlotId()] * this.durabilityMultiplier;
     }
 
-    public int getProtectionAmount(EquipmentSlot slot) {
-        return this.protectionAmounts[slot.getEntitySlotId()];
+    @Override
+    public int getProtection(ArmorItem.Type type) {
+        return this.protectionAmounts[type.getEquipmentSlot().getEntitySlotId()];
     }
 
     public int getEnchantability() {
