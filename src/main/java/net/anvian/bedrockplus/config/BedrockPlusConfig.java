@@ -75,13 +75,13 @@ public class BedrockPlusConfig {
         HoeAttackSpeed = config.defineInRange("HoeAttackSpeed", 2, -10000.0, 1000.0); // 2
         //armor
         ArmorDurabilityMultiplier = config.defineInRange("ArmorDurabilityMultiplier", 74, 0, 10000); // 74
-        ArmorEnchantability = config.defineInRange("ArmorDurabilityMultiplier", 2, 0, 10000); // 2
-        ArmorToughness = config.defineInRange("ArmorDurabilityMultiplier", 4.5, 0, 10000); // 4.5d
-        ArmorKnockbackResistance = config.defineInRange("ArmorDurabilityMultiplier", 0.2, 0, 5); // 0.2d
-        ArmorProtectionAmountsHelmet = config.defineInRange("ArmorDurabilityMultiplier", 4, 0, 10000); // 4
-        ArmorProtectionAmountsChestplate = config.defineInRange("ArmorDurabilityMultiplier", 10, 0, 10000); // 10
-        ArmorProtectionAmountsLeggings = config.defineInRange("ArmorDurabilityMultiplier", 8, 0, 10000); // 8
-        ArmorProtectionAmountsBoots = config.defineInRange("ArmorDurabilityMultiplier", 5, 0, 10000); // 5
+        ArmorEnchantability = config.defineInRange("ArmorEnchantability", 2, 0, 10000); // 2
+        ArmorToughness = config.defineInRange("ArmorToughness", 4.5, 0, 10000); // 4.5d
+        ArmorKnockbackResistance = config.defineInRange("ArmorKnockbackResistance", 0.2, 0, 5); // 0.2d
+        ArmorProtectionAmountsHelmet = config.defineInRange("ArmorProtectionAmountsHelmet", 4, 0, 10000); // 4
+        ArmorProtectionAmountsChestplate = config.defineInRange("ArmorProtectionAmountsChestplate", 10, 0, 10000); // 10
+        ArmorProtectionAmountsLeggings = config.defineInRange("ArmorProtectionAmountsLeggings", 8, 0, 10000); // 8
+        ArmorProtectionAmountsBoots = config.defineInRange("ArmorProtectionAmountsBoots", 5, 0, 10000); // 5
     }
     public static void loadConfig(ForgeConfigSpec config, String path) {
         final CommentedFileConfig file = CommentedFileConfig.builder(new File(path)).sync().autosave().writingMode(WritingMode.REPLACE).build();
