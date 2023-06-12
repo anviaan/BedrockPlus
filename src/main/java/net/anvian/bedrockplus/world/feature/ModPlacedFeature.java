@@ -21,7 +21,7 @@ public class ModPlacedFeature {
 
     register(context, IMPURE_BEDROCK_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
             modifiersWithCount(3, // VeinsPerChunk
-                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(-56))));
+                    HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(-56))));
 }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

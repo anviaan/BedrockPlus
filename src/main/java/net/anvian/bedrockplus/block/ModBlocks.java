@@ -1,14 +1,12 @@
 package net.anvian.bedrockplus.block;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
-import net.anvian.bedrockplus.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -25,7 +23,7 @@ public class ModBlocks {
                             BedrockPlusMod.CONFIG.BedrockImpureDeepslateResistance()) //75.0, 1200.0
                     .requiresTool()));
     public static final Block IMPURE_BEDROCK_BLOCK = registerBlock("impure_bedrock_block",
-            new Block(FabricBlockSettings.of(Material.METAL, MapColor.BLACK)
+            new Block(FabricBlockSettings.create().mapColor(MapColor.BLACK)
                     .requiresTool().strength(BedrockPlusMod.CONFIG.BlockOfImpureBedrockHardness(),
                             BedrockPlusMod.CONFIG.BlockOfImpureBedrockResistance()) //75.0, 1200.0
                     .sounds(BlockSoundGroup.NETHERITE)));
@@ -38,7 +36,7 @@ public class ModBlocks {
     private static Item registerBlockItem(String name, Block block){
         Item item = Registry.register(Registries.ITEM, new Identifier(BedrockPlusMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().fireproof()));
-        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.MANGO).register(entries -> entries.add(item));
+        ItemGroupEvents.modifyEntriesEvent(BedrockPlusMod.MANGO).register(entries -> entries.add(item));
         return item;
 }
 

@@ -72,7 +72,7 @@ public class ModItems {
     }
 
     private  static  void  addItemGroup(Item item){
-        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.MANGO).register(entries -> entries.add(item));
+        ItemGroupEvents.modifyEntriesEvent(BedrockPlusMod.MANGO).register(entries -> entries.add(item));
     }
 
     public static void registerModItems(){
