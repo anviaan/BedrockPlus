@@ -2,6 +2,7 @@ package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.item.custom.ModArmorItem;
+import net.anvian.bedrockplus.item.custom.ModSmithingTemplateItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
@@ -17,6 +18,9 @@ public class ModItems {
 
     public static final Item IMPURE_BEDROCK_SCRAP = registerItem("impure_bedrock_scrap",
             new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON).fireproof()));
+
+    public static final Item IMPURE_BEDROCK_UPGRADE_SMITHING_TEMPLATE = registerItem("impure_bedrock_upgrade_smithing_template",
+            ModSmithingTemplateItem.createImpureBedrockUpgrade());
 
     //armor
     public static final Item IMPURE_BEDROCK_HELMET = registerItem("impurebedrock_helmet",
@@ -60,6 +64,7 @@ public class ModItems {
     private static  void addItemsToItemGroup(){
         addItemGroup(IMPURE_BEDROCK_INGOT);
         addItemGroup(IMPURE_BEDROCK_SCRAP);
+        addItemGroup(IMPURE_BEDROCK_UPGRADE_SMITHING_TEMPLATE);
         addItemGroup(IMPURE_BEDROCK_HELMET);
         addItemGroup(IMPURE_BEDROCK_CHESTPLATE);
         addItemGroup(IMPURE_BEDROCK_LEGGINGS);

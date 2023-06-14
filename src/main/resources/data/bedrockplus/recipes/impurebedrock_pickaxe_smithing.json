@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:netherite_pickaxe"
-  },
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "bedrockplus:impure_bedrock_ingot"
   },
+  "base": {
+    "item": "minecraft:netherite_pickaxe"
+  },
   "result": {
     "item": "bedrockplus:impurebedrock_pickaxe"
+  },
+  "template": {
+    "item": "bedrockplus:impure_bedrock_upgrade_smithing_template"
   }
 }
