@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:netherite_chestplate"
-  },
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "bedrockplus:impure_bedrock_ingot"
   },
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
   "result": {
     "item": "bedrockplus:impurebedrock_chestplate"
+  },
+  "template": {
+    "item": "bedrockplus:impure_bedrock_upgrade_smithing_template"
   }
 }

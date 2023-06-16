@@ -1,8 +1,15 @@
 {
   "itemGroup.impure_bedrock": "Bedrock Plus mod",
 
-  "item.bedrockplus.impure_bedrock_ingot": "Lingote impuro de piedra aadre",
+  "item.bedrockplus.impure_bedrock_ingot": "Lingote impuro de piedra madre",
   "item.bedrockplus.impure_bedrock_scrap" : "Fragmento impuro de piedra madre",
+  "item.bedrockplus.impure_bedrock_upgrade_smithing_template": "Plantilla de herrería mejora de piedra base impura",
+
+  "upgrade.bedrockplus.impure_bedrock_upgrade": "Mejora de piedra madre impura",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.applies_to": "Equipamiento de netherita",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.ingredients": "Lingote impuro de piedra madre",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.base_slot_description": "Coloca una armadura, arma o herramienta de netherita",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.additions_slot_description": "Coloca un lingote impuro de piedra madre",
 
   "item.bedrockplus.impurebedrock_helmet" : "Yelmo impura de piedra madre",
   "item.bedrockplus.impurebedrock_chestplate" : "Pechera impura de piedra madre",

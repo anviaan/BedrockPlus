@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:netherite_sword"
-  },
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "bedrockplus:impure_bedrock_ingot"
   },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
   "result": {
     "item": "bedrockplus:impurebedrock_sword"
+  },
+  "template": {
+    "item": "bedrockplus:impure_bedrock_upgrade_smithing_template"
   }
 }

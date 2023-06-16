@@ -3,6 +3,13 @@
 
   "item.bedrockplus.impure_bedrock_ingot": "Impure bedrock ingot",
   "item.bedrockplus.impure_bedrock_scrap" : "Impure bedrock scrap",
+  "item.bedrockplus.impure_bedrock_upgrade_smithing_template": "Impure bedrock upgrade smithing template",
+
+  "upgrade.bedrockplus.impure_bedrock_upgrade": "Impure bedrock Upgrade",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.applies_to": "Netherite Equipment",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.ingredients": "Impure bedrock Ingot",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.base_slot_description": "Add Netherite armor, weapon, or tool",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.additions_slot_description": "Add Impure bedrock Ingot",
 
   "item.bedrockplus.impurebedrock_helmet" : "Impure bedrock helmet",
   "item.bedrockplus.impurebedrock_chestplate" : "Impure bedrock chestplate",
