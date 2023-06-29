@@ -1,0 +1,20 @@
+{
+  "itemGroup.bedrockplus.impure_bedrock": "Bedrock Plus Mod",
+
+  "item.bedrockplus.impure_bedrock_ingot": "Sztabka zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impure_bedrock_scrap" : "Odłamek zanieczyszczonej skały macierzystej",
+
+  "item.bedrockplus.impurebedrock_helmet" : "Hełm z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_chestplate" : "Napierśnik z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_leggings" : "Nogwice z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_boots" : "Buty z zanieczyszczonej skały macierzystej",
+
+  "item.bedrockplus.impurebedrock_sword" : "Miecz z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_axe" : "Siekiera z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_hoe" : "Motyka z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_shovel" : "Łopata z zanieczyszczonej skały macierzystej",
+  "item.bedrockplus.impurebedrock_pickaxe" : "Kilof z  zanieczyszczonej skały macierzystej",
+
+  "block.bedrockplus.impure_bedrock": "Łupek zanieczyszczony skałą macierzystą",
+  "block.bedrockplus.impure_bedrock_block" : "Blok zanieczyszczonej skały macierzystej"
+}
