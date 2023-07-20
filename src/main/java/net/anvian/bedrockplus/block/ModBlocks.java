@@ -1,7 +1,7 @@
 package net.anvian.bedrockplus.block;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
-import net.anvian.bedrockplus.config.BedrockPlusConfig;
+import net.anvian.bedrockplus.config.ModConfigs;
 import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -25,15 +25,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> IMPURE_BEDROCK = registerBlock("impure_bedrock",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.ANCIENT_DEBRIS)
-                    .strength(BedrockPlusConfig.BedrockImpureDeepslateHardness.get().floatValue(),
-                            BedrockPlusConfig.BedrockImpureDeepslateResistance.get().floatValue())
+                    .strength(ModConfigs.BedrockImpureDeepslateHardness.get().floatValue(),
+                            ModConfigs.BedrockImpureDeepslateResistance.get().floatValue())
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> IMPURE_BEDROCK_BLOCK = registerBlock("impure_bedrock_block",
             () -> new Block(BlockBehaviour.Properties
                     .of(Material.METAL, MaterialColor.COLOR_BLACK)
-                    .strength(BedrockPlusConfig.BlockOfImpureBedrockHardness.get().floatValue(),
-                            BedrockPlusConfig.BlockOfImpureBedrockResistance.get().floatValue())
+                    .strength(ModConfigs.BlockOfImpureBedrockHardness.get().floatValue(),
+                            ModConfigs.BlockOfImpureBedrockResistance.get().floatValue())
                     .requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

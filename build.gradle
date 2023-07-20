@@ -5,9 +5,9 @@ plugins {
 }
 
 
-version = '1.4.4'
+version = '1.5'
 group = 'net.anvian.bedrockplus'
-archivesBaseName = '(Forge)Bedrockplus-1.19.4'
+archivesBaseName = '(Forge)BedrockPlusMod-1.19.4'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 

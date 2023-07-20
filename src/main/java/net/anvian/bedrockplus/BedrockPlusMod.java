@@ -8,9 +8,12 @@ import net.anvian.bedrockplus.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 @Mod(BedrockPlusMod.MOD_ID)
@@ -23,7 +26,8 @@ public class BedrockPlusMod
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModConfigs.registerConfig();
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ModConfigs.SERVER_CONFIG);
+        ModConfigs.loadConfig(ModConfigs.SERVER_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-config.toml"));
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);

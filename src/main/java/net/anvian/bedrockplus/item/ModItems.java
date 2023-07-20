@@ -1,9 +1,8 @@
 package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
-import net.anvian.bedrockplus.config.BedrockPlusConfig;
+import net.anvian.bedrockplus.config.ModConfigs;
 import net.anvian.bedrockplus.item.custom.ModArmorItem;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,19 +25,19 @@ public class ModItems {
 
     //tools
     public static final RegistryObject<Item> IMPUREBEDROCK_SWORD  = ITEMS.register("impurebedrock_sword",
-            () -> new SwordItem(ModTiers.INSTANCE, BedrockPlusConfig.SwordAttackDamage.get(),BedrockPlusConfig.SwordAttackSpeed.get().floatValue(),
+            () -> new SwordItem(ModTiers.INSTANCE, ModConfigs.SwordAttackDamage.get(),ModConfigs.SwordAttackSpeed.get().floatValue(),
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_PICKAXE  = ITEMS.register("impurebedrock_pickaxe",
-            () -> new PickaxeItem(ModTiers.INSTANCE,BedrockPlusConfig.PickaxeAttackDamage.get(), BedrockPlusConfig.PickaxeAttackSpeed.get().floatValue(),
+            () -> new PickaxeItem(ModTiers.INSTANCE,ModConfigs.PickaxeAttackDamage.get(), ModConfigs.PickaxeAttackSpeed.get().floatValue(),
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_AXE  = ITEMS.register("impurebedrock_axe",
-            () -> new AxeItem(ModTiers.INSTANCE,BedrockPlusConfig.AxeAttackDamage.get(), BedrockPlusConfig.AxeAttackSpeed.get().floatValue(),
+            () -> new AxeItem(ModTiers.INSTANCE,ModConfigs.AxeAttackDamage.get(), ModConfigs.AxeAttackSpeed.get().floatValue(),
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_SHOVEL = ITEMS.register("impurebedrock_shovel",
-            () -> new ShovelItem(ModTiers.INSTANCE,BedrockPlusConfig.ShovelAttackDamage.get().floatValue(), BedrockPlusConfig.ShovelAttackSpeed.get().floatValue(),
+            () -> new ShovelItem(ModTiers.INSTANCE,ModConfigs.ShovelAttackDamage.get().floatValue(), ModConfigs.ShovelAttackSpeed.get().floatValue(),
                     new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> IMPUREBEDROCK_HOE  = ITEMS.register("impurebedrock_hoe",
-            () -> new HoeItem(ModTiers.INSTANCE,BedrockPlusConfig.HoeAttackDamage.get(), BedrockPlusConfig.HoeAttackSpeed.get().floatValue(),
+            () -> new HoeItem(ModTiers.INSTANCE, ModConfigs.HoeAttackDamage.get(), ModConfigs.HoeAttackSpeed.get().floatValue(),
                     new Item.Properties().fireResistant()));
     //armor
     public static final RegistryObject<Item> IMPURE_BEDROCK_HELMET = ITEMS.register("impurebedrock_helmet",
