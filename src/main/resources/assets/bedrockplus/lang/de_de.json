@@ -1,16 +1,16 @@
 {
-    "itemGroup.impure_bedrock": "Grundgestein plus Mod",
-    "item.bedrockplus.impure_bedrock_ingot": "Unreiner Grundgestein",
-    "item.bedrockplus.impure_bedrock_scrap": "Unreiner Grundgesteinsschrott",
+    "itemGroup.impure_bedrock": "Grundgestein-Plus Mod",
+    "item.bedrockplus.impure_bedrock_ingot": "Unreiner Grundgesteinbarren",
+    "item.bedrockplus.impure_bedrock_scrap": "Unreiner Grundgesteinschrott",
     "item.bedrockplus.impurebedrock_helmet": "Unreiner Grundgesteinshelm",
-    "item.bedrockplus.impurebedrock_chestplate": "Unreine Grundgesteinbrustplatte",
-    "item.bedrockplus.impurebedrock_leggings": "Unreine Grundgesteinsgänge",
-    "item.bedrockplus.impurebedrock_boots": "Unreine Grundgestrüche",
+    "item.bedrockplus.impurebedrock_chestplate": "Unreine Grundgesteinharnisch",
+    "item.bedrockplus.impurebedrock_leggings": "Unreine Grundgesteinbeinschutz",
+    "item.bedrockplus.impurebedrock_boots": "Unreine Grundgesteinstiefel",
     "item.bedrockplus.impurebedrock_sword": "Unreines Grundgesteinschwert",
-    "item.bedrockplus.impurebedrock_axe": "Unreine Grundgestein Axt",
-    "item.bedrockplus.impurebedrock_hoe": "Unreine Grundgestein Hacke",
+    "item.bedrockplus.impurebedrock_axe": "Unreine Grundgesteinaxt",
+    "item.bedrockplus.impurebedrock_hoe": "Unreine Grundgesteinhacke",
     "item.bedrockplus.impurebedrock_shovel": "Unreine Grundgesteinschaufel",
-    "item.bedrockplus.impurebedrock_pickaxe": "Unreine Grundgesteinsspitzung",
-    "block.bedrockplus.impure_bedrock": "Grundgestein unrein",
-    "block.bedrockplus.impure_bedrock_block": "Unreiner Grundblock"
+    "item.bedrockplus.impurebedrock_pickaxe": "Unreine Grundgesteinspitzhacke",
+    "block.bedrockplus.impure_bedrock": "Unreiner Grundgestein",
+    "block.bedrockplus.impure_bedrock_block": "Unreiner Grundgesteinblock"
 }
