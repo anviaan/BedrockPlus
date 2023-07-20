@@ -20,7 +20,7 @@ public class ModPlacedFeature {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
     register(context, IMPURE_BEDROCK_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.IMPURE_BEDROCK_ORE_KEY),
-            modifiersWithCount(3, // VeinsPerChunk
+            modifiersWithCount(7, // VeinsPerChunk
                     HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(-56))));
 }
 
