@@ -1,7 +1,8 @@
-package net.anvian.bedrockplus.item;
+package net.anvian.bedrockplus.item.armor;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.config.ModConfigs;
+import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;

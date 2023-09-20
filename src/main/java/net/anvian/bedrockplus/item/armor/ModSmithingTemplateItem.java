@@ -1,4 +1,4 @@
-package net.anvian.bedrockplus.item.custom;
+package net.anvian.bedrockplus.item.armor;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.minecraft.ChatFormatting;

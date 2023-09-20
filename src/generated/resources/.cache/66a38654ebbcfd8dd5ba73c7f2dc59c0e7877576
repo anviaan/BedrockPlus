@@ -1,0 +1,4 @@
+// 1.20	2023-09-20T16:17:01.7733362	Tags for minecraft:block mod id bedrockplus
+e8ccf1eac2ced7cd004dbc1cd28c9fde47a58c19 data/minecraft/tags/blocks/beacon_base_blocks.json
+f259c47273d4544137628f591e2518b7034f4291 data/minecraft/tags/blocks/mineable/pickaxe.json
+f259c47273d4544137628f591e2518b7034f4291 data/minecraft/tags/blocks/needs_diamond_tool.json
