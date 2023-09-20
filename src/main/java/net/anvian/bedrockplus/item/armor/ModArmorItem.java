@@ -1,7 +1,7 @@
-package net.anvian.bedrockplus.item.custom;
+package net.anvian.bedrockplus.item.armor;
 
 import com.google.common.collect.ImmutableMap;
-import net.anvian.bedrockplus.item.ModArmorMaterials;
+import net.anvian.bedrockplus.BedrockPlusMod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -18,7 +18,8 @@ public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
                     .put(ModArmorMaterials.IMPUREBEDROCK,
-                            new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0)).build();
+                            new StatusEffectInstance(StatusEffects.RESISTANCE,
+                                    200, 0, false, BedrockPlusMod.CONFIG.ArmorShowParticle(), BedrockPlusMod.CONFIG.ArmorShowIcon())).build();
 
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
@@ -54,12 +55,7 @@ public class ModArmorItem extends ArmorItem {
         boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
 
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
-            player.addStatusEffect(new StatusEffectInstance(mapStatusEffect.getEffectType(),
-                    mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
-
-             if(new Random().nextFloat() > 0.7f) { // 30% of damaging the armor
-                 player.getInventory().damageArmor(world.getDamageSources().magic(), 1f, new int[]{0, 1, 2, 3});
-             }
+            player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
         }
     }
 

@@ -1,8 +1,9 @@
 package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
-import net.anvian.bedrockplus.item.custom.ModArmorItem;
-import net.anvian.bedrockplus.item.custom.ModSmithingTemplateItem;
+import net.anvian.bedrockplus.item.armor.ModArmorItem;
+import net.anvian.bedrockplus.item.armor.ModArmorMaterials;
+import net.anvian.bedrockplus.item.armor.ModSmithingTemplateItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;

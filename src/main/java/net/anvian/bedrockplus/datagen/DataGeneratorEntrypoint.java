@@ -11,6 +11,8 @@ public class DataGeneratorEntrypoint implements net.fabricmc.fabric.api.datagen.
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModBlockTagProvider::new);
 	}
 
 	@Override

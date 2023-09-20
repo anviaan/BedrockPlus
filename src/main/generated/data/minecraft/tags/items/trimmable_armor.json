@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "bedrockplus:impurebedrock_boots",
+    "bedrockplus:impurebedrock_leggings",
+    "bedrockplus:impurebedrock_chestplate",
+    "bedrockplus:impurebedrock_helmet"
+  ]
+}
