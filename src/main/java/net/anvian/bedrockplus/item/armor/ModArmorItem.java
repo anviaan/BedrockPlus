@@ -12,7 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import java.util.Map;
-import java.util.Random;
 
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
