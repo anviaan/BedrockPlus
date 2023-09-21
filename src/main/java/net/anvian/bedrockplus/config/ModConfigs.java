@@ -46,4 +46,6 @@ public class ModConfigs {
     public int ArmorProtectionAmountsChestplate = 9;
     public int ArmorProtectionAmountsLeggings = 7;
     public int ArmorProtectionAmountsBoots = 4;
+    public boolean ArmorShowParticle = false;
+    public boolean ArmorShowIcon = false;
 }

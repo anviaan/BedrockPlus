@@ -1,6 +1,7 @@
-package net.anvian.bedrockplus.item;
+package net.anvian.bedrockplus.item.armor;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
+import net.anvian.bedrockplus.item.ModItems;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
