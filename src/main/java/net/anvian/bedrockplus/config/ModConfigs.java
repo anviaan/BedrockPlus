@@ -48,6 +48,8 @@ public class ModConfigs {
     public static ForgeConfigSpec.IntValue ArmorProtectionAmountsChestplate; // 9
     public static ForgeConfigSpec.IntValue ArmorProtectionAmountsLeggings; // 7
     public static ForgeConfigSpec.IntValue ArmorProtectionAmountsBoots; // 4
+    public static ForgeConfigSpec.BooleanValue ArmorShowParticle; //false
+    public static ForgeConfigSpec.BooleanValue ArmorShowIcon; //false
 
     static {
         final ForgeConfigSpec.Builder config = new ForgeConfigSpec.Builder();
@@ -90,6 +92,8 @@ public class ModConfigs {
         ArmorProtectionAmountsChestplate = config.defineInRange("ArmorProtectionAmountsChestplate", 9, 0, 10000);
         ArmorProtectionAmountsLeggings = config.defineInRange("ArmorProtectionAmountsLeggings", 7, 0, 10000);
         ArmorProtectionAmountsBoots = config.defineInRange("ArmorProtectionAmountsBoots", 4, 0, 10000);
+        ArmorShowParticle = config.define("ArmorShowParticle", false);
+        ArmorShowIcon = config.define("ArmorShowIcon", false);
 
         config.pop();
 

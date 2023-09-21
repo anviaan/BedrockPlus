@@ -2,7 +2,8 @@ package net.anvian.bedrockplus.item;
 
 import net.anvian.bedrockplus.BedrockPlusMod;
 import net.anvian.bedrockplus.config.ModConfigs;
-import net.anvian.bedrockplus.item.custom.ModArmorItem;
+import net.anvian.bedrockplus.item.armor.ModArmorItem;
+import net.anvian.bedrockplus.item.armor.ModArmorMaterials;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
