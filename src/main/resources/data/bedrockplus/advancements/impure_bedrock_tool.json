@@ -1,8 +1,8 @@
 {
   "display": {
     "icon": {"item": "bedrockplus:impurebedrock_sword"},
-    "title": "Powerful Tools",
-    "description": "Craft all the impure bedrock tools",
+    "title": {"translate": "advancements.bedrockplus.tool.title"},
+    "description": {"translate": "advancements.bedrockplus.tool.descr"},
     "frame": "challenge",
     "show_toast": true,
     "annouce_to_chat": true

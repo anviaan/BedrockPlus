@@ -1,8 +1,8 @@
 {
   "display": {
     "icon": {"item": "bedrockplus:impure_bedrock"},
-    "title": "Bedrock Plus Mod",
-    "description": "A very resistant mineral",
+    "title": {"translate": "advancements.bedrockplus.root.title"},
+    "description": {"translate": "advancements.bedrockplus.root.descr"},
     "frame": "task",
     "show_toast": true,
     "annouce_to_chat": true,

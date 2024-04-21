@@ -1,8 +1,8 @@
 {
   "display": {
     "icon": {"item": "bedrockplus:impurebedrock_hoe"},
-    "title": "Serious seriously dedication ",
-    "description": "Craft a impure bedrock hoe",
+    "title": {"translate": "advancements.bedrockplus.hoe.title"},
+    "description": {"translate": "advancements.bedrockplus.hoe.descr"},
     "frame": "challenge",
     "show_toast": true,
     "annouce_to_chat": true

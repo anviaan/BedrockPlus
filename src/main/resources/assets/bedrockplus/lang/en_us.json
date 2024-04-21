@@ -1,4 +1,17 @@
 {
+  "advancements.bedrockplus.root.title": "Bedrock Plus Mod",
+  "advancements.bedrockplus.root.descr": "A very resistant mineral",
+  "advancements.bedrockplus.armor.title": "You feel powerful",
+  "advancements.bedrockplus.armor.descr": "Wear a impure bedrock armor",
+  "advancements.bedrockplus.ingot.title": "A very hard mineral",
+  "advancements.bedrockplus.ingot.descr": "Craft a bedrock impure ingot",
+  "advancements.bedrockplus.scrap.title": "Get a bedrock impure scrap",
+  "advancements.bedrockplus.scrap.descr": "Smelt a impure bedrock",
+  "advancements.bedrockplus.tool.title": "Powerful Tools",
+  "advancements.bedrockplus.tool.descr": "Craft all the impure bedrock tools",
+  "advancements.bedrockplus.hoe.title": "Serious seriously dedication",
+  "advancements.bedrockplus.hoe.descr": "Craft a impure bedrock hoe",
+
   "itemGroup.bedrockplus.impure_bedrock": "Bedrock Plus Mod",
 
   "item.bedrockplus.impure_bedrock_ingot": "Impure bedrock ingot",
