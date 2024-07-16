@@ -3,8 +3,12 @@
     "icon": {
       "id": "bedrockplus:impurebedrock_hoe"
     },
-    "title": {"translate": "advancements.bedrockplus.hoe.title"},
-    "description": {"translate": "advancements.bedrockplus.hoe.descr"},
+    "title": {
+      "translate": "advancements.bedrockplus.hoe.title"
+    },
+    "description": {
+      "translate": "advancements.bedrockplus.hoe.descr"
+    },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true

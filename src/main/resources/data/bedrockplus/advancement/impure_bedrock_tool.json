@@ -3,8 +3,12 @@
     "icon": {
       "id": "bedrockplus:impurebedrock_sword"
     },
-    "title": {"translate": "advancements.bedrockplus.tool.title"},
-    "description": {"translate": "advancements.bedrockplus.tool.descr"},
+    "title": {
+      "translate": "advancements.bedrockplus.tool.title"
+    },
+    "description": {
+      "translate": "advancements.bedrockplus.tool.descr"
+    },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true

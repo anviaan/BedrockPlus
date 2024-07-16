@@ -3,8 +3,12 @@
     "icon": {
       "id": "bedrockplus:impurebedrock_helmet"
     },
-    "title": {"translate": "advancements.bedrockplus.armor.title"},
-    "description": {"translate": "advancements.bedrockplus.armor.descr"},
+    "title": {
+      "translate": "advancements.bedrockplus.armor.title"
+    },
+    "description": {
+      "translate": "advancements.bedrockplus.armor.descr"
+    },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true

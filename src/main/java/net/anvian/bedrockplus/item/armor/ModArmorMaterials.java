@@ -42,6 +42,6 @@ public class ModArmorMaterials {
     }
 
     private static Holder<ArmorMaterial> register(String string, EnumMap<Type, Integer> defense, int i, Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, ResourceLocation.tryBuild(BedrockPlusMod.MOD_ID, string), new ArmorMaterial(defense, i, holder, supplier, List.of(new ArmorMaterial.Layer(ResourceLocation.tryBuild(BedrockPlusMod.MOD_ID, string))), f, g));
+        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, ResourceLocation.fromNamespaceAndPath(BedrockPlusMod.MOD_ID, string), new ArmorMaterial(defense, i, holder, supplier, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(BedrockPlusMod.MOD_ID, string))), f, g));
     }
 }

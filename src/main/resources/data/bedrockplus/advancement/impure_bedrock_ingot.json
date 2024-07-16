@@ -1,15 +1,19 @@
 {
   "display": {
     "icon": {
-      "id": "bedrockplus:impure_bedrock_scrap"
+      "id": "bedrockplus:impure_bedrock_ingot"
     },
-    "title": {"translate": "advancements.bedrockplus.scrap.title"},
-    "description": {"translate": "advancements.bedrockplus.scrap.descr"},
+    "title": {
+      "translate": "advancements.bedrockplus.ingot.title"
+    },
+    "description": {
+      "translate": "advancements.bedrockplus.ingot.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
   },
-  "parent": "bedrockplus:bedrockplus",
+  "parent": "bedrockplus:impure_bedrock_scrap",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -17,7 +21,7 @@
         "items": [
           {
             "items": [
-              "bedrockplus:impure_bedrock_scrap"
+              "bedrockplus:impure_bedrock_ingot"
             ]
           }
         ]
