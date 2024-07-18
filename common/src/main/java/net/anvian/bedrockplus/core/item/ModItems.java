@@ -33,7 +33,7 @@ public class ModItems {
             .fireResistant()
             .attributes(PickaxeItem.createAttributes(
                     ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed)
+                    ModConfigs.pickaxeAttackDamage, (float) ModConfigs.pickaxeAttackSpeed)
             )
     );
 
@@ -42,7 +42,7 @@ public class ModItems {
             .fireResistant()
             .attributes(AxeItem.createAttributes(
                     ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed)
+                    ModConfigs.axeAttackDamage, (float) ModConfigs.axeAttackSpeed)
             )
     );
 
@@ -51,7 +51,7 @@ public class ModItems {
             .fireResistant()
             .attributes(ShovelItem.createAttributes(
                     ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed)
+                    (float) ModConfigs.shovelAttackDamage, (float) ModConfigs.shovelAttackSpeed)
             )
     );
 
@@ -60,7 +60,7 @@ public class ModItems {
             .fireResistant()
             .attributes(HoeItem.createAttributes(
                     ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed)
+                    ModConfigs.hoeAttackDamage, (float) ModConfigs.hoeAttackSpeed)
             )
     );
 
