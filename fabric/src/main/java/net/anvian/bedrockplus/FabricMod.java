@@ -5,6 +5,7 @@ import net.anvian.bedrockplus.core.ModTab;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.registry.ModBlockRegistry;
 import net.anvian.bedrockplus.core.registry.ModItemRegistry;
+import net.anvian.bedrockplus.core.registry.ModWorldRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraftforge.fml.config.ModConfig;
@@ -21,5 +22,7 @@ public class FabricMod implements ModInitializer {
         ModBlockRegistry.registerBlocks();
         ModItemRegistry.registerItems();
         ModTab.registerTab();
+
+        ModWorldRegistry.register();
     }
 }
