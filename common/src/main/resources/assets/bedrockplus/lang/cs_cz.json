@@ -1,0 +1,40 @@
+{
+  "itemGroup.impure_bedrock": "Podloží Plus Mód",
+
+  "advancements.bedrockplus.root.title": "Podloží Plus Mód",
+  "advancements.bedrockplus.root.descr": "Velice odolný minerál",
+  "advancements.bedrockplus.armor.title": "Cítíš se mocně",
+  "advancements.bedrockplus.armor.descr": "Nos nečisté podložní brnění",
+  "advancements.bedrockplus.ingot.title": "velice tvrdý minerál",
+  "advancements.bedrockplus.ingot.descr": "Vyrob nečistý podložní ingot",
+  "advancements.bedrockplus.scrap.title": "Získej nečistý podložní plátek",
+  "advancements.bedrockplus.scrap.descr": "Vypal nečisté podloží",
+  "advancements.bedrockplus.tool.title": "Mocné Nástroje",
+  "advancements.bedrockplus.tool.descr": "Vyrob všechny nečisté podložní nástroje",
+  "advancements.bedrockplus.hoe.title": "Silně silná závislost",
+  "advancements.bedrockplus.hoe.descr": "Vyrob nečistou podložní motyku",
+
+  "item.bedrockplus.impure_bedrock_ingot": "Nečistý podložní ingot",
+  "item.bedrockplus.impure_bedrock_scrap" : "Nečistý podložní plátek",
+  "item.bedrockplus.impure_bedrock_upgrade_smithing_template": "Nečistý podložní vylepšující kovačská předloha",
+
+  "upgrade.bedrockplus.impure_bedrock_upgrade": "Nečistě podložní vylepšení",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.applies_to": "Netheritové nástroje, zbraně a brnění",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.ingredients": "Nečistý podložní ingot",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.base_slot_description": "Přidej netherit na nástroj, zbraň nebo brnění",
+  "item.bedrockplus.smithing_template.impure_bedrock_upgrade.additions_slot_description": "Přidej nečistý podložní ingot",
+
+  "item.bedrockplus.impurebedrock_helmet" : "Nečistá podložní helma",
+  "item.bedrockplus.impurebedrock_chestplate" : "Nečistá podložní pancíř",
+  "item.bedrockplus.impurebedrock_leggings" : "Nečisté podložní kalhoty",
+  "item.bedrockplus.impurebedrock_boots" : "Nečisté podložní boty",
+
+  "item.bedrockplus.impurebedrock_sword" : "Nečistý podložní meč",
+  "item.bedrockplus.impurebedrock_axe" : "Nečistá podložní sekera",
+  "item.bedrockplus.impurebedrock_hoe" : "Nečistá podložní motyka",
+  "item.bedrockplus.impurebedrock_shovel" : "Nečistá podložní lopata",
+  "item.bedrockplus.impurebedrock_pickaxe" : "Nečistý podložní krumpáč",
+
+  "block.bedrockplus.impure_bedrock": "Nečistá podložní břidlice",
+  "block.bedrockplus.impure_bedrock_block" : "Nečistý podložní blok"
+}
