@@ -18,7 +18,7 @@ public class ModBlocks {
                     .strength((float) ModConfigs.bedrockImpureDeepslateHardness,
                             (float) ModConfigs.bedrockImpureDeepslateResistance)
                     .requiresCorrectToolForDrops()
-                    .setId(key("impure_bedrock"))
+                    .setId(key(Constants.IMPURE_BEDROCK_ID))
     );
 
     public static final Block IMPURE_BEDROCK_BLOCK = new Block(
@@ -27,7 +27,7 @@ public class ModBlocks {
                     .strength((float) ModConfigs.blockOfImpureBedrockHardness,
                             (float) ModConfigs.blockOfImpureBedrockResistance)
                     .requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)
-                    .setId(key("impure_bedrock_block"))
+                    .setId(key(Constants.IMPURE_BEDROCK_BLOCK_ID))
     );
 
     private static ResourceKey<Block> key(String name) {

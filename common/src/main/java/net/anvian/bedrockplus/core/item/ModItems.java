@@ -1,81 +1,45 @@
 package net.anvian.bedrockplus.core.item;
 
+import net.anvian.bedrockplus.Constants;
 import net.anvian.bedrockplus.core.block.ModBlocks;
 import net.anvian.bedrockplus.core.config.ModConfigs;
-import net.anvian.bedrockplus.core.item.armor.ImpureBedrockSmithingTemplateItem;
-import net.anvian.bedrockplus.core.item.armor.ModArmorItem;
-import net.anvian.bedrockplus.core.item.armor.ModArmorMaterials;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 
 public class ModItems {
     //blocks
-    public static final BlockItem IMPURE_BEDROCK = new BlockItem(ModBlocks.IMPURE_BEDROCK, new Item.Properties());
-    public static final BlockItem IMPURE_BEDROCK_BLOCK = new BlockItem(ModBlocks.IMPURE_BEDROCK_BLOCK, new Item.Properties());
+    public static final BlockItem IMPURE_BEDROCK = new BlockItem(ModBlocks.IMPURE_BEDROCK, new Item.Properties().useBlockDescriptionPrefix().setId(key(Constants.IMPURE_BEDROCK_ID)));
+    public static final BlockItem IMPURE_BEDROCK_BLOCK = new BlockItem(ModBlocks.IMPURE_BEDROCK_BLOCK, new Item.Properties().useBlockDescriptionPrefix().setId(key(Constants.IMPURE_BEDROCK_BLOCK_ID)));
 
     //items
-    public static final Item IMPURE_BEDROCK_INGOT = new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item IMPURE_BEDROCK_SCRAP = new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item IMPURE_BEDROCK_UPGRADE_SMITHING_TEMPLATE = ImpureBedrockSmithingTemplateItem.createImpureBedrockUpgradeTemplate();
+    public static final Item IMPURE_BEDROCK_INGOT = new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant().setId(key(Constants.IMPURE_BEDROCK_INGOT_ID)));
+    public static final Item IMPURE_BEDROCK_SCRAP = new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant().setId(key(Constants.IMPURE_BEDROCK_SCRAP_ID)));
 
     //tools
 
     public static final Item IMPUREBEDROCK_SWORD = new SwordItem(
-            ModTiers.IMPURE_BEDROCK, new Item.Properties()
-            .fireResistant()
-            .attributes(SwordItem.createAttributes(
-                    ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed)
-            )
+            ModToolMaterial.IMPURE_BEDROCK, ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_SWORD_ID))
     );
 
     public static final Item IMPUREBEDROCK_PICKAXE = new PickaxeItem(
-            ModTiers.IMPURE_BEDROCK, new Item.Properties()
-            .fireResistant()
-            .attributes(PickaxeItem.createAttributes(
-                    ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.pickaxeAttackDamage, (float) ModConfigs.pickaxeAttackSpeed)
-            )
+            ModToolMaterial.IMPURE_BEDROCK, (float) ModConfigs.pickaxeAttackDamage, (float) ModConfigs.pickaxeAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_PICKAXE_ID))
     );
 
     public static final Item IMPUREBEDROCK_AXE = new AxeItem(
-            ModTiers.IMPURE_BEDROCK, new Item.Properties()
-            .fireResistant()
-            .attributes(AxeItem.createAttributes(
-                    ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.axeAttackDamage, (float) ModConfigs.axeAttackSpeed)
-            )
+            ModToolMaterial.IMPURE_BEDROCK, (float) ModConfigs.axeAttackDamage, (float) ModConfigs.axeAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_AXE_ID))
     );
 
     public static final Item IMPUREBEDROCK_SHOVEL = new ShovelItem(
-            ModTiers.IMPURE_BEDROCK, new Item.Properties()
-            .fireResistant()
-            .attributes(ShovelItem.createAttributes(
-                    ModTiers.IMPURE_BEDROCK,
-                    (float) ModConfigs.shovelAttackDamage, (float) ModConfigs.shovelAttackSpeed)
-            )
+            ModToolMaterial.IMPURE_BEDROCK, (float) ModConfigs.shovelAttackDamage, (float) ModConfigs.shovelAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_SHOVEL_ID))
     );
 
     public static final Item IMPUREBEDROCK_HOE = new HoeItem(
-            ModTiers.IMPURE_BEDROCK, new Item.Properties()
-            .fireResistant()
-            .attributes(HoeItem.createAttributes(
-                    ModTiers.IMPURE_BEDROCK,
-                    ModConfigs.hoeAttackDamage, (float) ModConfigs.hoeAttackSpeed)
-            )
+            ModToolMaterial.IMPURE_BEDROCK, ModConfigs.hoeAttackDamage, (float) ModConfigs.hoeAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_HOE_ID))
     );
 
-    //armor
-    public static final Item IMPURE_BEDROCK_HELMET = new ModArmorItem(
-            ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().stacksTo(1)
-    );
-    public static final Item IMPURE_BEDROCK_CHESTPLATE = new ModArmorItem(
-            ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().stacksTo(1)
-    );
-    public static final Item IMPURE_BEDROCK_LEGGINGS = new ModArmorItem(
-            ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().stacksTo(1)
-    );
-    public static final Item IMPURE_BEDROCK_BOOTS = new ModArmorItem(
-            ModArmorMaterials.IMPUREBEDROCK, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().stacksTo(1)
-    );
-
+    private static ResourceKey<Item> key(String name) {
+        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
+    }
 }
