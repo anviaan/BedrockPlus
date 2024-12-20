@@ -1,8 +1,7 @@
 {
   "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "bedrockplus:impure_bedrock"
-  },
+  "category": "misc",
+  "ingredient": "bedrockplus:impure_bedrock",
   "result": {
     "id": "bedrockplus:impure_bedrock_scrap"
   },

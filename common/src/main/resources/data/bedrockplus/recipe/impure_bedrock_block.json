@@ -1,17 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "bedrockplus:impure_bedrock_ingot"
-    }
-  },
+  "category": "building",
   "pattern": [
     "###",
     "###",
     "###"
   ],
+  "key": {
+    "#": [
+      "bedrockplus:impure_bedrock_ingot"
+    ]
+  },
   "result": {
     "id": "bedrockplus:impure_bedrock_block",
     "count": 1
-  }
+  },
+  "show_notification": true
 }

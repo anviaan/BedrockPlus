@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     "#"
   ],
   "key": {
-    "#": {
-      "item": "bedrockplus:impure_bedrock_block"
-    }
+    "#": [
+      "bedrockplus:impure_bedrock_block"
+    ]
   },
   "result": {
     "id": "bedrockplus:impure_bedrock_ingot",
