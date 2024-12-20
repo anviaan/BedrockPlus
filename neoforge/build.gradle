@@ -7,7 +7,7 @@ neoForge {
     version = neoforge_version
     def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
-        accessTransformers.add(at.absolutePath)
+        accessTransformers.from(at.absolutePath)
     }
     parchment {
         minecraftVersion = parchment_minecraft
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:21.0.1"
+    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:21.3.3"
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
