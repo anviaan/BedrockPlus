@@ -2,3 +2,12 @@ plugins {
     id 'fabric-loom' version '1.8-SNAPSHOT' apply false
     id 'net.neoforged.moddev' version '2.0.49-beta' apply false
 }
+
+tasks.register("printEnv") {
+    doLast {
+        def envFile = new File(System.getenv("GITHUB_ENV"))
+        envFile.append("MOD_VERSION=${project.mod_version}\n")
+        envFile.append("RELEASE_NAME=${project.archives_base_name}-${project.mod_version}\n")
+        envFile.append("GAME_VERSIONS=${project.minecraft_version_range}\n")
+    }
+}
