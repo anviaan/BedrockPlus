@@ -1,20 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     "#C#",
     "#C#",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:diamond"
-    },
-    "C": {
-      "item": "minecraft:cobbled_deepslate"
-    }
+    "#": [
+      "minecraft:diamond"
+    ],
+    "C": [
+      "minecraft:cobbled_deepslate"
+    ]
   },
   "result": {
     "id": "bedrockplus:impure_bedrock_upgrade_smithing_template",
     "count": 1
-  }
+  },
+  "show_notification": true
 }

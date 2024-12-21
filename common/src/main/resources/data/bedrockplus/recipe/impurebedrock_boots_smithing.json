@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "bedrockplus:impure_bedrock_ingot"
-  },
-  "base": {
-    "item": "minecraft:netherite_boots"
-  },
+  "base": "minecraft:netherite_boots",
+  "addition": "bedrockplus:impure_bedrock_ingot",
+  "template": "bedrockplus:impure_bedrock_upgrade_smithing_template",
   "result": {
     "id": "bedrockplus:impurebedrock_boots"
-  },
-  "template": {
-    "item": "bedrockplus:impure_bedrock_upgrade_smithing_template"
   }
 }

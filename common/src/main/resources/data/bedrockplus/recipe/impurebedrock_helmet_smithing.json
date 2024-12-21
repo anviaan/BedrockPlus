@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "bedrockplus:impure_bedrock_ingot"
-  },
-  "base": {
-    "item": "minecraft:netherite_helmet"
-  },
+  "base": "minecraft:netherite_helmet",
+  "addition": "bedrockplus:impure_bedrock_ingot",
+  "template": "bedrockplus:impure_bedrock_upgrade_smithing_template",
   "result": {
     "id": "bedrockplus:impurebedrock_helmet"
-  },
-  "template": {
-    "item": "bedrockplus:impure_bedrock_upgrade_smithing_template"
   }
 }

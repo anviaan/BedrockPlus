@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "bedrockplus:impure_bedrock_ingot"
-  },
-  "base": {
-    "item": "minecraft:netherite_hoe"
-  },
+  "base": "minecraft:netherite_hoe",
+  "addition": "bedrockplus:impure_bedrock_ingot",
+  "template": "bedrockplus:impure_bedrock_upgrade_smithing_template",
   "result": {
     "id": "bedrockplus:impurebedrock_hoe"
-  },
-  "template": {
-    "item": "bedrockplus:impure_bedrock_upgrade_smithing_template"
   }
 }
