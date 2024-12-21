@@ -2,14 +2,17 @@ package net.anvian.bedrockplus.core.item.armor;
 
 import com.google.common.collect.ImmutableMap;
 import net.anvian.bedrockplus.core.config.ModConfigs;
-import net.minecraft.core.Holder;
+import net.anvian.bedrockplus.core.item.ModMaterials;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.Level;
 
 import java.util.Map;
@@ -17,11 +20,11 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.IMPUREBEDROCK.value(),
+                    .put(ModMaterials.Armor.IMPURE_BEDROCK,
                             new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0, false, ModConfigs.armorShowParticle, ModConfigs.armorShowIcon)).build();
 
-    public ModArmorItem(Holder<ArmorMaterial> p_329451_, Type p_266831_, Properties p_40388_) {
-        super(p_329451_, p_266831_, p_40388_);
+    public ModArmorItem(ArmorMaterial armorMaterial, ArmorType armorType, Properties properties) {
+        super(armorMaterial, armorType, properties);
     }
 
     @Override
@@ -64,16 +67,23 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
-        ItemStack boots = player.getInventory().getArmor(0);
-        ItemStack leggings = player.getInventory().getArmor(1);
-        ItemStack breastplate = player.getInventory().getArmor(2);
-        ItemStack helmet = player.getInventory().getArmor(3);
+        for (ItemStack armorStack: player.getInventory().armor) {
+            if(!(armorStack.getItem() instanceof ArmorItem)) {
+                return false;
+            }
+        }
 
-        return isArmorMaterial(helmet, material) && isArmorMaterial(breastplate, material) &&
-                isArmorMaterial(leggings, material) && isArmorMaterial(boots, material);
-    }
+        ArmorItem boots = ((ArmorItem)player.getInventory().getArmor(0).getItem());
+        ArmorItem leggings = ((ArmorItem)player.getInventory().getArmor(1).getItem());
+        ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmor(2).getItem());
+        ArmorItem helmet = ((ArmorItem)player.getInventory().getArmor(3).getItem());
 
-    private boolean isArmorMaterial(ItemStack stack, ArmorMaterial material) {
-        return (stack.getItem() instanceof ArmorItem) && ((ArmorItem) stack.getItem()).getMaterial().value() == material;
+        Equippable equippableComponentBoots = boots.components().get(DataComponents.EQUIPPABLE);
+        Equippable equippableComponentLeggings = leggings.components().get(DataComponents.EQUIPPABLE);
+        Equippable equippableComponentBreastplate = breastplate.components().get(DataComponents.EQUIPPABLE);
+        Equippable equippableComponentHelmet = helmet.components().get(DataComponents.EQUIPPABLE);
+
+        return equippableComponentBoots.model().get().equals(material.modelId()) && equippableComponentLeggings.model().get().equals(material.modelId()) &&
+                equippableComponentBreastplate.model().get().equals(material.modelId()) && equippableComponentHelmet.model().get().equals(material.modelId());
     }
 }

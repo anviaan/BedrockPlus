@@ -38,6 +38,7 @@ public class ModConfigs {
     private static final ForgeConfigSpec.DoubleValue HoeAttackSpeed = BUILDER.defineInRange("HoeAttackSpeed", 0, -10000.0, 1000.0);
 
     //armor
+    private static final ForgeConfigSpec.IntValue ArmorDurability = BUILDER.defineInRange("ArmorDurability", 47, 1, 10000);
     private static final ForgeConfigSpec.IntValue ArmorEnchantability = BUILDER.defineInRange("ArmorEnchantability", 22, 0, 10000);
     private static final ForgeConfigSpec.DoubleValue ArmorToughness = BUILDER.defineInRange("ArmorToughness", 4d, 0, 10000);
     private static final ForgeConfigSpec.DoubleValue ArmorKnockbackResistance = BUILDER.defineInRange("ArmorKnockbackResistance", 0.2, 0, 5.0);
@@ -69,6 +70,7 @@ public class ModConfigs {
     public static double shovelAttackSpeed;
     public static int hoeAttackDamage;
     public static double hoeAttackSpeed;
+    public static int armorDurability;
     public static int armorEnchantability;
     public static double armorToughness;
     public static double armorKnockbackResistance;
@@ -110,6 +112,7 @@ public class ModConfigs {
         hoeAttackDamage = HoeAttackDamage.get();
         hoeAttackSpeed = HoeAttackSpeed.get();
 
+        armorDurability = ArmorDurability.get();
         armorEnchantability = ArmorEnchantability.get();
         armorToughness = ArmorToughness.get();
         armorKnockbackResistance = ArmorKnockbackResistance.get();
