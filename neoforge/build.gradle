@@ -22,7 +22,7 @@ neoForge {
             client()
         }
         data {
-            data()
+            clientData()
         }
         server {
             server()
@@ -35,15 +35,9 @@ neoForge {
     }
 }
 
-repositories {
-    maven {
-        name = "Fuzs Mod Resources"
-        url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
-    }
-}
-
 dependencies {
-    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:21.3.3"
+    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:${forge_config_api_port_version}"
+    implementation "net.anvian.anvianslib:anvianslib-neoforge-1.21:${project.anvianslib_version}"
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
