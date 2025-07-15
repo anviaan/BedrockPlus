@@ -3,12 +3,15 @@ package net.anvian.bedrockplus.core.item;
 import net.anvian.bedrockplus.Constants;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.util.ModTags;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
 
 import java.util.EnumMap;
 
@@ -25,6 +28,9 @@ public class ModMaterials {
     }
 
     public interface Armor {
+        ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = ResourceKey.createRegistryKey(ResourceLocation.withDefaultNamespace("equipment_asset"));
+        ResourceKey<EquipmentAsset> IMPURE_BEDROCK_KEY = ResourceKey.create(REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "impurebedrock"));
+
         ArmorMaterial IMPURE_BEDROCK = new ArmorMaterial(
                 ModConfigs.armorDurability,
                 createMap(new int[]{
@@ -38,7 +44,7 @@ public class ModMaterials {
                 (float) ModConfigs.armorToughness,
                 (float) ModConfigs.armorKnockbackResistance,
                 ModTags.Items.IMPURE_BEDROCK,
-                ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "impurebedrock"));
+                IMPURE_BEDROCK_KEY);
 
         private static EnumMap<ArmorType, Integer> createMap(int[] values) {
             EnumMap<ArmorType, Integer> enumMap = new EnumMap<>(ArmorType.class);

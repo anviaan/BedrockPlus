@@ -1,6 +1,6 @@
 package net.anvian.bedrockplus;
 
-import fuzs.forgeconfigapiport.neoforge.api.forge.v4.ForgeConfigRegistry;
+import fuzs.forgeconfigapiport.neoforge.api.v5.ForgeConfigRegistry;
 import net.anvian.bedrockplus.core.ModTab;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.registry.ModBlockRegistry;
@@ -16,8 +16,8 @@ public class NeoForgeMod {
         Constants.LOG.info("Hello from " + Constants.MOD_ID + " (Neoforge)");
         CommonMod.init();
 
-        ForgeConfigRegistry.INSTANCE.register(Constants.MOD_ID, ModConfig.Type.SERVER, ModConfigs.SPEC, Constants.MOD_ID + "-config.toml");
-        ModConfigs.loadConfig(ModConfigs.SPEC, FMLPaths.CONFIGDIR.get().resolve(Constants.MOD_ID + "-config.toml"));
+        ForgeConfigRegistry.INSTANCE.register(Constants.MOD_ID, ModConfig.Type.SERVER, ModConfigs.SPEC, Constants.MOD_ID + "/" + Constants.MOD_ID + "-config.toml");
+        ModConfigs.loadConfig(ModConfigs.SPEC, FMLPaths.CONFIGDIR.get().resolve(Constants.MOD_ID).resolve(Constants.MOD_ID + "-config.toml"));
 
         ModBlockRegistry.BLOCKS.register(eventBus);
         ModItemRegistry.ITEMS.register(eventBus);

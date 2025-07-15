@@ -4,34 +4,38 @@ import com.google.common.collect.ImmutableMap;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.item.ModMaterials;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.Equippable;
-import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
-public class ModArmorItem extends ArmorItem {
+public class ModArmorItem extends Item {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ModMaterials.Armor.IMPURE_BEDROCK,
-                            new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0, false, ModConfigs.armorShowParticle, ModConfigs.armorShowIcon)).build();
+                            new MobEffectInstance(MobEffects.RESISTANCE, 200, 0, false, ModConfigs.armorShowParticle, ModConfigs.armorShowIcon)).build();
 
-    public ModArmorItem(ArmorMaterial armorMaterial, ArmorType armorType, Properties properties) {
-        super(armorMaterial, armorType, properties);
+    public ModArmorItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int $$3, boolean $$4) {
-        if (!level.isClientSide()) {
-            if (hasFullSuitOfArmorOn((Player) entity)) {
-                evaluateArmorEffects((Player) entity);
+    public void inventoryTick(@NotNull ItemStack itemStack, ServerLevel serverLevel, @NotNull Entity entity, @Nullable EquipmentSlot equipmentSlot) {
+        if (!serverLevel.isClientSide()) {
+            if (entity instanceof Player player) {
+                if (hasFullSuitOfArmorOn(player)) {
+                    evaluateArmorEffects(player);
+                }
             }
         }
     }
@@ -57,33 +61,34 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private boolean hasFullSuitOfArmorOn(Player player) {
-        ItemStack boots = player.getInventory().getArmor(0);
-        ItemStack leggings = player.getInventory().getArmor(1);
-        ItemStack breastplate = player.getInventory().getArmor(2);
-        ItemStack helmet = player.getInventory().getArmor(3);
+        ItemStack boots = player.getInventory().getItem(EquipmentSlot.FEET.getIndex());
+        ItemStack leggings = player.getInventory().getItem(EquipmentSlot.LEGS.getIndex());
+        ItemStack chestplate = player.getInventory().getItem(EquipmentSlot.CHEST.getIndex());
+        ItemStack helmet = player.getInventory().getItem(EquipmentSlot.HEAD.getIndex());
 
-        return !helmet.isEmpty() && !breastplate.isEmpty()
+        return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
-        for (ItemStack armorStack: player.getInventory().armor) {
-            if(!(armorStack.getItem() instanceof ArmorItem)) {
-                return false;
-            }
+        ItemStack boots = player.getInventory().getItem(EquipmentSlot.FEET.getIndex());
+        ItemStack leggings = player.getInventory().getItem(EquipmentSlot.LEGS.getIndex());
+        ItemStack chestplate = player.getInventory().getItem(EquipmentSlot.CHEST.getIndex());
+        ItemStack helmet = player.getInventory().getItem(EquipmentSlot.HEAD.getIndex());
+
+        Equippable equippableComponentBoots = boots.getComponents().get(DataComponents.EQUIPPABLE);
+        Equippable equippableComponentLeggings = leggings.getComponents().get(DataComponents.EQUIPPABLE);
+        Equippable equippableComponentBreastplate = chestplate.getComponents().get(DataComponents.EQUIPPABLE);
+        Equippable equippableComponentHelmet = helmet.getComponents().get(DataComponents.EQUIPPABLE);
+
+        if (equippableComponentBoots == null || equippableComponentLeggings == null ||
+            equippableComponentBreastplate == null || equippableComponentHelmet == null) {
+            return false;
         }
 
-        ArmorItem boots = ((ArmorItem)player.getInventory().getArmor(0).getItem());
-        ArmorItem leggings = ((ArmorItem)player.getInventory().getArmor(1).getItem());
-        ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmor(2).getItem());
-        ArmorItem helmet = ((ArmorItem)player.getInventory().getArmor(3).getItem());
-
-        Equippable equippableComponentBoots = boots.components().get(DataComponents.EQUIPPABLE);
-        Equippable equippableComponentLeggings = leggings.components().get(DataComponents.EQUIPPABLE);
-        Equippable equippableComponentBreastplate = breastplate.components().get(DataComponents.EQUIPPABLE);
-        Equippable equippableComponentHelmet = helmet.components().get(DataComponents.EQUIPPABLE);
-
-        return equippableComponentBoots.model().get().equals(material.modelId()) && equippableComponentLeggings.model().get().equals(material.modelId()) &&
-                equippableComponentBreastplate.model().get().equals(material.modelId()) && equippableComponentHelmet.model().get().equals(material.modelId());
+        return equippableComponentBoots.assetId().get().equals(material.assetId()) &&
+               equippableComponentLeggings.assetId().get().equals(material.assetId()) &&
+               equippableComponentBreastplate.assetId().get().equals(material.assetId()) &&
+               equippableComponentHelmet.assetId().get().equals(material.assetId());
     }
 }

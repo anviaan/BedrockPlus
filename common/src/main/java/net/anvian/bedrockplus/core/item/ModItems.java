@@ -8,7 +8,12 @@ import net.anvian.bedrockplus.core.item.armor.ModArmorItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.equipment.ArmorType;
 
 public class ModItems {
@@ -23,12 +28,12 @@ public class ModItems {
 
     //tools
 
-    public static final Item IMPUREBEDROCK_SWORD = new SwordItem(
-            ModMaterials.Tool.IMPURE_BEDROCK, ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_SWORD_ID))
+    public static final Item IMPUREBEDROCK_SWORD = new Item(
+            new Item.Properties().sword(ModMaterials.Tool.IMPURE_BEDROCK, ModConfigs.swordAttackDamage, (float) ModConfigs.swordAttackSpeed).fireResistant().setId(key(Constants.IMPUREBEDROCK_SWORD_ID))
     );
 
-    public static final Item IMPUREBEDROCK_PICKAXE = new PickaxeItem(
-            ModMaterials.Tool.IMPURE_BEDROCK, (float) ModConfigs.pickaxeAttackDamage, (float) ModConfigs.pickaxeAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_PICKAXE_ID))
+    public static final Item IMPUREBEDROCK_PICKAXE = new Item(
+            new Item.Properties().pickaxe(ModMaterials.Tool.IMPURE_BEDROCK, (float) ModConfigs.pickaxeAttackDamage, (float) ModConfigs.pickaxeAttackSpeed).fireResistant().setId(key(Constants.IMPUREBEDROCK_PICKAXE_ID))
     );
 
     public static final Item IMPUREBEDROCK_AXE = new AxeItem(
@@ -45,16 +50,16 @@ public class ModItems {
 
     //armor
     public static final Item IMPURE_BEDROCK_HELMET = new ModArmorItem(
-            ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.HELMET, new Item.Properties().fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_HELMET_ID))
+            new Item.Properties().humanoidArmor(ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.HELMET).fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_HELMET_ID))
     );
     public static final Item IMPURE_BEDROCK_CHESTPLATE = new ModArmorItem(
-            ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.CHESTPLATE, new Item.Properties().fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_CHESTPLATE_ID))
+            new Item.Properties().humanoidArmor(ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.CHESTPLATE).fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_CHESTPLATE_ID))
     );
     public static final Item IMPURE_BEDROCK_LEGGINGS = new ModArmorItem(
-            ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.LEGGINGS, new Item.Properties().fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_LEGGINGS_ID))
+            new Item.Properties().humanoidArmor(ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.LEGGINGS).fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_LEGGINGS_ID))
     );
     public static final Item IMPURE_BEDROCK_BOOTS = new ModArmorItem(
-            ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.BOOTS, new Item.Properties().fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_BOOTS_ID))
+            new Item.Properties().humanoidArmor(ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.BOOTS).fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_BOOTS_ID))
     );
 
     private static ResourceKey<Item> key(String name) {

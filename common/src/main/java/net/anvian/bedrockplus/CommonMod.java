@@ -1,11 +1,10 @@
 package net.anvian.bedrockplus;
 
-import net.anvian.bedrockplus.platform.Services;
+import net.anvian.anvianslib.util.LibUtil;
 
 public class CommonMod {
     public static void init() {
-        if (Services.PLATFORM.isModLoaded(Constants.MOD_ID)) {
-            Constants.LOG.info("Hello from " + Constants.MOD_ID);
-        }
+        Constants.LOG.info("Initializing {} version {}", Constants.MOD_NAME, Constants.MOD_VERSION);
+        LibUtil.setupTelemetry(Constants.MOD_ID, Constants.MOD_VERSION);
     }
 }
