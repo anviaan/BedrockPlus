@@ -1,6 +1,7 @@
 package net.anvian.bedrockplus.core.item.armor;
 
 import com.google.common.collect.ImmutableMap;
+import net.anvian.bedrockplus.CommonMod;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.item.ModMaterials;
 import net.minecraft.core.component.DataComponents;
@@ -20,10 +21,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 public class ModArmorItem extends Item {
+    private static final ModConfigs.BedrockPlusConfig config = CommonMod.configs.getConfig();
+
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ModMaterials.Armor.IMPURE_BEDROCK,
-                            new MobEffectInstance(MobEffects.RESISTANCE, 200, 0, false, ModConfigs.armorShowParticle, ModConfigs.armorShowIcon)).build();
+                            new MobEffectInstance(MobEffects.RESISTANCE, 200, 0, false, config.armorShowParticle, config.armorShowIcon)).build();
 
     public ModArmorItem(Properties properties) {
         super(properties);
@@ -82,13 +85,13 @@ public class ModArmorItem extends Item {
         Equippable equippableComponentHelmet = helmet.getComponents().get(DataComponents.EQUIPPABLE);
 
         if (equippableComponentBoots == null || equippableComponentLeggings == null ||
-            equippableComponentBreastplate == null || equippableComponentHelmet == null) {
+                equippableComponentBreastplate == null || equippableComponentHelmet == null) {
             return false;
         }
 
         return equippableComponentBoots.assetId().get().equals(material.assetId()) &&
-               equippableComponentLeggings.assetId().get().equals(material.assetId()) &&
-               equippableComponentBreastplate.assetId().get().equals(material.assetId()) &&
-               equippableComponentHelmet.assetId().get().equals(material.assetId());
+                equippableComponentLeggings.assetId().get().equals(material.assetId()) &&
+                equippableComponentBreastplate.assetId().get().equals(material.assetId()) &&
+                equippableComponentHelmet.assetId().get().equals(material.assetId());
     }
 }

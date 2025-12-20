@@ -1,5 +1,6 @@
 package net.anvian.bedrockplus.core.item;
 
+import net.anvian.bedrockplus.CommonMod;
 import net.anvian.bedrockplus.Constants;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.util.ModTags;
@@ -16,13 +17,15 @@ import net.minecraft.world.item.equipment.EquipmentAsset;
 import java.util.EnumMap;
 
 public class ModMaterials {
+    private static final ModConfigs.BedrockPlusConfig config = CommonMod.configs.getConfig();
+
     public interface Tool {
         ToolMaterial IMPURE_BEDROCK = new ToolMaterial(
                 BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
-                ModConfigs.toolDurability,
-                (float) ModConfigs.toolMiningSpeed,
-                (float) ModConfigs.toolAttackDamage,
-                ModConfigs.toolEnchantability,
+                config.toolDurability,
+                (float) config.toolMiningSpeed,
+                (float) config.toolAttackDamage,
+                config.toolEnchantability,
                 ModTags.Items.IMPURE_BEDROCK
         );
     }
@@ -32,17 +35,17 @@ public class ModMaterials {
         ResourceKey<EquipmentAsset> IMPURE_BEDROCK_KEY = ResourceKey.create(REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "impurebedrock"));
 
         ArmorMaterial IMPURE_BEDROCK = new ArmorMaterial(
-                ModConfigs.armorDurability,
+                config.armorDurability,
                 createMap(new int[]{
-                        ModConfigs.armorProtectionAmountsHelmet,
-                        ModConfigs.armorProtectionAmountsChestplate,
-                        ModConfigs.armorProtectionAmountsLeggings,
-                        ModConfigs.armorProtectionAmountsBoots,
-                        ModConfigs.armorProtectionAmountsBody}),
-                ModConfigs.armorEnchantability,
+                        config.armorProtectionAmountsHelmet,
+                        config.armorProtectionAmountsChestplate,
+                        config.armorProtectionAmountsLeggings,
+                        config.armorProtectionAmountsBoots,
+                        config.armorProtectionAmountsBody}),
+                config.armorEnchantability,
                 SoundEvents.ARMOR_EQUIP_NETHERITE,
-                (float) ModConfigs.armorToughness,
-                (float) ModConfigs.armorKnockbackResistance,
+                (float) config.armorToughness,
+                (float) config.armorKnockbackResistance,
                 ModTags.Items.IMPURE_BEDROCK,
                 IMPURE_BEDROCK_KEY);
 
