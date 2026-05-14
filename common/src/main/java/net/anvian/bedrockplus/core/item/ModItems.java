@@ -8,7 +8,7 @@ import net.anvian.bedrockplus.core.item.armor.ImpureBedrockSmithingTemplateItem;
 import net.anvian.bedrockplus.core.item.armor.ModArmorItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HoeItem;
@@ -64,6 +64,6 @@ public class ModItems {
     );
 
     private static ResourceKey<Item> key(String name) {
-        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, name));
     }
 }
