@@ -29,6 +29,7 @@
     "item.bedrockplus.impurebedrock_hoe" : "Azada impura de piedra madre",
     "item.bedrockplus.impurebedrock_shovel" : "Pala impura de piedra madre",
     "item.bedrockplus.impurebedrock_pickaxe" : "Pico impura de piedra madre",
+  "item.bedrockplus.impurebedrock_spear": "Impure Bedrock Spear",
     "block.bedrockplus.impure_bedrock": "Pizzara profunda impura de piedra madre",
     "block.bedrockplus.impure_bedrock_block" : "Bloque impuro de piedra Base"
 }

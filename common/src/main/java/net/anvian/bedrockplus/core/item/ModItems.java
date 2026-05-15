@@ -7,8 +7,8 @@ import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.item.armor.ImpureBedrockSmithingTemplateItem;
 import net.anvian.bedrockplus.core.item.armor.ModArmorItem;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HoeItem;
@@ -49,6 +49,13 @@ public class ModItems {
             ModMaterials.Tool.IMPURE_BEDROCK, config.hoeAttackDamage, (float) config.hoeAttackSpeed, new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_HOE_ID))
     );
 
+    public static final Item IMPUREBEDROCK_SPEAR = new Item(
+            new Item.Properties()
+                    .spear(ModMaterials.Tool.IMPURE_BEDROCK, 1.15f, 1.2f, 0.4f, 2.5f, 9.0f, 5.5f, 5.1f, 8.75f, 4.6f)
+                    .fireResistant()
+                    .setId(key(Constants.IMPUREBEDROCK_SPEAR_ID))
+    );
+
     //armor
     public static final Item IMPURE_BEDROCK_HELMET = new ModArmorItem(
             new Item.Properties().humanoidArmor(ModMaterials.Armor.IMPURE_BEDROCK, ArmorType.HELMET).fireResistant().stacksTo(1).setId(key(Constants.IMPUREBEDROCK_HELMET_ID))
@@ -64,6 +71,6 @@ public class ModItems {
     );
 
     private static ResourceKey<Item> key(String name) {
-        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, name));
     }
 }

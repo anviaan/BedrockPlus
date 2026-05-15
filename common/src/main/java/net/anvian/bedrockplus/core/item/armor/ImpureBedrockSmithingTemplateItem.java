@@ -2,10 +2,9 @@ package net.anvian.bedrockplus.core.item.armor;
 
 import net.anvian.bedrockplus.Constants;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SmithingTemplateItem;
@@ -20,41 +19,41 @@ public class ImpureBedrockSmithingTemplateItem extends Item {
     private static final ChatFormatting TITLE_FORMAT = ChatFormatting.GRAY;
     private static final ChatFormatting DESCRIPTION_FORMAT = ChatFormatting.BLUE;
     private static final Component INGREDIENTS_TITLE = Component.translatable(
-                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.ingredients"))
+                    Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.ingredients").toLanguageKey("item")
             )
             .withStyle(TITLE_FORMAT);
     private static final Component APPLIES_TO_TITLE = Component.translatable(
-                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.applies_to"))
+                    Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.applies_to").toLanguageKey("item")
             )
             .withStyle(TITLE_FORMAT);
     private static final Component SMITHING_TEMPLATE_SUFFIX = Component.translatable(
-                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template"))
+                    Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template").toLanguageKey("item")
             )
             .withStyle(TITLE_FORMAT);
     private static final Component IMPURE_BEDROCK_UPGRADE_APPLIES_TO = Component.translatable(
-                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.applies_to"))
+                    Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.applies_to").toLanguageKey("item")
             )
             .withStyle(DESCRIPTION_FORMAT);
     private static final Component IMPURE_BEDROCK_UPGRADE_INGREDIENTS = Component.translatable(
-                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.ingredients"))
+                    Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.ingredients").toLanguageKey("item")
             )
             .withStyle(DESCRIPTION_FORMAT);
     private static final Component IMPURE_BEDROCK_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(
-            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.base_slot_description"))
+            Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.base_slot_description").toLanguageKey("item")
     );
     private static final Component IMPURE_BEDROCK_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(
-            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.additions_slot_description"))
+            Identifier.fromNamespaceAndPath(Constants.MOD_ID, "smithing_template.impure_bedrock_upgrade.additions_slot_description").toLanguageKey("item")
     );
-    private static final ResourceLocation EMPTY_SLOT_HELMET = ResourceLocation.withDefaultNamespace("container/slot/helmet");
-    private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = ResourceLocation.withDefaultNamespace("container/slot/chestplate");
-    private static final ResourceLocation EMPTY_SLOT_LEGGINGS = ResourceLocation.withDefaultNamespace("container/slot/leggings");
-    private static final ResourceLocation EMPTY_SLOT_BOOTS = ResourceLocation.withDefaultNamespace("container/slot/boots");
-    private static final ResourceLocation EMPTY_SLOT_HOE = ResourceLocation.withDefaultNamespace("container/slot/hoe");
-    private static final ResourceLocation EMPTY_SLOT_AXE = ResourceLocation.withDefaultNamespace("container/slot/axe");
-    private static final ResourceLocation EMPTY_SLOT_SWORD = ResourceLocation.withDefaultNamespace("container/slot/sword");
-    private static final ResourceLocation EMPTY_SLOT_SHOVEL = ResourceLocation.withDefaultNamespace("container/slot/shovel");
-    private static final ResourceLocation EMPTY_SLOT_PICKAXE = ResourceLocation.withDefaultNamespace("container/slot/pickaxe");
-    private static final ResourceLocation EMPTY_SLOT_INGOT = ResourceLocation.withDefaultNamespace("container/slot/ingot");
+    private static final Identifier EMPTY_SLOT_HELMET = Identifier.withDefaultNamespace("container/slot/helmet");
+    private static final Identifier EMPTY_SLOT_CHESTPLATE = Identifier.withDefaultNamespace("container/slot/chestplate");
+    private static final Identifier EMPTY_SLOT_LEGGINGS = Identifier.withDefaultNamespace("container/slot/leggings");
+    private static final Identifier EMPTY_SLOT_BOOTS = Identifier.withDefaultNamespace("container/slot/boots");
+    private static final Identifier EMPTY_SLOT_HOE = Identifier.withDefaultNamespace("container/slot/hoe");
+    private static final Identifier EMPTY_SLOT_AXE = Identifier.withDefaultNamespace("container/slot/axe");
+    private static final Identifier EMPTY_SLOT_SWORD = Identifier.withDefaultNamespace("container/slot/sword");
+    private static final Identifier EMPTY_SLOT_SHOVEL = Identifier.withDefaultNamespace("container/slot/shovel");
+    private static final Identifier EMPTY_SLOT_PICKAXE = Identifier.withDefaultNamespace("container/slot/pickaxe");
+    private static final Identifier EMPTY_SLOT_INGOT = Identifier.withDefaultNamespace("container/slot/ingot");
 
     private final Component appliesTo;
     private final Component ingredients;
@@ -81,7 +80,7 @@ public class ImpureBedrockSmithingTemplateItem extends Item {
         );
     }
 
-    private static List<ResourceLocation> createImpureBedrockUpgradeIconList() {
+    private static List<Identifier> createImpureBedrockUpgradeIconList() {
         return List.of(
                 EMPTY_SLOT_HELMET,
                 EMPTY_SLOT_SWORD,
@@ -95,7 +94,7 @@ public class ImpureBedrockSmithingTemplateItem extends Item {
         );
     }
 
-    private static List<ResourceLocation> createImpureBedrockUpgradeMaterialList() {
+    private static List<Identifier> createImpureBedrockUpgradeMaterialList() {
         return List.of(EMPTY_SLOT_INGOT);
     }
 

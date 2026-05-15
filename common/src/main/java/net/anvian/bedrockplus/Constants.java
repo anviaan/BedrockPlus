@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public class Constants {
     public static final String MOD_ID = "bedrockplus";
     public static final String MOD_NAME = "BedrockPlus";
-    public static final String MOD_VERSION = "1.9.1";
+    public static final String MOD_VERSION = "1.10.0";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 
     // blocks
@@ -24,6 +24,7 @@ public class Constants {
     public static final String IMPUREBEDROCK_AXE_ID = "impurebedrock_axe";
     public static final String IMPUREBEDROCK_SHOVEL_ID = "impurebedrock_shovel";
     public static final String IMPUREBEDROCK_HOE_ID = "impurebedrock_hoe";
+    public static final String IMPUREBEDROCK_SPEAR_ID = "impurebedrock_spear";
 
     // armor
     public static final String IMPUREBEDROCK_HELMET_ID = "impurebedrock_helmet";

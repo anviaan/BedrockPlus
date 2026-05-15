@@ -6,7 +6,7 @@ import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.util.ModTags;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ToolMaterial;
@@ -31,8 +31,8 @@ public class ModMaterials {
     }
 
     public interface Armor {
-        ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = ResourceKey.createRegistryKey(ResourceLocation.withDefaultNamespace("equipment_asset"));
-        ResourceKey<EquipmentAsset> IMPURE_BEDROCK_KEY = ResourceKey.create(REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "impurebedrock"));
+        ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
+        ResourceKey<EquipmentAsset> IMPURE_BEDROCK_KEY = ResourceKey.create(REGISTRY_KEY, Identifier.fromNamespaceAndPath(Constants.MOD_ID, "impurebedrock"));
 
         ArmorMaterial IMPURE_BEDROCK = new ArmorMaterial(
                 config.armorDurability,

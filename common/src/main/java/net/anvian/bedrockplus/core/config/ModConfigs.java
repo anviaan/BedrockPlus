@@ -32,6 +32,8 @@ public class ModConfigs extends Config<ModConfigs.BedrockPlusConfig> {
         public double shovelAttackSpeed;
         public int hoeAttackDamage;
         public double hoeAttackSpeed;
+        public int spearAttackDamage;
+        public double spearAttackSpeed;
         public int armorDurability;
         public int armorEnchantability;
         public double armorToughness;
@@ -51,7 +53,7 @@ public class ModConfigs extends Config<ModConfigs.BedrockPlusConfig> {
             blockOfImpureBedrockResistance = 1200.0;
             toolDurability = 3046;
             toolMiningSpeed = 13.0;
-            toolAttackDamage = 6.0;
+            toolAttackDamage = 5.0;
             toolEnchantability = 22;
             swordAttackDamage = 5;
             swordAttackSpeed = -2.4;
@@ -63,6 +65,8 @@ public class ModConfigs extends Config<ModConfigs.BedrockPlusConfig> {
             shovelAttackSpeed = -3.0;
             hoeAttackDamage = -5;
             hoeAttackSpeed = 0.0;
+            spearAttackDamage = 8;
+            spearAttackSpeed = -2.6;
             armorDurability = 47;
             armorEnchantability = 22;
             armorToughness = 4.0;

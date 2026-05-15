@@ -23,6 +23,8 @@ public class ModItemRegistry {
     public static final RegistryObject<Item> IMPUREBEDROCK_SHOVEL = ITEMS.register(Constants.IMPUREBEDROCK_SHOVEL_ID, () -> ModItems.IMPUREBEDROCK_SHOVEL);
     public static final RegistryObject<Item> IMPUREBEDROCK_HOE = ITEMS.register(Constants.IMPUREBEDROCK_HOE_ID, () -> ModItems.IMPUREBEDROCK_HOE);
 
+    public static final RegistryObject<Item> IMPUREBEDROCK_SPEAR = ITEMS.register(Constants.IMPUREBEDROCK_SPEAR_ID, () -> ModItems.IMPUREBEDROCK_SPEAR);
+
     public static final RegistryObject<Item> IMPURE_BEDROCK_HELMET = ITEMS.register(Constants.IMPUREBEDROCK_HELMET_ID, () -> ModItems.IMPURE_BEDROCK_HELMET);
     public static final RegistryObject<Item> IMPURE_BEDROCK_CHESTPLATE = ITEMS.register(Constants.IMPUREBEDROCK_CHESTPLATE_ID, () -> ModItems.IMPURE_BEDROCK_CHESTPLATE);
     public static final RegistryObject<Item> IMPURE_BEDROCK_LEGGINGS = ITEMS.register(Constants.IMPUREBEDROCK_LEGGINGS_ID, () -> ModItems.IMPURE_BEDROCK_LEGGINGS);
