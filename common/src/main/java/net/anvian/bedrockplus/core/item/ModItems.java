@@ -51,7 +51,11 @@ public class ModItems {
 
     public static final Item IMPUREBEDROCK_SPEAR = new Item(
             new Item.Properties()
-                    .spear(ModMaterials.Tool.IMPURE_BEDROCK, 1.15f, 1.2f, 0.4f, 2.5f, 9.0f, 5.5f, 5.1f, 8.75f, 4.6f)
+                    .spear(ModMaterials.Tool.IMPURE_BEDROCK,
+                            config.spearAttackDuration, config.spearDamageMultiplier, config.spearDelay,
+                            config.spearDismountTime, config.spearDismountThreshold,
+                            config.spearKnockbackTime, config.spearKnockbackThreshold,
+                            config.spearDamageTime, config.spearDamageThreshold)
                     .fireResistant()
                     .setId(key(Constants.IMPUREBEDROCK_SPEAR_ID))
     );
