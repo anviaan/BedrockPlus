@@ -64,20 +64,20 @@ public class ModArmorItem extends Item {
     }
 
     private boolean hasFullSuitOfArmorOn(Player player) {
-        ItemStack boots = player.getInventory().getItem(EquipmentSlot.FEET.getIndex());
-        ItemStack leggings = player.getInventory().getItem(EquipmentSlot.LEGS.getIndex());
-        ItemStack chestplate = player.getInventory().getItem(EquipmentSlot.CHEST.getIndex());
-        ItemStack helmet = player.getInventory().getItem(EquipmentSlot.HEAD.getIndex());
+        ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+        ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+        ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+        ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
 
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
-        ItemStack boots = player.getInventory().getItem(EquipmentSlot.FEET.getIndex());
-        ItemStack leggings = player.getInventory().getItem(EquipmentSlot.LEGS.getIndex());
-        ItemStack chestplate = player.getInventory().getItem(EquipmentSlot.CHEST.getIndex());
-        ItemStack helmet = player.getInventory().getItem(EquipmentSlot.HEAD.getIndex());
+        ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+        ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+        ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+        ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
 
         Equippable equippableComponentBoots = boots.getComponents().get(DataComponents.EQUIPPABLE);
         Equippable equippableComponentLeggings = leggings.getComponents().get(DataComponents.EQUIPPABLE);

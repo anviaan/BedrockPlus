@@ -24,6 +24,7 @@ public class Constants {
     public static final String IMPUREBEDROCK_AXE_ID = "impurebedrock_axe";
     public static final String IMPUREBEDROCK_SHOVEL_ID = "impurebedrock_shovel";
     public static final String IMPUREBEDROCK_HOE_ID = "impurebedrock_hoe";
+    public static final String IMPUREBEDROCK_SPEAR_ID = "impurebedrock_spear";
 
     // armor
     public static final String IMPUREBEDROCK_HELMET_ID = "impurebedrock_helmet";

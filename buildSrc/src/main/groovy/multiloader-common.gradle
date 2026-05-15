@@ -104,14 +104,38 @@ processResources {
 
 publishing {
     publications {
-        register('mavenJava', MavenPublication) {
-            artifactId base.archivesName.get()
+        mavenJava(MavenPublication) {
+            artifactId = base.archivesName.get()
             from components.java
+            pom {
+                name = "anvian's Lib"
+                description = "A small utility library for Anvian's mods."
+                url = 'https://github.com/anviaan/anvians-lib/'
+                licenses {
+                    license {
+                        name = 'GNU GPLv3'
+                        url = 'https://github.com/anviaan/anvians-lib/blob/main/LICENSE'
+                        distribution = 'repo'
+                    }
+                }
+                developers {
+                    developer {
+                        name = 'anvian'
+                    }
+                }
+            }
         }
     }
     repositories {
         maven {
-            url System.getenv('local_maven_url')
+            name = "Reposilite"
+            url = uri(version.toString().endsWith("SNAPSHOT") ?
+                    "https://maven.anvian.net/snapshots" :
+                    "https://maven.anvian.net/releases")
+            credentials {
+                username = (project.findProperty("reposilite.user") as String) ?: System.getenv("REPOSILITE_USER")
+                password = (project.findProperty("reposilite.token") as String) ?: System.getenv("REPOSILITE_TOKEN")
+            }
         }
     }
 }

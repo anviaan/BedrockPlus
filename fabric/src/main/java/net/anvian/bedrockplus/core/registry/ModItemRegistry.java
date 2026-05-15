@@ -21,6 +21,8 @@ public class ModItemRegistry {
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.IMPUREBEDROCK_SHOVEL_ID), ModItems.IMPUREBEDROCK_SHOVEL);
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.IMPUREBEDROCK_HOE_ID), ModItems.IMPUREBEDROCK_HOE);
 
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.IMPUREBEDROCK_SPEAR_ID), ModItems.IMPUREBEDROCK_SPEAR);
+
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.IMPUREBEDROCK_HELMET_ID), ModItems.IMPURE_BEDROCK_HELMET);
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.IMPUREBEDROCK_CHESTPLATE_ID), ModItems.IMPURE_BEDROCK_CHESTPLATE);
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Constants.MOD_ID, Constants.IMPUREBEDROCK_LEGGINGS_ID), ModItems.IMPURE_BEDROCK_LEGGINGS);

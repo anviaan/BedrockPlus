@@ -29,6 +29,7 @@ public class ModTab {
                     entries.accept(ModItems.IMPUREBEDROCK_AXE);
                     entries.accept(ModItems.IMPUREBEDROCK_SHOVEL);
                     entries.accept(ModItems.IMPUREBEDROCK_HOE);
+                    entries.accept(ModItems.IMPUREBEDROCK_SPEAR);
                     entries.accept(ModItems.IMPURE_BEDROCK_HELMET);
                     entries.accept(ModItems.IMPURE_BEDROCK_CHESTPLATE);
                     entries.accept(ModItems.IMPURE_BEDROCK_LEGGINGS);

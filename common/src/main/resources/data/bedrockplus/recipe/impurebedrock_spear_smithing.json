@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:netherite_spear",
+  "addition": "bedrockplus:impure_bedrock_ingot",
+  "template": "bedrockplus:impure_bedrock_upgrade_smithing_template",
+  "result": {
+    "id": "bedrockplus:impurebedrock_spear"
+  }
+}
