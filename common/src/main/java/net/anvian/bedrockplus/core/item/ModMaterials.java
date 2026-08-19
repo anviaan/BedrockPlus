@@ -1,12 +1,13 @@
 package net.anvian.bedrockplus.core.item;
 
+import net.anvian.anvianslib.util.RegistryUtil;
 import net.anvian.bedrockplus.CommonMod;
 import net.anvian.bedrockplus.Constants;
 import net.anvian.bedrockplus.core.config.ModConfigs;
 import net.anvian.bedrockplus.core.util.ModTags;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ToolMaterial;
@@ -26,22 +27,24 @@ public class ModMaterials {
                 (float) config.toolMiningSpeed,
                 (float) config.toolAttackDamage,
                 config.toolEnchantability,
-                ModTags.Items.IMPURE_BEDROCK
-        );
+                ModTags.Items.IMPURE_BEDROCK);
     }
 
     public interface Armor {
-        ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
-        ResourceKey<EquipmentAsset> IMPURE_BEDROCK_KEY = ResourceKey.create(REGISTRY_KEY, Identifier.fromNamespaceAndPath(Constants.MOD_ID, "impurebedrock"));
+        ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY =
+                ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
+        ResourceKey<EquipmentAsset> IMPURE_BEDROCK_KEY =
+                RegistryUtil.key(REGISTRY_KEY, Constants.MOD_ID, "impurebedrock");
 
         ArmorMaterial IMPURE_BEDROCK = new ArmorMaterial(
                 config.armorDurability,
-                createMap(new int[]{
-                        config.armorProtectionAmountsHelmet,
-                        config.armorProtectionAmountsChestplate,
-                        config.armorProtectionAmountsLeggings,
-                        config.armorProtectionAmountsBoots,
-                        config.armorProtectionAmountsBody}),
+                createMap(new int[] {
+                    config.armorProtectionAmountsHelmet,
+                    config.armorProtectionAmountsChestplate,
+                    config.armorProtectionAmountsLeggings,
+                    config.armorProtectionAmountsBoots,
+                    config.armorProtectionAmountsBody
+                }),
                 config.armorEnchantability,
                 SoundEvents.ARMOR_EQUIP_NETHERITE,
                 (float) config.armorToughness,

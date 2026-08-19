@@ -1,1 +1,1 @@
-- Update Minecraft version range to [26.1, 26.3)
+- Update Anvian's lib to 1.5.0
