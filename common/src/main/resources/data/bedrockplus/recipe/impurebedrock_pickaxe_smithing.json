@@ -1,6 +1,8 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": "minecraft:netherite_pickaxe",
+  "base": {
+    "tag": "bedrockplus:upgradeable_pickaxes"
+  },
   "addition": "bedrockplus:impure_bedrock_ingot",
   "template": "bedrockplus:impure_bedrock_upgrade_smithing_template",
   "result": {

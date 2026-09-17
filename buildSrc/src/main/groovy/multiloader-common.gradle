@@ -48,7 +48,7 @@ repositories {
     }
     maven {
         name = 'Repsy Anvian'
-        url = 'https://repo.repsy.io/mvn/anvian/anvians-lib'
+        url = 'https://maven.anvian.net/releases'
     }
 }
 
@@ -109,7 +109,6 @@ processResources {
             "forge_loader_version_range"   : forge_loader_version_range,
             'credits'                      : credits,
             'java_version'                 : java_version,
-            'forge_config_api_port_version': forge_config_api_port_version,
             'anvianslib_version'           : anvianslib_version
     ]
 

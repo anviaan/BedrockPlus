@@ -77,7 +77,6 @@ dependencies {
 
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
 
-    api(fg.deobf("fuzs.forgeconfigapiport:forgeconfigapiport-forge:${forge_config_api_port_version}"))
     implementation "net.anvian.anvianslib:anvianslib-forge-1.21:${project.anvianslib_version}"
 }
 
