@@ -1,2 +1,7 @@
-- Port to 26.1
-- Spear config added
+- Fixed Resistance checks to read armor slots and refresh the effect while the complete Impure Bedrock armor set is equipped.
+- Migrated configuration handling to Anvian's Lib JSON, including legacy TOML migration, malformed-file recovery, and valid tool_durability: 0 support.
+- Added optional Netherite upgrade tags for More Tool Variants axe, hoe, pickaxe, and shovel variants without requiring the optional mod.
+- Initialized Anvian's Lib telemetry and enabled generation of config/bedrockplus/telemetry-config.json.
+- Kept the existing Impure Bedrock texture unchanged.
+- Maintained the 1.21.11-based snapshot and the Impure Bedrock spear configuration.
+- Preserved the current Anvian's Lib JSON configuration path and legacy/corrupt configuration recovery.

@@ -10,23 +10,24 @@ env:
   CURSEFORGE_ID: 585068
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      mod_version: ${{ steps.gradle-env.outputs.mod_version }}
+      release_name: ${{ steps.gradle-env.outputs.release_name }}
+      game_versions: ${{ steps.gradle-env.outputs.game_versions }}
 
     steps:
-      - name: Check Environment Variables
-        run: env
-
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
 
       - name: Setup Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: ${{ env.JAVA_VERSION }}
 
       - name: Make Gradle Wrapper Executable
         run: chmod +x gradlew
@@ -34,8 +35,48 @@ jobs:
       - name: Set Environment Variables from Gradle
         run: ./gradlew printEnv
 
+      - name: Export Gradle outputs
+        id: gradle-env
+        run: |
+          echo "mod_version=$MOD_VERSION"     >> "$GITHUB_OUTPUT"
+          echo "release_name=$RELEASE_NAME"   >> "$GITHUB_OUTPUT"
+          echo "game_versions=$GAME_VERSIONS" >> "$GITHUB_OUTPUT"
+
       - name: Build
         run: ./gradlew build
+
+      - name: Upload Fabric JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: fabric-jar
+          path: fabric/build/libs/
+
+      - name: Upload Forge JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: forge-jar
+          path: forge/build/libs/
+
+      - name: Upload NeoForge JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: neoforge-jar
+          path: neoforge/build/libs/
+
+
+  publish-fabric:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Fabric JAR
+        uses: actions/download-artifact@v4
+        with:
+          name: fabric-jar
+          path: fabric/build/libs/
 
       - name: Fabric Publish (Modrinth & CurseForge)
         uses: Kir-Antipov/mc-publish@v3.3
@@ -47,14 +88,14 @@ jobs:
           curseforge-token: ${{ env.CURSEFORGE_TOKEN }}
 
           files: |
-            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+            fabric/build/libs/!(*-@(dev|sources|javadoc|shadow)).jar
 
-          name: ${{ env.RELEASE_NAME }}
-          version: ${{ env.MOD_VERSION }}
+          name: ${{ needs.build.outputs.release_name }}
+          version: ${{ needs.build.outputs.mod_version }}
           version-type: 'release'
           changelog-file: CHANGELOG.md
 
-          game-versions: ${{ env.GAME_VERSIONS }}
+          game-versions: ${{ needs.build.outputs.game_versions }}
 
           loaders: |
             fabric
@@ -66,32 +107,19 @@ jobs:
 
           java: ${{ env.JAVA_VERSION }}
 
-      - name: NeoForge Publish (Modrinth & CurseForge)
-        uses: Kir-Antipov/mc-publish@v3.3
+  publish-forge:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Forge JAR
+        uses: actions/download-artifact@v4
         with:
-          modrinth-id: ${{ env.MODRINTH_ID }}
-          modrinth-token: ${{ env.MODRINTH_TOKEN }}
-
-          curseforge-id: ${{ env.CURSEFORGE_ID }}
-          curseforge-token: ${{ env.CURSEFORGE_TOKEN }}
-
-          files: |
-            neoforge/build/libs/!(*-@(dev|sources|javadoc)).jar
-
-          name: ${{ env.RELEASE_NAME }}
-          version: ${{ env.MOD_VERSION }}
-          version-type: 'release'
-          changelog-file: CHANGELOG.md
-
-          game-versions: ${{ env.GAME_VERSIONS }}
-
-          loaders: |
-            neoforge
-
-          dependencies: |
-            anvians-lib
-
-          java: ${{ env.JAVA_VERSION }}
+          name: forge-jar
+          path: forge/build/libs/
 
       - name: Forge Publish (Modrinth & CurseForge)
         uses: Kir-Antipov/mc-publish@v3.3
@@ -103,14 +131,14 @@ jobs:
           curseforge-token: ${{ env.CURSEFORGE_TOKEN }}
 
           files: |
-            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+            forge/build/libs/!(*-@(dev|sources|javadoc|shadow)).jar
 
-          name: ${{ env.RELEASE_NAME }}
-          version: ${{ env.MOD_VERSION }}
+          name: ${{ needs.build.outputs.release_name }}
+          version: ${{ needs.build.outputs.mod_version }}
           version-type: 'release'
           changelog-file: CHANGELOG.md
 
-          game-versions: ${{ env.GAME_VERSIONS }}
+          game-versions: ${{ needs.build.outputs.game_versions }}
 
           loaders: |
             forge
@@ -119,3 +147,70 @@ jobs:
             anvians-lib
 
           java: ${{ env.JAVA_VERSION }}
+
+  publish-neoforge:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download NeoForge JAR
+        uses: actions/download-artifact@v4
+        with:
+          name: neoforge-jar
+          path: neoforge/build/libs/
+
+      - name: NeoForge Publish (Modrinth & CurseForge)
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{ env.MODRINTH_ID }}
+          modrinth-token: ${{ env.MODRINTH_TOKEN }}
+
+          curseforge-id: ${{ env.CURSEFORGE_ID }}
+          curseforge-token: ${{ env.CURSEFORGE_TOKEN }}
+
+          files: |
+            neoforge/build/libs/!(*-@(dev|sources|javadoc|shadow)).jar
+
+          name: ${{ needs.build.outputs.release_name }}
+          version: ${{ needs.build.outputs.mod_version }}
+          version-type: 'release'
+          changelog-file: CHANGELOG.md
+
+          game-versions: ${{ needs.build.outputs.game_versions }}
+
+          loaders: |
+            neoforge
+
+          dependencies: |
+            anvians-lib
+
+          java: ${{ env.JAVA_VERSION }}
+
+  publish-maven:
+    needs: [ publish-fabric, publish-forge, publish-neoforge ]
+    if: success()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x gradlew
+
+      - name: Publish to Reposilite
+        env:
+          REPOSILITE_USER: ${{ secrets.REPOSILITE_USER }}
+          REPOSILITE_TOKEN: ${{ secrets.REPOSILITE_TOKEN }}
+        run: ./gradlew publish

@@ -1,7 +1,12 @@
 package net.anvian.bedrockplus.core.config;
 
 import net.anvian.anvianslib.config.Config;
+import net.anvian.bedrockplus.Constants;
 import org.slf4j.Logger;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 public class ModConfigs extends Config<ModConfigs.BedrockPlusConfig> {
     public ModConfigs(Class<BedrockPlusConfig> configClass, Logger logger) {
@@ -9,8 +14,43 @@ public class ModConfigs extends Config<ModConfigs.BedrockPlusConfig> {
     }
 
     @Override
+    public void initialize(File configDirectory, String modId) {
+        try {
+            Files.createDirectories(configDirectory.toPath());
+        } catch (IOException | SecurityException exception) {
+            Constants.LOG.error("Unable to create configuration directory {}", configDirectory, exception);
+        }
+        super.initialize(configDirectory, modId);
+    }
+
+    @Override
     protected BedrockPlusConfig createDefaultConfig() {
         return new BedrockPlusConfig();
+    }
+
+    @Override
+    public void loadConfig() {
+        if (configFile != null) {
+            ConfigMigration.Migration<BedrockPlusConfig> migration =
+                    ConfigMigration.migrate(configFile, BedrockPlusConfig.class, Constants.LOG);
+            if (migration != null) {
+                config = migration.config();
+                saveConfig();
+                if (configFile.exists()) {
+                    ConfigMigration.backupLegacyFiles(migration.legacyFiles(), Constants.LOG);
+                }
+            } else {
+                ConfigMigration.backupIfInvalidJson(configFile, BedrockPlusConfig.class, Constants.LOG);
+                super.loadConfig();
+            }
+        } else {
+            super.loadConfig();
+        }
+
+        if (config == null) {
+            config = createDefaultConfig();
+            saveConfig();
+        }
     }
 
     public static class BedrockPlusConfig {
