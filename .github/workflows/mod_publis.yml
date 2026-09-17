@@ -18,9 +18,6 @@ jobs:
       game_versions: ${{ steps.gradle-env.outputs.game_versions }}
 
     steps:
-      - name: Check Environment Variables
-        run: env
-
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
@@ -36,12 +33,14 @@ jobs:
         run: chmod +x gradlew
 
       - name: Set Environment Variables from Gradle
+        run: ./gradlew printEnv
+
+      - name: Export Gradle outputs
         id: gradle-env
         run: |
-          ./gradlew printEnv
-          echo "mod_version=$MOD_VERSION"       >> $GITHUB_OUTPUT
-          echo "release_name=$RELEASE_NAME"     >> $GITHUB_OUTPUT
-          echo "game_versions=$GAME_VERSIONS"   >> $GITHUB_OUTPUT
+          echo "mod_version=$MOD_VERSION"     >> "$GITHUB_OUTPUT"
+          echo "release_name=$RELEASE_NAME"   >> "$GITHUB_OUTPUT"
+          echo "game_versions=$GAME_VERSIONS" >> "$GITHUB_OUTPUT"
 
       - name: Build
         run: ./gradlew build
@@ -57,6 +56,7 @@ jobs:
         with:
           name: neoforge-jar
           path: neoforge/build/libs/
+
 
   publish-fabric:
     needs: build
