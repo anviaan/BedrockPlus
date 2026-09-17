@@ -11,3 +11,13 @@ tasks.register("printEnv") {
         envFile.append("GAME_VERSIONS=${project.minecraft_version_range}\n")
     }
 }
+
+// Solve the issue with lwjgl-freetype on macOS
+subprojects {
+    repositories {
+        maven {
+            url "https://libraries.minecraft.net"
+            content { includeModule("org.lwjgl", "lwjgl-freetype") }
+        }
+    }
+}

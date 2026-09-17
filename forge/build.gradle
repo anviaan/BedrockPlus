@@ -83,8 +83,8 @@ dependencies {
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
+    implementation "net.anvian.anvianslib:anvianslib-forge-1.21:${project.anvianslib_version}"
 
-    api(fg.deobf("fuzs.forgeconfigapiport:forgeconfigapiport-forge:21.3.3"))
 }
 
 publishing {
