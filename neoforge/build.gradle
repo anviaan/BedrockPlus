@@ -37,7 +37,6 @@ neoForge {
 }
 
 dependencies {
-    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:${forge_config_api_port_version}"
     implementation "net.anvian.anvianslib:anvianslib-neoforge-1.21.6:${project.anvianslib_version}"
 }
 
