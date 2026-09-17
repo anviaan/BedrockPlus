@@ -26,7 +26,7 @@ public class ModArmorItem extends Item {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ModMaterials.Armor.IMPURE_BEDROCK,
-                            new MobEffectInstance(MobEffects.RESISTANCE, 200, 0, false, config.armorShowParticle, config.armorShowIcon)).build();
+                            new MobEffectInstance(MobEffects.RESISTANCE, 40, 0, false, config.armorShowParticle, config.armorShowIcon)).build();
 
     public ModArmorItem(Properties properties) {
         super(properties);
@@ -34,11 +34,11 @@ public class ModArmorItem extends Item {
 
     @Override
     public void inventoryTick(@NotNull ItemStack itemStack, ServerLevel serverLevel, @NotNull Entity entity, @Nullable EquipmentSlot equipmentSlot) {
-        if (!serverLevel.isClientSide()) {
-            if (entity instanceof Player player) {
-                if (hasFullSuitOfArmorOn(player)) {
-                    evaluateArmorEffects(player);
-                }
+        if (!serverLevel.isClientSide() && entity instanceof Player player) {
+            if (hasFullSuitOfArmorOn(player)) {
+                evaluateArmorEffects(player);
+            } else {
+                clearArmorEffects(player);
             }
         }
     }
@@ -50,16 +50,22 @@ public class ModArmorItem extends Item {
 
             if (hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+            } else {
+                player.removeEffect(mapStatusEffect.getEffect());
             }
         }
     }
 
     private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
                                             MobEffectInstance mapStatusEffect) {
-        boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
-
-        if (hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+        if (hasCorrectArmorOn(mapArmorMaterial, player)) {
             player.addEffect(new MobEffectInstance(mapStatusEffect));
+        }
+    }
+
+    private void clearArmorEffects(Player player) {
+        for (MobEffectInstance effect : MATERIAL_TO_EFFECT_MAP.values()) {
+            player.removeEffect(effect.getEffect());
         }
     }
 
