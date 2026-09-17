@@ -4,7 +4,7 @@
     "item": "bedrockplus:impure_bedrock_ingot"
   },
   "base": {
-    "item": "minecraft:netherite_axe"
+    "tag": "bedrockplus:upgradeable_axes"
   },
   "result": {
     "id": "bedrockplus:impurebedrock_axe"

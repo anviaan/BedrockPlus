@@ -20,9 +20,9 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    modImplementation "net.anvian.anvianslib:anvianslib-fabric-1.21:${project.anvianslib_version}"
 
     modLocalRuntime("com.terraformersmc:modmenu:11.0.1")
-    modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:21.0.1"
 }
 
 loom {

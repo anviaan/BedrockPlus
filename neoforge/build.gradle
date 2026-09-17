@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:21.0.1"
+    implementation "net.anvian.anvianslib:anvianslib-neoforge-1.21:${project.anvianslib_version}"
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }

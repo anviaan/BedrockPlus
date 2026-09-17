@@ -1,0 +1,46 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherite_pickaxe",
+    {
+      "id": "mstv-mtoolv:acacia_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:bamboo_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:birch_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:cherry_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:crimson_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:dark_oak_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:jungle_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:mangrove_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:spruce_netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mstv-mtoolv:warped_netherite_pickaxe",
+      "required": false
+    }
+  ]
+}
