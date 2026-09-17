@@ -22,7 +22,7 @@ public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ModMaterials.Armor.IMPURE_BEDROCK,
-                            new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0, false, ModConfigs.armorShowParticle, ModConfigs.armorShowIcon)).build();
+                            new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 0, false, ModConfigs.armorShowParticle, ModConfigs.armorShowIcon)).build();
 
     public ModArmorItem(ArmorMaterial armorMaterial, ArmorType armorType, Properties properties) {
         super(armorMaterial, armorType, properties);
@@ -30,9 +30,11 @@ public class ModArmorItem extends ArmorItem {
 
     @Override
     public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int $$3, boolean $$4) {
-        if (!level.isClientSide()) {
-            if (hasFullSuitOfArmorOn((Player) entity)) {
-                evaluateArmorEffects((Player) entity);
+        if (!level.isClientSide() && entity instanceof Player player) {
+            if (hasFullSuitOfArmorOn(player)) {
+                evaluateArmorEffects(player);
+            } else {
+                clearArmorEffects(player);
             }
         }
     }
@@ -44,34 +46,40 @@ public class ModArmorItem extends ArmorItem {
 
             if (hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+            } else {
+                player.removeEffect(mapStatusEffect.getEffect());
             }
         }
     }
 
     private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
                                             MobEffectInstance mapStatusEffect) {
-        boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
-
-        if (hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+        if (hasCorrectArmorOn(mapArmorMaterial, player)) {
             player.addEffect(new MobEffectInstance(mapStatusEffect));
         }
     }
 
+    private void clearArmorEffects(Player player) {
+        for (MobEffectInstance effect : MATERIAL_TO_EFFECT_MAP.values()) {
+            player.removeEffect(effect.getEffect());
+        }
+    }
+
     private boolean hasFullSuitOfArmorOn(Player player) {
-        ItemStack boots = player.getInventory().getItem(EquipmentSlot.FEET.getIndex());
-        ItemStack leggings = player.getInventory().getItem(EquipmentSlot.LEGS.getIndex());
-        ItemStack chestplate = player.getInventory().getItem(EquipmentSlot.CHEST.getIndex());
-        ItemStack helmet = player.getInventory().getItem(EquipmentSlot.HEAD.getIndex());
+        ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+        ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+        ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+        ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
 
         return !helmet.isEmpty() && !chestplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
-        ItemStack boots = player.getInventory().getItem(EquipmentSlot.FEET.getIndex());
-        ItemStack leggings = player.getInventory().getItem(EquipmentSlot.LEGS.getIndex());
-        ItemStack chestplate = player.getInventory().getItem(EquipmentSlot.CHEST.getIndex());
-        ItemStack helmet = player.getInventory().getItem(EquipmentSlot.HEAD.getIndex());
+        ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+        ItemStack leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+        ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+        ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
 
         Equippable equippableComponentBoots = boots.getComponents().get(DataComponents.EQUIPPABLE);
         Equippable equippableComponentLeggings = leggings.getComponents().get(DataComponents.EQUIPPABLE);
