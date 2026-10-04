@@ -9,12 +9,9 @@ import net.anvian.bedrockplus.core.item.armor.ImpureBedrockSmithingTemplateItem;
 import net.anvian.bedrockplus.core.item.armor.ModArmorItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.equipment.ArmorType;
 
 public class ModItems {
@@ -53,23 +50,20 @@ public class ModItems {
             .fireResistant()
             .setId(key(Constants.IMPUREBEDROCK_PICKAXE_ID)));
 
-    public static final Item IMPUREBEDROCK_AXE = new AxeItem(
-            ModMaterials.Tool.IMPURE_BEDROCK,
-            (float) config.axeAttackDamage,
-            (float) config.axeAttackSpeed,
-            new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_AXE_ID)));
+    public static final Item IMPUREBEDROCK_AXE = new Item(new Item.Properties()
+            .axe(ModMaterials.Tool.IMPURE_BEDROCK, (float) config.axeAttackDamage, (float) config.axeAttackSpeed)
+            .fireResistant()
+            .setId(key(Constants.IMPUREBEDROCK_AXE_ID)));
 
-    public static final Item IMPUREBEDROCK_SHOVEL = new ShovelItem(
-            ModMaterials.Tool.IMPURE_BEDROCK,
-            (float) config.shovelAttackDamage,
-            (float) config.shovelAttackSpeed,
-            new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_SHOVEL_ID)));
+    public static final Item IMPUREBEDROCK_SHOVEL = new Item(new Item.Properties()
+            .shovel(ModMaterials.Tool.IMPURE_BEDROCK, (float) config.shovelAttackDamage, (float) config.shovelAttackSpeed)
+            .fireResistant()
+            .setId(key(Constants.IMPUREBEDROCK_SHOVEL_ID)));
 
-    public static final Item IMPUREBEDROCK_HOE = new HoeItem(
-            ModMaterials.Tool.IMPURE_BEDROCK,
-            config.hoeAttackDamage,
-            (float) config.hoeAttackSpeed,
-            new Item.Properties().fireResistant().setId(key(Constants.IMPUREBEDROCK_HOE_ID)));
+    public static final Item IMPUREBEDROCK_HOE = new Item(new Item.Properties()
+            .hoe(ModMaterials.Tool.IMPURE_BEDROCK, (float) config.hoeAttackDamage, (float) config.hoeAttackSpeed)
+            .fireResistant()
+            .setId(key(Constants.IMPUREBEDROCK_HOE_ID)));
 
     public static final Item IMPUREBEDROCK_SPEAR = new Item(new Item.Properties()
             .spear(

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "tag": "bedrockplus:upgradeable_hoes"
-  },
+  "base": "#bedrockplus:upgradeable_hoes",
   "addition": "bedrockplus:impure_bedrock_ingot",
   "template": "bedrockplus:impure_bedrock_upgrade_smithing_template",
   "result": {

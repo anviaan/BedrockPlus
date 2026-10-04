@@ -1,8 +1,6 @@
-- Fixed Resistance checks to read armor slots and refresh the effect while the complete Impure Bedrock armor set is equipped.
-- Migrated configuration handling to Anvian's Lib JSON, including legacy TOML migration, malformed-file recovery, and valid tool_durability: 0 support.
-- Added optional Netherite upgrade tags for More Tool Variants axe, hoe, pickaxe, and shovel variants without requiring the optional mod.
-- Initialized Anvian's Lib telemetry and enabled generation of config/bedrockplus/telemetry-config.json.
-- Kept the existing Impure Bedrock texture unchanged.
-- Updated the branch for Java 25 and Minecraft 26.1.
-- Kept the current Anvian's Lib JSON configuration API and corrupt-file recovery.
-- Added optional 26.1 More Tool Variants Netherite tags and retained the Fabric/NeoForge-only module layout.
+- Updated Fabric and NeoForge to Minecraft 26.3 only, retaining Java 25.
+- Updated Fabric API, Fabric Loader, NeoForm, NeoForge, and development-only Mod Menu.
+- Updated resource pack metadata and worldgen block-state data for 26.3.
+- Retained Anvian's Lib 1.5.0, existing configuration migration, equipment behavior, and textures.
+- Adapted axe, shovel, and hoe registration to the 26.3 item-properties API.
+- Updated ModDevGradle to 2.0.148 for NeoForge 26.3 artifact generation.

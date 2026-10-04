@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:ore",
+  "targets": [
+    {
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:deepslate_ore_replaceables"
+      },
+      "state": {
+        "id": "bedrockplus:impure_bedrock"
+      }
+    }
+  ],
+  "size": 4,
+  "discard_chance_on_air_exposure": 0
+}
